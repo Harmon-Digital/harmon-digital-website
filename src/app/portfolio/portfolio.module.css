@@ -1,0 +1,256 @@
+.page {
+  min-height: 100vh;
+  background: #0a0a0a;
+  padding-top: 120px;
+  padding-bottom: 100px;
+}
+
+.header {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 0 24px 60px;
+}
+
+.label {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 500;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 24px;
+}
+
+.title {
+  font-size: clamp(32px, 5vw, 42px);
+  font-weight: 400;
+  color: #fff;
+  margin: 0 0 16px;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.subtitle {
+  font-size: 16px;
+  color: #888;
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* Portfolio Section */
+.portfolioSection {
+  position: relative;
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Project List */
+.projectList {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.projectItem {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  border-top: 1px solid #222;
+}
+
+.projectItemInner {
+  position: relative;
+  padding: 28px 0;
+}
+
+.projectHighlight {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(255,255,255,0.03) 0%, transparent 100%);
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.projectContent {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.projectLogo {
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #141414;
+  border-radius: 8px;
+  border: 1px solid #222;
+  padding: 8px;
+}
+
+.projectLogo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+  opacity: 0.8;
+}
+
+.projectMain {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+}
+
+.projectTitleRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.projectTitle {
+  font-size: 20px;
+  font-weight: 500;
+  color: #fff;
+  margin: 0;
+}
+
+.projectTitleText {
+  position: relative;
+}
+
+.projectUnderline {
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  height: 1px;
+  background: #fff;
+  transition: width 0.3s ease;
+}
+
+.projectCategory {
+  font-size: 12px;
+  color: #666;
+  background: #1a1a1a;
+  padding: 4px 10px;
+  border-radius: 4px;
+  border: 1px solid #333;
+}
+
+.projectArrow {
+  width: 16px;
+  height: 16px;
+  color: #fff;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  margin-left: auto;
+}
+
+.projectDescription {
+  font-size: 14px;
+  margin: 0;
+  line-height: 1.5;
+  transition: color 0.3s ease;
+  max-width: 500px;
+}
+
+.projectYear {
+  font-size: 14px;
+  color: #666;
+  flex-shrink: 0;
+  margin-left: auto;
+}
+
+.projectListBorder {
+  height: 1px;
+  background: #222;
+}
+
+/* CTA Section */
+.cta {
+  max-width: 700px;
+  margin: 80px auto 0;
+  padding: 60px 24px;
+  text-align: center;
+  border-top: 1px solid #222;
+}
+
+.ctaTitle {
+  font-size: clamp(24px, 4vw, 32px);
+  font-weight: 400;
+  color: #fff;
+  margin: 0 0 12px;
+  letter-spacing: -0.02em;
+}
+
+.ctaSubtitle {
+  font-size: 16px;
+  color: #888;
+  margin: 0 0 32px;
+}
+
+.ctaButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 28px;
+  background: #fff;
+  color: #0a0a0a;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.ctaButton:hover {
+  opacity: 0.9;
+}
+
+@media (max-width: 768px) {
+  .projectContent {
+    flex-wrap: wrap;
+  }
+
+  .projectMain {
+    flex: 1;
+    min-width: 200px;
+  }
+
+  .projectYear {
+    margin-left: 0;
+  }
+
+  .projectArrow {
+    display: none;
+  }
+
+  .projectLogo {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 28px;
+  }
+
+  .projectTitle {
+    font-size: 18px;
+  }
+
+  .projectTitleRow {
+    gap: 8px;
+  }
+
+  .projectCategory {
+    font-size: 11px;
+    padding: 3px 8px;
+  }
+}
