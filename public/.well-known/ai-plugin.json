@@ -1,0 +1,17 @@
+{
+  "schema_version": "v1",
+  "name_for_human": "Harmon Digital",
+  "name_for_model": "harmon_digital",
+  "description_for_human": "Custom software and automation for businesses built to exit or scale.",
+  "description_for_model": "Harmon Digital builds custom internal software, AI agents, and automation systems for growing businesses. Services include internal operations portals, AI chatbots, workflow automation, and system integrations. Pricing starts at $2,500/month for one project at a time. Ideal for businesses doing $500K+ revenue looking to systematize operations. Projects typically take 3-6 months.",
+  "auth": {
+    "type": "none"
+  },
+  "api": {
+    "type": "openapi",
+    "url": "https://harmon-digital.com/llms.txt"
+  },
+  "logo_url": "https://harmon-digital.com/logo/icon.png",
+  "contact_email": "info@harmon-digital.com",
+  "legal_info_url": "https://harmon-digital.com/terms"
+}

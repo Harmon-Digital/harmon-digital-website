@@ -20,7 +20,7 @@ export function Header() {
     <header className={`${styles.header} ${isScrolled ? styles.headerScrolled : ''}`}>
       <div className={`${styles.container} ${isScrolled ? styles.containerScrolled : ''}`}>
         <a href="/" className={styles.logo}>
-          <img src="/logo/icon.png" alt="" className={styles.logoIcon} />
+          <img src="/logo/icon.png" alt="Harmon Digital" className={styles.logoIcon} />
           <span>Harmon Digital</span>
         </a>
 

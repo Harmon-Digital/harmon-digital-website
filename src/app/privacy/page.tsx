@@ -18,7 +18,7 @@ export default function PrivacyPolicy() {
           <section>
             <h2>Introduction</h2>
             <p>
-              Harmon Digital ("we," "our," or "us") respects your privacy and is committed to protecting your personal data. This privacy policy explains how we collect, use, and safeguard your information when you visit our website or use our services.
+              Harmon Digital, LLC ("we," "our," or "us") respects your privacy and is committed to protecting your personal data. This privacy policy explains how we collect, use, and safeguard your information when you visit our website or use our services.
             </p>
           </section>
 
@@ -101,7 +101,7 @@ export default function PrivacyPolicy() {
               If you have any questions about this privacy policy or our data practices, please contact us at:
             </p>
             <p>
-              <strong>Email:</strong> hello@harmon-digital.com
+              <strong>Email:</strong> info@harmon-digital.com
             </p>
           </section>
         </div>

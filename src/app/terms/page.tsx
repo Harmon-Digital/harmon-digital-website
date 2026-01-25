@@ -18,14 +18,14 @@ export default function TermsOfService() {
           <section>
             <h2>Agreement to Terms</h2>
             <p>
-              By accessing or using the Harmon Digital website and services, you agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use our services.
+              By accessing or using the Harmon Digital, LLC website and services, you agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use our services.
             </p>
           </section>
 
           <section>
             <h2>Services</h2>
             <p>
-              Harmon Digital provides custom software development, automation, and AI solutions for businesses. Our services include but are not limited to:
+              Harmon Digital, LLC provides custom software development, automation, and AI solutions for businesses. Our services include but are not limited to:
             </p>
             <ul>
               <li>Custom internal software and portals</li>
@@ -54,7 +54,7 @@ export default function TermsOfService() {
           <section>
             <h2>Intellectual Property</h2>
             <p>
-              Upon full payment, clients receive ownership of custom code and deliverables created specifically for their project. Harmon Digital retains the right to use general knowledge, techniques, and non-proprietary components in future projects.
+              Upon full payment, clients receive ownership of custom code and deliverables created specifically for their project. Harmon Digital, LLC retains the right to use general knowledge, techniques, and non-proprietary components in future projects.
             </p>
             <p>
               Third-party tools, libraries, and integrations remain subject to their respective licenses.
@@ -83,7 +83,7 @@ export default function TermsOfService() {
           <section>
             <h2>Limitation of Liability</h2>
             <p>
-              To the maximum extent permitted by law, Harmon Digital shall not be liable for any indirect, incidental, special, consequential, or punitive damages resulting from your use of our services.
+              To the maximum extent permitted by law, Harmon Digital, LLC shall not be liable for any indirect, incidental, special, consequential, or punitive damages resulting from your use of our services.
             </p>
             <p>
               Our total liability for any claim arising from our services shall not exceed the amount paid by you for the services in the twelve months preceding the claim.
@@ -132,7 +132,7 @@ export default function TermsOfService() {
               For questions about these terms, please contact us at:
             </p>
             <p>
-              <strong>Email:</strong> hello@harmon-digital.com
+              <strong>Email:</strong> info@harmon-digital.com
             </p>
           </section>
         </div>

@@ -1,0 +1,53 @@
+# Harmon Digital
+
+> Custom software and automation for businesses built to exit or scale.
+
+Harmon Digital, LLC builds custom internal software, AI agents, and automation systems for growing businesses. We help business owners systematize their operations so they can scale without hiring, free up their time, and increase their company's value.
+
+## Services
+
+- Internal Operations Portals
+- AI Agents & Chatbots
+- Workflow Automation
+- System Integrations
+- CRM & Sales Systems
+- Inventory & Order Management
+- Custom Dashboards & Reporting
+- Slack/Teams AI Bots
+
+## Pricing
+
+- Standard: $2,500/month - One project at a time, 3-6 month builds
+- Accelerated: $5,000/month - Two projects in parallel
+- Maintenance: $1,500/month - Ongoing support after launch
+
+## Process
+
+1. Discovery call - Learn about your business and identify bottlenecks
+2. Solution design - Design your custom system with approval before building
+3. Build & iterate - AI-powered development with features delivered every 2 weeks
+4. Launch & support - Deploy, train your team, provide ongoing support
+
+## Ideal Clients
+
+- Businesses doing $500K+ in revenue
+- Service businesses, agencies, distributors
+- Companies where the owner is the bottleneck
+- Businesses planning to exit or scale
+
+## Contact
+
+- Website: https://harmon-digital.com
+- Email: info@harmon-digital.com
+- LinkedIn: https://www.linkedin.com/company/harmon-digital/
+- Book a call: https://cal.com/harmon-digital/15min
+
+## Portfolio
+
+See our work at https://harmon-digital.com/portfolio
+
+Notable projects:
+- ProducifyX: ATS and operations portal for a staffing agency
+- Happy Endings: AI email agent and full internal operations system
+- Hoplite Capital: Custom work software for multi-location golf cart dealership
+- Neighbors Bank: RAG-powered Slack bot for 200+ underwriters

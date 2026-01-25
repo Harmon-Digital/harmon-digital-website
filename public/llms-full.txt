@@ -1,0 +1,173 @@
+# Harmon Digital - Complete Information
+
+> Custom software and automation for businesses built to exit or scale.
+
+## Company Overview
+
+Harmon Digital, LLC is a software development company that builds custom internal software, AI agents, and automation systems for growing businesses. We specialize in helping business owners systematize their operations so they can:
+
+- Scale without hiring additional staff
+- Free up their time from day-to-day operations
+- Build a business that runs without them
+- Increase company valuation for future exit
+
+We use AI-powered development to deliver full internal applications in 3-6 months, not years.
+
+## Services Offered
+
+### Internal Operations Portals
+Custom internal software and portals to manage business operations, replacing spreadsheets and disconnected tools with unified systems.
+
+### AI Agents & Chatbots
+Intelligent AI agents for customer service, lead qualification, appointment setting, and internal automation. We build custom RAG-powered bots that answer questions from your internal documents.
+
+### Workflow Automation
+End-to-end workflow automation using tools like Make.com, n8n, and custom integrations to eliminate repetitive manual tasks.
+
+### System Integrations
+Connect existing tools and systems (Airtable, QuickBooks, Shopmonkey, Slack, etc.) for seamless data flow across your business.
+
+### Additional Services
+- CRM & Sales Systems
+- Inventory & Order Management
+- Applicant Tracking Systems (ATS)
+- Document Processing
+- Custom Dashboards & Reporting
+- Slack/Teams AI Bots
+
+## Pricing Plans
+
+### Standard - $2,500/month
+- One active project at a time
+- AI-powered development
+- Working features delivered every 2 weeks
+- Dedicated Slack channel for communication
+- Weekly progress calls
+- Typical project duration: 3-6 months
+
+### Accelerated - $5,000/month
+- Two active projects in parallel
+- AI-powered development
+- Faster delivery timeline
+- Dedicated Slack channel
+- Weekly progress calls
+
+### Maintenance - $1,500/month
+- Bug fixes and minor updates
+- Keep integrations running smoothly
+- Priority support when issues arise
+- Optional - clients own everything we build
+
+## Our Process
+
+### 1. Discovery Call
+We learn about your business, identify bottlenecks, and map out which processes are eating your time. No commitment required.
+
+### 2. Solution Design
+We design your custom system—whether it's an internal portal, AI agent, or workflow automation. You see exactly what we're building before we start.
+
+### 3. Build & Iterate
+We build your solution using AI-powered development, delivering working features every 2 weeks. You're involved the whole way, giving feedback as we go.
+
+### 4. Launch & Support
+We deploy your system, train your team, and provide ongoing support. Your business now runs smoother—with or without you.
+
+## Ideal Client Profile
+
+We work best with:
+- Businesses doing $500K+ in annual revenue
+- Service businesses, agencies, and distributors
+- Companies where the owner is currently the bottleneck
+- Businesses planning to sell in 1-7 years
+- Recently acquired businesses needing systems
+- Companies looking to scale without proportionally increasing headcount
+
+## Technology Stack
+
+We use modern, maintainable tools:
+- Airtable for databases
+- Make.com and n8n for workflow automation
+- Custom web applications (React, Next.js) when needed
+- OpenAI, Anthropic, and other AI APIs for intelligent features
+- Pinecone and vector databases for RAG applications
+- Various integrations based on client needs
+
+## Portfolio Highlights
+
+### ProducifyX (Staffing Agency)
+- Custom ATS and operations portal
+- Unified system replacing multiple disconnected tools
+- Owner saved 20+ hours per week
+- Build time: 4 months
+
+### Happy Endings (Ice Cream Company)
+- AI email agent for wholesale orders
+- Complete internal system: orders, kitchen, training, inventory
+- Eliminated external software costs
+- System serves as asset for future business sale
+- Build time: 3 months
+
+### Hoplite Capital / Etto Leisure Carts (Golf Cart Dealership)
+- Multi-location inventory and operations software
+- Airtable + Make.com + Shopmonkey + QuickBooks integration
+- Real-time visibility across all locations
+- Automated quotes and invoicing
+- Build time: 6 weeks
+
+### Neighbors Bank (Mortgage Lender)
+- RAG-powered Slack bot for 200+ underwriters
+- Instant answers from internal documents
+- Reduced answer retrieval from hours to seconds
+- Automated escalations
+- Build time: 2 months
+
+### Mike's Fences (Fence Company)
+- AI appointment setting agent
+- Automated lead qualification and scheduling
+- 40% more estimates scheduled
+- Zero missed inquiries
+- Build time: 6 weeks
+
+## Communication Style
+
+We communicate primarily through Slack with:
+- Dedicated channel for each client
+- Real-time collaboration and quick feedback
+- Weekly video calls to review progress
+- Working features demonstrated every two weeks
+
+## Contact Information
+
+- Website: https://harmon-digital.com
+- Email: info@harmon-digital.com
+- LinkedIn: https://www.linkedin.com/company/harmon-digital/
+- Book a Discovery Call: https://cal.com/harmon-digital/15min
+
+## Frequently Asked Questions
+
+**Q: What's the difference between Standard and Accelerated?**
+A: Standard ($2,500/mo) means we work on one project at a time—great for most businesses. Accelerated ($5,000/mo) lets us run two projects in parallel, so you can systematize faster if you have multiple priorities or a tighter timeline.
+
+**Q: How long does a typical project take?**
+A: Most full internal applications take 3-6 months. You'll see working features every 2 weeks, so you're not waiting months to see progress. Simpler automations and integrations can be done in weeks.
+
+**Q: What's included in the $1,500/mo maintenance?**
+A: Maintenance covers bug fixes, minor updates, keeping integrations running smoothly, and priority support when something breaks. It's optional—you own everything we build and it works without us. But most clients like knowing someone's watching the systems.
+
+**Q: What tools do you use to build?**
+A: We use modern, maintainable tools: Airtable for databases, n8n for workflow automation, custom web apps when needed, and various AI APIs for intelligent features. We choose tools based on your needs—not what's trendy.
+
+**Q: Is this right for my business?**
+A: If you're doing $500K+ in revenue and spending too much time on operations, probably yes. We work best with service businesses, agencies, distributors, and companies where the owner is currently the bottleneck. Book a call—we'll tell you honestly if we can help.
+
+## Why Systematize Your Business?
+
+1. **Scale without hiring** - Automation handles repetitive work so you can grow without adding headcount
+2. **Free up your time** - Stop working in the business, focus on growth
+3. **Increase valuation** - Turnkey businesses command premium multiples
+4. **AI-powered speed** - Full applications delivered in 3-6 months, not years
+
+---
+
+Last updated: January 2025
+For the most current information, visit https://harmon-digital.com

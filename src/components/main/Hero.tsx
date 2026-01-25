@@ -2,7 +2,17 @@
 
 import { useEffect, useState, useRef } from 'react'
 import { motion } from 'framer-motion'
-import { ArrowUpRight } from 'lucide-react'
+import {
+  ArrowUpRight,
+  ClipboardList,
+  Package,
+  Truck,
+  Users,
+  CheckSquare,
+  Inbox,
+  Zap,
+  BarChart3
+} from 'lucide-react'
 import Link from 'next/link'
 import styles from './Hero.module.css'
 
@@ -90,7 +100,9 @@ export function Hero() {
   const [smoothPosition, setSmoothPosition] = useState({ x: 0, y: 0 })
   const [isVisible, setIsVisible] = useState(false)
   const [openFaq, setOpenFaq] = useState<number | null>(null)
+  const [highlightVisible, setHighlightVisible] = useState(false)
   const portfolioRef = useRef<HTMLDivElement>(null)
+  const bookCallRef = useRef<HTMLDivElement>(null)
   const animationRef = useRef<number | null>(null)
 
   // Qualification form state
@@ -127,6 +139,26 @@ export function Hero() {
       }
     }
   }, [mousePosition])
+
+  // Intersection observer for highlight animation
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setHighlightVisible(true)
+          }
+        })
+      },
+      { threshold: 0.5 }
+    )
+
+    if (bookCallRef.current) {
+      observer.observe(bookCallRef.current)
+    }
+
+    return () => observer.disconnect()
+  }, [])
 
   const handleMouseMove = (e: React.MouseEvent) => {
     if (portfolioRef.current) {
@@ -167,7 +199,7 @@ export function Hero() {
     }
   }
 
-  const handleFormSubmit = (e: React.FormEvent) => {
+  const handleFormSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
 
     // Spam check - if honeypot is filled, it's a bot
@@ -181,6 +213,17 @@ export function Hero() {
     if (isSalesPitch) {
       setFormStep(2)
       return
+    }
+
+    // Send form data to API
+    try {
+      await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      })
+    } catch (error) {
+      console.error('Failed to submit form:', error)
     }
 
     // Everyone else is qualified
@@ -217,7 +260,7 @@ export function Hero() {
                 {/* Double the logos for seamless infinite scroll */}
                 {[...clientLogos, ...clientLogos].map((logo, index) => (
                   <div key={index} className={styles.logoSlide}>
-                    <img src={logo} alt="" className={styles.clientLogo} />
+                    <img src={logo} alt="Client logo" className={styles.clientLogo} />
                   </div>
                 ))}
               </div>
@@ -240,7 +283,7 @@ export function Hero() {
             <div className={styles.cardHeader}>
               <div className={styles.userInfo}>
                 <div className={styles.userAvatar}>
-                  <img src="https://i.pravatar.cc/40?img=11" alt="" />
+                  <img src="https://i.pravatar.cc/40?img=11" alt="User avatar" />
                 </div>
                 <div className={styles.userDetails}>
                   <span className={styles.userName}>Operations Hub</span>
@@ -252,22 +295,22 @@ export function Hero() {
             <div className={styles.cardBody}>
               <div className={styles.sidebarSection}>
                 <span className={styles.sectionLabel}>Operations</span>
-                <div className={styles.navItem}><span className={styles.navIcon}>📋</span> Orders</div>
-                <div className={styles.navItem}><span className={styles.navIcon}>📦</span> Inventory</div>
-                <div className={styles.navItem}><span className={styles.navIcon}>🚚</span> Fulfillment</div>
+                <div className={styles.navItem}><ClipboardList size={16} className={styles.navIcon} /> Orders</div>
+                <div className={styles.navItem}><Package size={16} className={styles.navIcon} /> Inventory</div>
+                <div className={styles.navItem}><Truck size={16} className={styles.navIcon} /> Fulfillment</div>
               </div>
               <div className={styles.sidebarSection}>
                 <span className={styles.sectionLabel}>Team</span>
-                <div className={styles.navItem}><span className={styles.navIcon}>👥</span> Staff</div>
-                <div className={`${styles.navItem} ${styles.navItemActive}`}><span className={styles.navIcon}>✅</span> Tasks</div>
+                <div className={styles.navItem}><Users size={16} className={styles.navIcon} /> Staff</div>
+                <div className={`${styles.navItem} ${styles.navItemActive}`}><CheckSquare size={16} className={styles.navIcon} /> Tasks</div>
                 <div className={styles.navItem}>
-                  <span className={styles.navIcon}>📨</span> Requests
+                  <Inbox size={16} className={styles.navIcon} /> Requests
                   <span className={styles.badge}>8</span>
                 </div>
               </div>
               <div className={styles.sidebarSection}>
-                <div className={styles.navItem}><span className={styles.navIcon}>🤖</span> Automations</div>
-                <div className={styles.navItem}><span className={styles.navIcon}>📊</span> Reports</div>
+                <div className={styles.navItem}><Zap size={16} className={styles.navIcon} /> Automations</div>
+                <div className={styles.navItem}><BarChart3 size={16} className={styles.navIcon} /> Reports</div>
               </div>
               <button className={styles.addNewBtn}>+ Add new</button>
             </div>
@@ -289,35 +332,35 @@ export function Hero() {
                 <span className={styles.customerEmail}>Auto-assigned</span>
                 <span className={styles.customerOrders}>12</span>
                 <span className={styles.customerSpent}>High</span>
-                <span className={`${styles.statusBadge} ${styles.statusPaying}`}>Running</span>
+                <span className={`${styles.statusBadge} ${styles.statusRunning}`}>Running</span>
               </div>
               <div className={styles.tableRow}>
                 <span className={styles.customerName}>Inventory sync</span>
                 <span className={styles.customerEmail}>Scheduled</span>
                 <span className={styles.customerOrders}>—</span>
                 <span className={styles.customerSpent}>Med</span>
-                <span className={`${styles.statusBadge} ${styles.statusPaying}`}>Complete</span>
+                <span className={`${styles.statusBadge} ${styles.statusComplete}`}>Complete</span>
               </div>
               <div className={styles.tableRow}>
                 <span className={styles.customerName}>Send follow-ups</span>
                 <span className={styles.customerEmail}>AI Agent</span>
                 <span className={styles.customerOrders}>8</span>
                 <span className={styles.customerSpent}>Med</span>
-                <span className={`${styles.statusBadge} ${styles.statusNotReg}`}>Pending</span>
+                <span className={`${styles.statusBadge} ${styles.statusPending}`}>Pending</span>
               </div>
               <div className={styles.tableRow}>
                 <span className={styles.customerName}>Generate report</span>
                 <span className={styles.customerEmail}>Weekly</span>
                 <span className={styles.customerOrders}>1</span>
                 <span className={styles.customerSpent}>Low</span>
-                <span className={`${styles.statusBadge} ${styles.statusCancelled}`}>Queued</span>
+                <span className={`${styles.statusBadge} ${styles.statusQueued}`}>Queued</span>
               </div>
               <div className={styles.tableRow}>
                 <span className={styles.customerName}>Update pricing</span>
                 <span className={styles.customerEmail}>Manual review</span>
                 <span className={styles.customerOrders}>3</span>
                 <span className={styles.customerSpent}>High</span>
-                <span className={`${styles.statusBadge} ${styles.statusPaying}`}>Running</span>
+                <span className={`${styles.statusBadge} ${styles.statusRunning}`}>Running</span>
               </div>
             </div>
           </div>
@@ -890,10 +933,10 @@ export function Hero() {
       </div>
 
       {/* Book a Call Section */}
-      <div className={styles.bookCallSection} id="book">
+      <div ref={bookCallRef} className={styles.bookCallSection} id="book">
         <div className={styles.bookCallSectionInner}>
           <h2 className={styles.bookCallHeadline}>
-            Ready to build a business that <span className={styles.highlighted}>runs on its own?</span>
+            Ready to build a business that <span className={`${styles.highlighted} ${highlightVisible ? styles.highlightedVisible : ''}`}>runs on its own?</span>
           </h2>
 
           {formStep === 0 && (
@@ -1029,15 +1072,18 @@ export function Hero() {
         <div className={styles.footerInner}>
           <div className={styles.footerTop}>
             <div className={styles.footerLogo}>
-              <img src="/logo/icon.png" alt="" className={styles.footerLogoIcon} />
+              <img src="/logo/icon.png" alt="Harmon Digital logo" className={styles.footerLogoIcon} />
               <span>Harmon Digital</span>
             </div>
-            <div className={styles.footerSocials}>
-              <a href="https://www.linkedin.com/company/harmon-digital/" target="_blank" rel="noopener noreferrer">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                </svg>
-              </a>
+            <div className={styles.footerContact}>
+              <a href="mailto:info@harmon-digital.com" className={styles.footerEmail}>info@harmon-digital.com</a>
+              <div className={styles.footerSocials}>
+                <a href="https://www.linkedin.com/company/harmon-digital/" target="_blank" rel="noopener noreferrer">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                  </svg>
+                </a>
+              </div>
             </div>
           </div>
           <div className={styles.footerBottom}>
