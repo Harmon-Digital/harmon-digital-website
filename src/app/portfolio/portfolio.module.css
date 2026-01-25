@@ -237,12 +237,28 @@
 }
 
 @media (max-width: 480px) {
+  .page {
+    padding-top: 100px;
+  }
+
+  .header {
+    padding: 0 16px 40px;
+  }
+
   .title {
-    font-size: 28px;
+    font-size: 26px;
+  }
+
+  .subtitle {
+    font-size: 14px;
+  }
+
+  .portfolioSection {
+    padding: 0 16px;
   }
 
   .projectTitle {
-    font-size: 18px;
+    font-size: 17px;
   }
 
   .projectTitleRow {
@@ -252,5 +268,22 @@
   .projectCategory {
     font-size: 11px;
     padding: 3px 8px;
+  }
+
+  .projectDescription {
+    font-size: 13px;
+  }
+
+  .cta {
+    padding: 40px 16px;
+    margin-top: 60px;
+  }
+
+  .ctaTitle {
+    font-size: 22px;
+  }
+
+  .ctaSubtitle {
+    font-size: 14px;
   }
 }

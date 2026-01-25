@@ -1446,6 +1446,8 @@
   .container {
     grid-template-columns: 1fr;
     gap: 60px;
+    min-height: auto;
+    overflow: visible;
   }
 
   .heroDivider {
@@ -1459,6 +1461,19 @@
 
   .subtitle {
     max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .ctaBtn {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .trust {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   .logoSlider {
@@ -1472,42 +1487,50 @@
 }
 
 @media (max-width: 768px) {
+  .hero {
+    padding-top: 70px;
+  }
+
   .container {
     padding: 40px 20px;
+    gap: 40px;
   }
 
   .headline {
-    font-size: 28px;
+    font-size: 26px;
+    line-height: 1.3;
+  }
+
+  .subtitle {
+    font-size: 15px;
+  }
+
+  .ctaBtn {
+    margin-bottom: 32px;
   }
 
   .screenshots {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .screenshotCard {
-    transform: none;
-    width: 100%;
-    max-width: 300px;
-  }
-
-  .tableCard {
-    width: 100%;
-    max-width: 360px;
-  }
-
-  .tableRow {
-    grid-template-columns: 1fr 1fr;
-    gap: 4px;
-  }
-
-  .customerEmail,
-  .customerOrders {
     display: none;
+  }
+
+  .trustLabel {
+    font-size: 13px;
   }
 }
 
 @media (max-width: 480px) {
+  .container {
+    padding: 32px 16px;
+  }
+
+  .headline {
+    font-size: 22px;
+  }
+
+  .subtitle {
+    font-size: 14px;
+  }
+
   .clientLogo {
     height: 20px;
   }
@@ -1521,12 +1544,22 @@
   }
 
   .whyHeadline,
-  .howHeadline {
-    font-size: 24px;
+  .howHeadline,
+  .servicesHeadline,
+  .slackHeadline,
+  .pricingHeadline,
+  .faqHeadline,
+  .bookCallHeadline {
+    font-size: 22px;
   }
 
   .whySection,
-  .howSection {
+  .howSection,
+  .servicesSection,
+  .slackSection,
+  .pricingSection,
+  .faqSection,
+  .bookCallSection {
     padding: 60px 0;
   }
 
@@ -1570,6 +1603,18 @@
 
   .maintenanceRight {
     text-align: left;
+  }
+
+  .footerTop {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .footerBottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
   }
 
   .maintenanceRight .planPrice {
@@ -1619,11 +1664,5 @@
 
   .calEmbed {
     min-height: 500px;
-  }
-
-  .footerTop {
-    flex-direction: column;
-    gap: 24px;
-    align-items: flex-start;
   }
 }
