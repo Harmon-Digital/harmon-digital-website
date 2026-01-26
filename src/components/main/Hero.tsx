@@ -255,7 +255,7 @@ export function Hero() {
           </a>
 
           <div className={styles.trust}>
-            <p className={styles.trustLabel}>Trusted by businesses preparing to exit</p>
+            <p className={styles.trustLabel}>Businesses we've worked with</p>
             <div className={styles.logoSlider}>
               <div className={styles.logoTrack}>
                 {/* Double the logos for seamless infinite scroll */}
@@ -689,52 +689,38 @@ export function Hero() {
       <div className={styles.pricingSection} id="pricing">
         <div className={styles.pricingSectionInner}>
           <h2 className={styles.pricingHeadline}>
-            The math is simple.<br />
-            Here's how it works.
+            Two ways to work with us.
           </h2>
           <p className={styles.pricingSubtitle}>
-            $2,500/month for 3-6 months + 8% of the valuation increase at closing.
+            Whether you're growing or exiting, we build the systems you need.
           </p>
 
-          <div className={styles.exitExample}>
-            <h3 className={styles.exitExampleTitle}>Example</h3>
-            <div className={styles.exitExampleGrid}>
-              <div className={styles.exitExampleRow}>
-                <span className={styles.exitExampleLabel}>Business valued today</span>
-                <span className={styles.exitExampleValue}>$2,000,000</span>
-              </div>
-              <div className={styles.exitExampleRow}>
-                <span className={styles.exitExampleLabel}>Multiple increase</span>
-                <span className={styles.exitExampleValue}>+25%</span>
-              </div>
-              <div className={styles.exitExampleRow}>
-                <span className={styles.exitExampleLabel}>Sells for after systematization</span>
-                <span className={styles.exitExampleValue}>$2,500,000</span>
-              </div>
-              <div className={styles.exitExampleDivider} />
-              <div className={styles.exitExampleRow}>
-                <span className={styles.exitExampleLabel}>Valuation increase</span>
-                <span className={styles.exitExampleValue}>$500,000</span>
-              </div>
-              <div className={styles.exitExampleRow}>
-                <span className={styles.exitExampleLabel}>Our fee (4mo retainer + 8%)</span>
-                <span className={styles.exitExampleValue}>$50,000</span>
-              </div>
-              <div className={`${styles.exitExampleRow} ${styles.exitExampleHighlight}`}>
-                <span className={styles.exitExampleLabel}>You net extra</span>
-                <span className={styles.exitExampleValue}>$450,000</span>
-              </div>
+          <div className={styles.pricingModels}>
+            <div className={styles.pricingModel}>
+              <span className={styles.modelLabel}>Model 1</span>
+              <h3 className={styles.modelName}>Ongoing Retainer</h3>
+              <p className={styles.modelFor}>For growing businesses, not selling</p>
+              <div className={styles.modelPrice}>$2,500–$5,000<span>/month</span></div>
+              <ul className={styles.modelDetails}>
+                <li>Month-to-month, cancel anytime</li>
+                <li>Custom software & automation</li>
+                <li>Ongoing development & support</li>
+              </ul>
+              <a href="#book" className={styles.modelCta}>Get Started</a>
             </div>
-            <p className={styles.exitExampleNote}>Higher multiple. Zero risk.</p>
-          </div>
 
-          <div className={styles.pricingOptions}>
-            <div className={styles.pricingOption}>
-              <div className={styles.optionHeader}>
-                <h4 className={styles.optionName}>Need ongoing support?</h4>
-                <span className={styles.optionPrice}>$2,500/month</span>
-              </div>
-              <p className={styles.optionDesc}>Maintenance, updates, and continued development after launch.</p>
+            <div className={`${styles.pricingModel} ${styles.pricingModelFeatured}`}>
+              <span className={styles.modelLabel}>Model 2</span>
+              <h3 className={styles.modelName}>Exit Systematization</h3>
+              <p className={styles.modelFor}>For businesses selling in 6-12 months</p>
+              <div className={styles.modelPrice}>$2,500<span>/month × 3</span></div>
+              <div className={styles.modelPriceSecondary}>+ 8% of valuation increase at closing</div>
+              <ul className={styles.modelDetails}>
+                <li>3-month minimum engagement</li>
+                <li>Full systematization package</li>
+                <li>Success fee paid from proceeds</li>
+              </ul>
+              <a href="#book" className={styles.modelCta}>Get Started</a>
             </div>
           </div>
 
