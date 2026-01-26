@@ -39,12 +39,13 @@
 }
 
 .headline {
-  font-size: clamp(32px, 4vw, 48px);
+  font-size: clamp(32px, 3.5vw, 42px);
   font-weight: 400;
   line-height: 1.2;
   color: #fff;
   margin: 0 0 24px 0;
   letter-spacing: -0.02em;
+  max-width: 600px;
 }
 
 .subtitle {
@@ -74,6 +75,24 @@
   background: #fff;
   color: #0a0a0a;
   border-color: #fff;
+}
+
+.heroCtas {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.ctaBtnSecondary {
+  font-size: 14px;
+  font-weight: 500;
+  color: #888;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.ctaBtnSecondary:hover {
+  color: #fff;
 }
 
 /* Trust Section */

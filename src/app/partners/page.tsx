@@ -121,16 +121,21 @@ export default function PartnersPage() {
         <div className={styles.heroInner}>
           <span className={styles.label}>Partner Program</span>
           <h1 className={styles.headline}>
-            Increase your deal values 15-25%.<br />
-            Earn $5K-$15K per referral.
+            Increase your deal values <span style={{whiteSpace: 'nowrap'}}>15-25%.</span><br />
+            Earn <span style={{whiteSpace: 'nowrap'}}>$5K-$15K</span> per referral.
           </h1>
           <p className={styles.subtitle}>
             M&A advisors and brokers: we systematize your client's business,
             get paid from the valuation increase, and you earn a commission.
           </p>
-          <a href="#book" className={styles.ctaBtn}>
-            Become a Partner
-          </a>
+          <div className={styles.heroCtas}>
+            <a href="#book" className={styles.ctaBtn}>
+              Become a Partner
+            </a>
+            <a href="#example" className={styles.ctaBtnSecondary}>
+              See Example Deal
+            </a>
+          </div>
 
           <div className={styles.trust}>
             <p className={styles.trustLabel}>Businesses we've systematized</p>
@@ -261,7 +266,7 @@ export default function PartnersPage() {
       </div>
 
       {/* Commission Section */}
-      <div className={styles.section}>
+      <div className={styles.section} id="example">
         <div className={styles.sectionInner}>
           <h2 className={styles.sectionHeadline}>
             You earn 15% of what we make.
