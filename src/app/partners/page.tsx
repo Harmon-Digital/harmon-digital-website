@@ -7,7 +7,7 @@ import styles from './partners.module.css'
 declare global {
   interface Window {
     Cal?: {
-      ns?: Record<string, unknown>
+      ns?: Record<string, ((...args: unknown[]) => void) & { q?: unknown[] }>
       (...args: unknown[]): void
     }
   }

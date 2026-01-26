@@ -693,7 +693,7 @@ export function Hero() {
             Here's how it works.
           </h2>
           <p className={styles.pricingSubtitle}>
-            Systematization reduces key-person risk. Buyers pay higher multiples for turnkey operations.
+            $2,500/month for 3-6 months + 8% of the valuation increase at closing.
           </p>
 
           <div className={styles.exitExample}>
