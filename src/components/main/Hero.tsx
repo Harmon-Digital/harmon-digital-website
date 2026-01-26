@@ -240,21 +240,22 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
+          <span className={styles.heroLabel}>Custom Software & Automation</span>
           <h1 className={styles.headline}>
-            Custom software and automation for businesses built to exit or scale.
+            We systematize your business. You sell for more.
           </h1>
 
           <p className={styles.subtitle}>
-            Scale without hiring. Free up your time. Build a business
-            that runs without you. AI-powered development in 3-6 months.
+            We build custom software and automation that lets your business run without you.
+            Buyers pay a premium for turnkey operations.
           </p>
 
-          <a href="#how-it-works" className={styles.ctaBtn}>
-            See how it works
+          <a href="#book" className={styles.ctaBtn}>
+            Book a free assessment
           </a>
 
           <div className={styles.trust}>
-            <p className={styles.trustLabel}>Trusted by growing businesses</p>
+            <p className={styles.trustLabel}>Trusted by businesses preparing to exit</p>
             <div className={styles.logoSlider}>
               <div className={styles.logoTrack}>
                 {/* Double the logos for seamless infinite scroll */}
@@ -367,17 +368,17 @@ export function Hero() {
         </motion.div>
       </div>
 
-      {/* Why Choose Section */}
+      {/* Problem Section */}
       <div className={styles.whySection}>
         <div className={styles.whySectionInner}>
           <div className={styles.whyHeader}>
             <h2 className={styles.whyHeadline}>
-              Why systematize your business?<br />
-              The benefits compound.
+              Owner-dependent businesses<br />
+              sell for less.
             </h2>
             <p className={styles.whySubtitle}>
-              Stop being the bottleneck. Build systems that work
-              while you focus on what matters most.
+              Buyers discount heavily for key-person risk. If everything
+              runs through you, expect a lower multiple—or no deal at all.
             </p>
           </div>
 
@@ -389,26 +390,11 @@ export function Hero() {
                   <circle cx="12" cy="7" r="4"/>
                 </svg>
               </div>
-              <h3 className={styles.benefitTitle}>Scale without hiring</h3>
+              <h3 className={styles.benefitTitle}>You are the bottleneck</h3>
               <p className={styles.benefitDesc}>
-                Automation handles the repetitive
-                work so you can grow without
-                adding headcount.
-              </p>
-            </div>
-
-            <div className={styles.benefitCard}>
-              <div className={styles.benefitIcon}>
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <circle cx="12" cy="12" r="10"/>
-                  <polyline points="12 6 12 12 16 14"/>
-                </svg>
-              </div>
-              <h3 className={styles.benefitTitle}>Free up your time</h3>
-              <p className={styles.benefitDesc}>
-                Stop working in the business.
-                Custom tools handle operations
-                so you can focus on growth.
+                Every decision, every process, every
+                customer issue runs through you.
+                Buyers see risk.
               </p>
             </div>
 
@@ -419,100 +405,43 @@ export function Hero() {
                   <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
                 </svg>
               </div>
-              <h3 className={styles.benefitTitle}>Increase your valuation</h3>
+              <h3 className={styles.benefitTitle}>Lower valuations</h3>
               <p className={styles.benefitDesc}>
-                Turnkey businesses command
-                premium multiples. Reduce owner
-                dependency, maximize value.
+                Key-person risk means lower
+                multiples. Buyers won't pay
+                premium for uncertainty.
               </p>
             </div>
 
             <div className={styles.benefitCard}>
               <div className={styles.benefitIcon}>
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+                  <circle cx="12" cy="12" r="10"/>
+                  <polyline points="12 6 12 12 16 14"/>
                 </svg>
               </div>
-              <h3 className={styles.benefitTitle}>AI-powered speed</h3>
+              <h3 className={styles.benefitTitle}>Deals drag on</h3>
               <p className={styles.benefitDesc}>
-                We leverage AI to deliver full
-                internal applications in 3-6 months,
-                not years.
+                Due diligence takes longer when
+                there's nothing documented.
+                Buyers get cold feet.
               </p>
             </div>
-          </div>
-        </div>
-      </div>
 
-      {/* How It Works Section */}
-      <div className={styles.howSection} id="how-it-works">
-        <div className={styles.howSectionInner}>
-          <h2 className={styles.howHeadline}>
-            How it works.<br />
-            From discovery to launch<br />
-            in 3-6 months.
-          </h2>
-          <p className={styles.howSubtitle}>
-            A straightforward process to systematize your operations.
-          </p>
-
-          <div className={styles.stepsContainer}>
-            <div className={styles.step}>
-              <div className={styles.stepNumber}>
-                <span>1</span>
-                <div className={styles.stepLine} />
+            <div className={styles.benefitCard}>
+              <div className={styles.benefitIcon}>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+                  <line x1="12" y1="9" x2="12" y2="13"/>
+                  <line x1="12" y1="17" x2="12.01" y2="17"/>
+                </svg>
               </div>
-              <div className={styles.stepContent}>
-                <h3 className={styles.stepTitle}>Discovery call</h3>
-                <p className={styles.stepDesc}>
-                  We learn about your business, identify bottlenecks, and map out
-                  which processes are eating your time. No commitment—just a
-                  conversation about what's possible.
-                </p>
-              </div>
-            </div>
-
-            <div className={styles.step}>
-              <div className={styles.stepNumber}>
-                <span>2</span>
-                <div className={styles.stepLine} />
-              </div>
-              <div className={styles.stepContent}>
-                <h3 className={styles.stepTitle}>Solution design</h3>
-                <p className={styles.stepDesc}>
-                  We design your custom system—whether it's an internal portal,
-                  AI agent, or workflow automation. You'll see exactly what we're
-                  building before we start.
-                </p>
-              </div>
-            </div>
-
-            <div className={styles.step}>
-              <div className={styles.stepNumber}>
-                <span>3</span>
-                <div className={styles.stepLine} />
-              </div>
-              <div className={styles.stepContent}>
-                <h3 className={styles.stepTitle}>Build & iterate</h3>
-                <p className={styles.stepDesc}>
-                  We build your solution using AI-powered development, delivering
-                  working features every 2 weeks. You're involved the whole way,
-                  giving feedback as we go.
-                </p>
-              </div>
-            </div>
-
-            <div className={styles.step}>
-              <div className={styles.stepNumber}>
-                <span>4</span>
-              </div>
-              <div className={styles.stepContent}>
-                <h3 className={styles.stepTitle}>Launch & support</h3>
-                <p className={styles.stepDesc}>
-                  We deploy your system, train your team, and provide ongoing
-                  support. Your business now runs smoother—with or without you.
-                </p>
-              </div>
+              <h3 className={styles.benefitTitle}>Deals fall through</h3>
+              <p className={styles.benefitDesc}>
+                Buyers walk away when they see
+                how dependent the business is
+                on you being there.
+              </p>
             </div>
           </div>
         </div>
@@ -523,38 +452,38 @@ export function Hero() {
         <div className={styles.servicesSectionInner}>
           <h2 className={styles.servicesHeadline}>
             What we build.<br />
-            Custom tools that run your business.
+            Everything buyers want to see.
           </h2>
           <p className={styles.servicesSubtitle}>
-            From internal portals to AI agents, we build the systems that
-            let you step back from day-to-day operations.
+            Turnkey operations that prove your business runs without you.
+            The assets that command premium multiples.
           </p>
 
           <div className={styles.servicesGrid}>
             <div className={styles.servicesColumn}>
               <div className={styles.serviceItem}>
                 <span className={styles.serviceIcon}>◇</span>
-                <span>Internal Operations Portals</span>
+                <span>Operations Portal</span>
               </div>
               <div className={styles.serviceItem}>
                 <span className={styles.serviceIcon}>◎</span>
-                <span>AI Agents & Chatbots</span>
+                <span>AI Customer Service Agent</span>
               </div>
               <div className={styles.serviceItem}>
                 <span className={styles.serviceIcon}>▤</span>
-                <span>Inventory & Order Management</span>
+                <span>Order & Fulfillment System</span>
               </div>
               <div className={styles.serviceItem}>
                 <span className={styles.serviceIcon}>⌁</span>
-                <span>CRM & Sales Systems</span>
+                <span>Sales Pipeline Automation</span>
               </div>
               <div className={styles.serviceItem}>
                 <span className={styles.serviceIcon}>▢</span>
-                <span>Applicant Tracking (ATS)</span>
+                <span>Employee Onboarding System</span>
               </div>
               <div className={styles.serviceItem}>
                 <span className={styles.serviceIcon}>▧</span>
-                <span>Document Processing</span>
+                <span>Complete SOPs & Documentation</span>
               </div>
             </div>
             <div className={styles.servicesColumn}>
@@ -568,47 +497,91 @@ export function Hero() {
               </div>
               <div className={styles.serviceItem}>
                 <span className={styles.serviceIcon}>◉</span>
-                <span>Custom Dashboards</span>
+                <span>Real-time Dashboards</span>
               </div>
               <div className={styles.serviceItem}>
                 <span className={styles.serviceIcon}>△</span>
-                <span>Reporting & Analytics</span>
+                <span>Financial Reporting</span>
               </div>
               <div className={styles.serviceItem}>
                 <span className={styles.serviceIcon}>○</span>
-                <span>Slack/Teams AI Bots</span>
+                <span>Knowledge Base & Training</span>
               </div>
               <div className={styles.serviceItem}>
                 <span className={styles.serviceIcon}>+</span>
-                <span>and more</span>
+                <span>Custom to your business</span>
               </div>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Communication Section */}
-      <div className={styles.slackSection}>
-        <div className={styles.slackSectionInner}>
-          <h2 className={styles.slackHeadline}>
-            We communicate<br />
-            through Slack.
+      {/* How It Works Section */}
+      <div className={styles.howSection} id="how-it-works">
+        <div className={styles.howSectionInner}>
+          <h2 className={styles.howHeadline}>
+            How it works.<br />
+            Buyer-ready in 3-6 months.
           </h2>
-          <p className={styles.slackSubtitle}>
-            Dedicated Slack channel for real-time collaboration.
-            Weekly calls to review progress. You see working
-            features every two weeks—not just at the end.
+          <p className={styles.howSubtitle}>
+            We systematize your business. You sell for more. We get paid from the increase.
           </p>
 
-          <div className={styles.chatDemo}>
-            <div className={`${styles.chatBubble} ${styles.chatLeft}`}>
-              Here's the inventory dashboard—thoughts?
+          <div className={styles.stepsContainer}>
+            <div className={styles.step}>
+              <div className={styles.stepNumber}>
+                <span>1</span>
+                <div className={styles.stepLine} />
+              </div>
+              <div className={styles.stepContent}>
+                <h3 className={styles.stepTitle}>Free assessment</h3>
+                <p className={styles.stepDesc}>
+                  We analyze your operations, identify what's keeping buyers away,
+                  and show you exactly what needs to be systematized. No cost,
+                  no commitment.
+                </p>
+              </div>
             </div>
-            <div className={`${styles.chatBubble} ${styles.chatRight}`}>
-              Can we add a filter by location?
+
+            <div className={styles.step}>
+              <div className={styles.stepNumber}>
+                <span>2</span>
+                <div className={styles.stepLine} />
+              </div>
+              <div className={styles.stepContent}>
+                <h3 className={styles.stepTitle}>We systematize</h3>
+                <p className={styles.stepDesc}>
+                  Custom automation, AI agents, and documentation—everything
+                  buyers want to see. The business runs without you in 3-6 months.
+                </p>
+              </div>
             </div>
-            <div className={`${styles.chatBubble} ${styles.chatLeft}`}>
-              Done. Pushed live.
+
+            <div className={styles.step}>
+              <div className={styles.stepNumber}>
+                <span>3</span>
+                <div className={styles.stepLine} />
+              </div>
+              <div className={styles.stepContent}>
+                <h3 className={styles.stepTitle}>You go to market</h3>
+                <p className={styles.stepDesc}>
+                  List your business with confidence. Buyers see turnkey operations,
+                  complete documentation, and zero key-person risk.
+                </p>
+              </div>
+            </div>
+
+            <div className={styles.step}>
+              <div className={styles.stepNumber}>
+                <span>4</span>
+              </div>
+              <div className={styles.stepContent}>
+                <h3 className={styles.stepTitle}>We get paid at closing</h3>
+                <p className={styles.stepDesc}>
+                  You sell for more than you would have. We take 8% of the
+                  increase from sale proceeds. You keep the rest.
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -622,6 +595,13 @@ export function Hero() {
       >
         <div className={styles.portfolioSectionInner}>
           <span className={styles.sectionLabel}>Selected Work</span>
+          <h2 className={styles.portfolioHeadline}>
+            Real results.<br />
+            Businesses we've systematized.
+          </h2>
+          <p className={styles.portfolioSubtitle}>
+            Operations portals, AI agents, and automation built for businesses preparing to exit.
+          </p>
 
           {/* Floating Image Preview */}
           <div
@@ -705,154 +685,60 @@ export function Hero() {
         </div>
       </div>
 
-      {/* Testimonials Section - Hidden for now */}
-      {false && <div className={styles.testimonialsSection}>
-        <div className={styles.testimonialsSectionInner}>
-          <span className={styles.sectionLabel}>Results</span>
-          <h2 className={styles.testimonialsHeadline}>
-            What our clients say
-          </h2>
-          <div className={styles.trustBadge}>
-            <span>Businesses systematized</span>
-            <span className={styles.divider}>|</span>
-            <span className={styles.stars}>★★★★★</span>
-          </div>
-
-          <div className={styles.testimonialsGrid}>
-            <div className={styles.testimonialCard}>
-              <div className={styles.testimonialHeader}>
-                <div className={styles.testimonialAvatar}>
-                  <img src="https://i.pravatar.cc/80?img=11" alt="" />
-                </div>
-                <span className={styles.testimonialName}>Mike Chen</span>
-                <span className={styles.testimonialRole}>Founder</span>
-              </div>
-              <p className={styles.testimonialQuote}>
-                We went from managing everything in spreadsheets to having a real operations system. I actually took a two-week vacation for the first time in years.
-              </p>
-              <div className={styles.testimonialFooter}>
-                <img src="/clients/1.png" alt="ProducifyX" className={styles.companyLogo} />
-                <span className={styles.testimonialDate}>2024</span>
-              </div>
-            </div>
-
-            <div className={styles.testimonialCard}>
-              <div className={styles.testimonialHeader}>
-                <div className={styles.testimonialAvatar}>
-                  <img src="https://i.pravatar.cc/80?img=5" alt="" />
-                </div>
-                <span className={styles.testimonialName}>Sarah Mitchell</span>
-                <span className={styles.testimonialRole}>Owner</span>
-              </div>
-              <p className={styles.testimonialQuote}>
-                The ordering system they built handles everything our old process couldn't. Orders don't fall through the cracks anymore.
-              </p>
-              <div className={styles.testimonialFooter}>
-                <img src="/clients/10.png" alt="HappyEndings" className={styles.companyLogo} />
-                <span className={styles.testimonialDate}>2024</span>
-              </div>
-            </div>
-
-            <div className={styles.testimonialCard}>
-              <div className={styles.testimonialHeader}>
-                <div className={styles.testimonialAvatar}>
-                  <img src="https://i.pravatar.cc/80?img=12" alt="" />
-                </div>
-                <span className={styles.testimonialName}>David Park</span>
-                <span className={styles.testimonialRole}>Partner</span>
-              </div>
-              <p className={styles.testimonialQuote}>
-                After acquiring the dealership, we needed systems fast. They built our inventory tracking in weeks, not months. The ROI was immediate.
-              </p>
-              <div className={styles.testimonialFooter}>
-                <img src="/clients/2.png" alt="Hoplite Capital" className={styles.companyLogo} />
-                <span className={styles.testimonialDate}>2024</span>
-              </div>
-            </div>
-
-            <div className={styles.testimonialCard}>
-              <div className={styles.testimonialHeader}>
-                <div className={styles.testimonialAvatar}>
-                  <img src="https://i.pravatar.cc/80?img=8" alt="" />
-                </div>
-                <span className={styles.testimonialName}>James Wilson</span>
-                <span className={styles.testimonialRole}>VP Operations</span>
-              </div>
-              <p className={styles.testimonialQuote}>
-                The Slack AI agent for our underwriting team cut response times in half. Our team can focus on decisions instead of data entry.
-              </p>
-              <div className={styles.testimonialFooter}>
-                <img src="/clients/6.png" alt="Neighbors Bank" className={styles.companyLogo} />
-                <span className={styles.testimonialDate}>2024</span>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </div>}
-
       {/* Pricing Section */}
       <div className={styles.pricingSection} id="pricing">
         <div className={styles.pricingSectionInner}>
           <h2 className={styles.pricingHeadline}>
-            Simple pricing.<br />
-            Choose your pace.
+            The math is simple.<br />
+            Here's how it works.
           </h2>
+          <p className={styles.pricingSubtitle}>
+            Systematization reduces key-person risk. Buyers pay higher multiples for turnkey operations.
+          </p>
 
-          <div className={styles.pricingCards}>
-            <div className={styles.pricingCard}>
-              <div className={styles.planIcon}>||||</div>
-              <h3 className={styles.planName}>Standard</h3>
-              <p className={styles.planTagline}>One project at a time. 3-6 month builds.</p>
-              <div className={styles.planPrice}>
-                <span className={styles.priceAmount}>$2,500</span>
-                <span className={styles.pricePeriod}>/mo</span>
+          <div className={styles.exitExample}>
+            <h3 className={styles.exitExampleTitle}>Example</h3>
+            <div className={styles.exitExampleGrid}>
+              <div className={styles.exitExampleRow}>
+                <span className={styles.exitExampleLabel}>Business valued today</span>
+                <span className={styles.exitExampleValue}>$2,000,000</span>
               </div>
-              <a href="#book" className={styles.planBtn}>Book a call</a>
-              <ul className={styles.planFeatures}>
-                <li><span className={styles.featureIcon}>✓</span> One active project</li>
-                <li><span className={styles.featureIcon}>⚡</span> AI-powered development</li>
-                <li><span className={styles.featureIcon}>⏱</span> Working features every 2 weeks</li>
-                <li><span className={styles.featureIcon}>💬</span> Dedicated Slack channel</li>
-                <li><span className={styles.featureIcon}>📞</span> Weekly progress calls</li>
-              </ul>
+              <div className={styles.exitExampleRow}>
+                <span className={styles.exitExampleLabel}>Multiple increase</span>
+                <span className={styles.exitExampleValue}>+25%</span>
+              </div>
+              <div className={styles.exitExampleRow}>
+                <span className={styles.exitExampleLabel}>Sells for after systematization</span>
+                <span className={styles.exitExampleValue}>$2,500,000</span>
+              </div>
+              <div className={styles.exitExampleDivider} />
+              <div className={styles.exitExampleRow}>
+                <span className={styles.exitExampleLabel}>Valuation increase</span>
+                <span className={styles.exitExampleValue}>$500,000</span>
+              </div>
+              <div className={styles.exitExampleRow}>
+                <span className={styles.exitExampleLabel}>Our fee (4mo retainer + 8%)</span>
+                <span className={styles.exitExampleValue}>$50,000</span>
+              </div>
+              <div className={`${styles.exitExampleRow} ${styles.exitExampleHighlight}`}>
+                <span className={styles.exitExampleLabel}>You net extra</span>
+                <span className={styles.exitExampleValue}>$450,000</span>
+              </div>
             </div>
+            <p className={styles.exitExampleNote}>Higher multiple. Zero risk.</p>
+          </div>
 
-            <div className={styles.pricingCard}>
-              <div className={styles.planIcon}>||||</div>
-              <h3 className={styles.planName}>Accelerated</h3>
-              <p className={styles.planTagline}>Two projects in parallel. Move faster.</p>
-              <div className={styles.planPrice}>
-                <span className={styles.priceAmount}>$5,000</span>
-                <span className={styles.pricePeriod}>/mo</span>
+          <div className={styles.pricingOptions}>
+            <div className={styles.pricingOption}>
+              <div className={styles.optionHeader}>
+                <h4 className={styles.optionName}>Need ongoing support?</h4>
+                <span className={styles.optionPrice}>$2,500/month</span>
               </div>
-              <a href="#book" className={styles.planBtn}>Book a call</a>
-              <ul className={styles.planFeatures}>
-                <li><span className={styles.featureIcon}>✓</span> Two active projects</li>
-                <li><span className={styles.featureIcon}>⚡</span> AI-powered development</li>
-                <li><span className={styles.featureIcon}>⏱</span> Faster delivery timeline</li>
-                <li><span className={styles.featureIcon}>💬</span> Dedicated Slack channel</li>
-                <li><span className={styles.featureIcon}>📞</span> Weekly progress calls</li>
-              </ul>
+              <p className={styles.optionDesc}>Maintenance, updates, and continued development after launch.</p>
             </div>
           </div>
 
-          <div className={styles.maintenanceCard}>
-            <div className={styles.maintenanceContent}>
-              <div>
-                <div className={styles.planIcon}>||||</div>
-                <h3 className={styles.planName}>Maintenance</h3>
-                <p className={styles.planTagline}>Keep your systems running smoothly after launch.</p>
-              </div>
-              <div className={styles.maintenanceRight}>
-                <div className={styles.planPrice}>
-                  <span className={styles.priceAmount}>$1,500</span>
-                  <span className={styles.pricePeriod}>/mo</span>
-                </div>
-                <a href="#book" className={styles.planBtn}>Learn more</a>
-              </div>
-            </div>
-          </div>
+          <a href="#book" className={styles.pricingCta}>Book a Free Assessment</a>
         </div>
       </div>
 
@@ -864,7 +750,7 @@ export function Hero() {
             Straight answers.
           </h2>
           <p className={styles.faqSubtitle}>
-            Everything you need to know about working with us.
+            Everything you need to know before we talk.
           </p>
 
           <div className={styles.faqList}>
@@ -873,11 +759,11 @@ export function Hero() {
                 className={styles.faqQuestion}
                 onClick={() => setOpenFaq(openFaq === 0 ? null : 0)}
               >
-                <span>What's the difference between Standard and Accelerated?</span>
+                <span>What if my valuation doesn't increase?</span>
                 <span className={`${styles.faqIcon} ${openFaq === 0 ? styles.faqIconOpen : ''}`}>▼</span>
               </button>
               <div className={`${styles.faqAnswer} ${openFaq === 0 ? styles.faqAnswerOpen : ''}`}>
-                <p>Standard ($2,500/mo) means we work on one project at a time—great for most businesses. Accelerated ($5,000/mo) lets us run two projects in parallel, so you can systematize faster if you have multiple priorities or a tighter timeline.</p>
+                <p>You pay the monthly retainer during the build. Our success fee is 8% of the valuation increase, paid from sale proceeds. If systematization doesn't increase what buyers will pay, we don't collect the success fee.</p>
               </div>
             </div>
             <div className={styles.faqItem}>
@@ -885,11 +771,11 @@ export function Hero() {
                 className={styles.faqQuestion}
                 onClick={() => setOpenFaq(openFaq === 1 ? null : 1)}
               >
-                <span>How long does a typical project take?</span>
+                <span>How do you measure the valuation increase?</span>
                 <span className={`${styles.faqIcon} ${openFaq === 1 ? styles.faqIconOpen : ''}`}>▼</span>
               </button>
               <div className={`${styles.faqAnswer} ${openFaq === 1 ? styles.faqAnswerOpen : ''}`}>
-                <p>Most full internal applications take 3-6 months. You'll see working features every 2 weeks, so you're not waiting months to see progress. Simpler automations and integrations can be done in weeks.</p>
+                <p>We work with your broker or get an independent assessment to establish your baseline valuation before we start. When you sell, the increase is the difference between what you actually sell for and that baseline. Simple, transparent, no games.</p>
               </div>
             </div>
             <div className={styles.faqItem}>
@@ -897,11 +783,11 @@ export function Hero() {
                 className={styles.faqQuestion}
                 onClick={() => setOpenFaq(openFaq === 2 ? null : 2)}
               >
-                <span>What's included in the $1,500/mo maintenance?</span>
+                <span>How long until my business is ready to sell?</span>
                 <span className={`${styles.faqIcon} ${openFaq === 2 ? styles.faqIconOpen : ''}`}>▼</span>
               </button>
               <div className={`${styles.faqAnswer} ${openFaq === 2 ? styles.faqAnswerOpen : ''}`}>
-                <p>Maintenance covers bug fixes, minor updates, keeping integrations running smoothly, and priority support when something breaks. It's optional—you own everything we build and it works without us. But most clients like knowing someone's watching the systems.</p>
+                <p>3-6 months for full systematization, depending on complexity. After that, your business runs without you and buyers see turnkey operations instead of key-person risk.</p>
               </div>
             </div>
             <div className={styles.faqItem}>
@@ -909,11 +795,11 @@ export function Hero() {
                 className={styles.faqQuestion}
                 onClick={() => setOpenFaq(openFaq === 3 ? null : 3)}
               >
-                <span>What tools do you use to build?</span>
+                <span>What if I'm not ready to sell yet?</span>
                 <span className={`${styles.faqIcon} ${openFaq === 3 ? styles.faqIconOpen : ''}`}>▼</span>
               </button>
               <div className={`${styles.faqAnswer} ${openFaq === 3 ? styles.faqAnswerOpen : ''}`}>
-                <p>We use modern, maintainable tools: Airtable for databases, n8n for workflow automation, custom web apps when needed, and various AI APIs for intelligent features. We choose tools based on your needs—not what's trendy.</p>
+                <p>We work best with businesses actively preparing to go to market. If you're more than 6 months out, let's talk—we can discuss whether the timing makes sense or if you should reach out when you're closer.</p>
               </div>
             </div>
             <div className={styles.faqItem}>
@@ -925,7 +811,7 @@ export function Hero() {
                 <span className={`${styles.faqIcon} ${openFaq === 4 ? styles.faqIconOpen : ''}`}>▼</span>
               </button>
               <div className={`${styles.faqAnswer} ${openFaq === 4 ? styles.faqAnswerOpen : ''}`}>
-                <p>If you're doing $500K+ in revenue and spending too much time on operations, probably yes. We work best with service businesses, agencies, distributors, and companies where the owner is currently the bottleneck. Book a call—we'll tell you honestly if we can help.</p>
+                <p>If you're doing $500K+ in revenue and you're the bottleneck, probably yes. We work best with service businesses, agencies, distributors, and companies where buyers would discount for key-person risk. Book a call—we'll tell you honestly if we can help.</p>
               </div>
             </div>
           </div>
@@ -936,12 +822,12 @@ export function Hero() {
       <div ref={bookCallRef} className={styles.bookCallSection} id="book">
         <div className={styles.bookCallSectionInner}>
           <h2 className={styles.bookCallHeadline}>
-            Ready to build a business that <span className={`${styles.highlighted} ${highlightVisible ? styles.highlightedVisible : ''}`}>runs on its own?</span>
+            See what custom software can do for <span className={`${styles.highlighted} ${highlightVisible ? styles.highlightedVisible : ''}`}>your valuation.</span>
           </h2>
 
           {formStep === 0 && (
             <form className={styles.qualifyForm} onSubmit={handleFormSubmit}>
-              <p className={styles.formSubtitle}>Tell us about your business so we can come prepared.</p>
+              <p className={styles.formSubtitle}>Tell us about your exit timeline so we can come prepared.</p>
 
               {/* Honeypot field - hidden from users, bots will fill it */}
               <input
@@ -1089,6 +975,7 @@ export function Hero() {
           <div className={styles.footerBottom}>
             <p className={styles.footerCredit}>Made with love by Harmon Digital.</p>
             <div className={styles.footerLinks}>
+              <Link href="/partners">Partners</Link>
               <Link href="/privacy">Privacy</Link>
               <Link href="/terms">Terms</Link>
             </div>

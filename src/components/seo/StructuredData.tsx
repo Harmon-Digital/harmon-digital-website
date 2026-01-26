@@ -5,14 +5,14 @@ export function OrganizationSchema() {
     name: 'Harmon Digital, LLC',
     url: 'https://harmon-digital.com',
     logo: 'https://harmon-digital.com/logo/icon.png',
-    description: 'Custom software and automation for businesses built to exit or scale. AI-powered development delivered in 3-6 months.',
+    description: 'Sell your business for more. We systematize owner-dependent businesses so buyers pay a premium.',
     foundingDate: '2024',
     sameAs: [
       'https://www.linkedin.com/company/harmon-digital/',
     ],
     contactPoint: {
       '@type': 'ContactPoint',
-      email: 'hello@harmon-digital.com',
+      email: 'info@harmon-digital.com',
       contactType: 'sales',
       availableLanguage: 'English',
     },
@@ -37,30 +37,38 @@ export function ProfessionalServiceSchema() {
     name: 'Harmon Digital, LLC',
     url: 'https://harmon-digital.com',
     image: 'https://harmon-digital.com/logo/icon.png',
-    description: 'Custom software development, business automation, and AI solutions for growing businesses.',
-    priceRange: '$2,500 - $5,000/month',
+    description: 'Exit systematization for owner-dependent businesses. We build turnkey operations so buyers pay a premium.',
+    priceRange: '$2,500/mo + Success-based',
     areaServed: {
       '@type': 'Country',
       name: 'United States',
     },
     hasOfferCatalog: {
       '@type': 'OfferCatalog',
-      name: 'Software Development Services',
+      name: 'Exit Systematization Services',
       itemListElement: [
         {
           '@type': 'Offer',
           itemOffered: {
             '@type': 'Service',
-            name: 'Internal Operations Portals',
-            description: 'Custom internal software and portals to manage business operations.',
+            name: 'Operations Portal',
+            description: 'Custom internal portal so the business runs without you.',
           },
         },
         {
           '@type': 'Offer',
           itemOffered: {
             '@type': 'Service',
-            name: 'AI Agents & Chatbots',
-            description: 'Intelligent AI agents and chatbots for customer service and internal automation.',
+            name: 'AI Customer Service Agent',
+            description: 'AI agent to handle customer inquiries without owner involvement.',
+          },
+        },
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'Complete SOPs & Documentation',
+            description: 'Full documentation and standard operating procedures for due diligence.',
           },
         },
         {
@@ -68,15 +76,7 @@ export function ProfessionalServiceSchema() {
           itemOffered: {
             '@type': 'Service',
             name: 'Workflow Automation',
-            description: 'End-to-end workflow automation to eliminate repetitive tasks.',
-          },
-        },
-        {
-          '@type': 'Offer',
-          itemOffered: {
-            '@type': 'Service',
-            name: 'System Integrations',
-            description: 'Connect your existing tools and systems for seamless data flow.',
+            description: 'Automated workflows that eliminate owner dependency.',
           },
         },
       ],
@@ -98,34 +98,34 @@ export function FAQSchema() {
     mainEntity: [
       {
         '@type': 'Question',
-        name: "What's the difference between Standard and Accelerated?",
+        name: "What if my valuation doesn't increase?",
         acceptedAnswer: {
           '@type': 'Answer',
-          text: "Standard ($2,500/mo) means we work on one project at a time—great for most businesses. Accelerated ($5,000/mo) lets us run two projects in parallel, so you can systematize faster if you have multiple priorities or a tighter timeline.",
+          text: "You pay the monthly retainer during the build. Our success fee is 8% of the valuation increase, paid from sale proceeds. If systematization doesn't increase what buyers will pay, we don't collect the success fee.",
         },
       },
       {
         '@type': 'Question',
-        name: 'How long does a typical project take?',
+        name: 'How do you measure the valuation increase?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: "Most full internal applications take 3-6 months. You'll see working features every 2 weeks, so you're not waiting months to see progress. Simpler automations and integrations can be done in weeks.",
+          text: "We work with your broker or get an independent assessment to establish your baseline valuation before we start. When you sell, the increase is the difference between what you actually sell for and that baseline. Simple, transparent, no games.",
         },
       },
       {
         '@type': 'Question',
-        name: "What's included in the $1,500/mo maintenance?",
+        name: 'How long until my business is ready to sell?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: "Maintenance covers bug fixes, minor updates, keeping integrations running smoothly, and priority support when something breaks. It's optional—you own everything we build and it works without us. But most clients like knowing someone's watching the systems.",
+          text: "3-6 months for full systematization, depending on complexity. After that, your business runs without you and buyers see turnkey operations instead of key-person risk.",
         },
       },
       {
         '@type': 'Question',
-        name: 'What tools do you use to build?',
+        name: "What if I'm not ready to sell yet?",
         acceptedAnswer: {
           '@type': 'Answer',
-          text: "We use modern, maintainable tools: Airtable for databases, n8n for workflow automation, custom web apps when needed, and various AI APIs for intelligent features. We choose tools based on your needs—not what's trendy.",
+          text: "We work best with businesses actively preparing to go to market. If you're more than 6 months out, let's talk—we can discuss whether the timing makes sense or if you should reach out when you're closer.",
         },
       },
       {
@@ -133,7 +133,7 @@ export function FAQSchema() {
         name: 'Is this right for my business?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: "If you're doing $500K+ in revenue and spending too much time on operations, probably yes. We work best with service businesses, agencies, distributors, and companies where the owner is currently the bottleneck. Book a call—we'll tell you honestly if we can help.",
+          text: "If you're doing $500K+ in revenue and you're the bottleneck, probably yes. We work best with service businesses, agencies, distributors, and companies where buyers would discount for key-person risk.",
         },
       },
     ],

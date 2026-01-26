@@ -35,24 +35,33 @@ Connect existing tools and systems (Airtable, QuickBooks, Shopmonkey, Slack, etc
 - Custom Dashboards & Reporting
 - Slack/Teams AI Bots
 
-## Pricing Plans
+## Pricing (Project-Based)
 
-### Standard - $2,500/month
-- One active project at a time
-- AI-powered development
-- Working features delivered every 2 weeks
-- Dedicated Slack channel for communication
-- Weekly progress calls
-- Typical project duration: 3-6 months
+### Exit-Ready - Starting at $35,000
+- Operational infrastructure & automation
+- 5-10 core automations
+- AI customer service agent
+- Complete documentation & SOPs
+- 30-45 day implementation
+- Perfect for businesses preparing to sell ($500K-$2M valuation)
 
-### Accelerated - $5,000/month
-- Two active projects in parallel
-- AI-powered development
-- Faster delivery timeline
-- Dedicated Slack channel
-- Weekly progress calls
+### Turnkey Operations - Starting at $65,000
+- Everything in Exit-Ready
+- Custom software development
+- Multiple AI agents (sales, support, operations)
+- Advanced integrations (5+ systems)
+- 45-60 day implementation
+- For complex businesses preparing for sale ($2M-$5M valuation)
 
-### Maintenance - $1,500/month
+### Full Systematization - Starting at $100,000
+- Everything in Turnkey Operations
+- Complete process re-engineering
+- Multiple specialized AI agents
+- White-glove implementation
+- 60-90 day timeline
+- Enterprise-level for high-value exits ($5M+ valuation)
+
+### Ongoing Support - Starting at $2,500/month
 - Bug fixes and minor updates
 - Keep integrations running smoothly
 - Priority support when issues arise

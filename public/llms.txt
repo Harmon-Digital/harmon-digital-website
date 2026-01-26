@@ -1,31 +1,32 @@
 # Harmon Digital
 
-> Custom software and automation for businesses built to exit or scale.
+> Sell your business for more. We only win when you do.
 
-Harmon Digital, LLC builds custom internal software, AI agents, and automation systems for growing businesses. We help business owners systematize their operations so they can scale without hiring, free up their time, and increase their company's value.
+Harmon Digital systematizes owner-dependent businesses so buyers pay a premium—not a discount. We build custom automation, AI agents, and documentation that let the business run without you. Our fee: $2,500/month retainer during the build + 8% of the valuation increase at closing.
 
-## Services
+## What We Build (Exit-Ready Assets)
 
-- Internal Operations Portals
-- AI Agents & Chatbots
+- Operations Portal (runs without you)
+- AI Customer Service Agent
+- Order & Fulfillment System
+- Sales Pipeline Automation
+- Employee Onboarding System
+- Complete SOPs & Documentation
 - Workflow Automation
 - System Integrations
-- CRM & Sales Systems
-- Inventory & Order Management
-- Custom Dashboards & Reporting
-- Slack/Teams AI Bots
+- Real-time Dashboards
+- Financial Reporting
+- Knowledge Base & Training
 
 ## Pricing
 
-- Standard: $2,500/month - One project at a time, 3-6 month builds
-- Accelerated: $5,000/month - Two projects in parallel
-- Maintenance: $1,500/month - Ongoing support after launch
+Exit Systematization: $2,500/month retainer (3-6 months depending on build complexity) + 8% of valuation increase (paid at closing). Full operational systematization, AI agents, automation, complete documentation. For businesses actively preparing to sell.
 
 ## Process
 
 1. Discovery call - Learn about your business and identify bottlenecks
 2. Solution design - Design your custom system with approval before building
-3. Build & iterate - AI-powered development with features delivered every 2 weeks
+3. Build & iterate - AI-powered development, 3-6 month implementation
 4. Launch & support - Deploy, train your team, provide ongoing support
 
 ## Ideal Clients
