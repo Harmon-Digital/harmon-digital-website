@@ -62,10 +62,7 @@ export default function PartnersPage() {
     name: '',
     email: '',
     firm: '',
-    website: '',
-    dealsPerYear: '',
-    clientTypes: '',
-    notes: '',
+    dealSize: '',
     honeypot: '',
   })
 
@@ -107,10 +104,7 @@ export default function PartnersPage() {
           name: formData.name,
           email: formData.email,
           firm: formData.firm,
-          website: formData.website,
-          dealsPerYear: formData.dealsPerYear,
-          clientTypes: formData.clientTypes,
-          notes: formData.notes,
+          dealSize: formData.dealSize,
         }),
       })
     } catch (error) {
@@ -127,8 +121,8 @@ export default function PartnersPage() {
         <div className={styles.heroInner}>
           <span className={styles.label}>Partner Program</span>
           <h1 className={styles.headline}>
-            A bigger exit for your clients.<br />
-            A commission for you.
+            Increase your deal values 15-25%.<br />
+            Earn $5K-$15K per referral.
           </h1>
           <p className={styles.subtitle}>
             M&A advisors and brokers: we systematize your client's business,
@@ -137,6 +131,19 @@ export default function PartnersPage() {
           <a href="#book" className={styles.ctaBtn}>
             Become a Partner
           </a>
+
+          <div className={styles.trust}>
+            <p className={styles.trustLabel}>Businesses we've systematized</p>
+            <div className={styles.logoSlider}>
+              <div className={styles.logoTrack}>
+                {[...Array.from({ length: 13 }, (_, i) => `/clients/${i + 1}.png`), ...Array.from({ length: 13 }, (_, i) => `/clients/${i + 1}.png`)].map((logo, index) => (
+                  <div key={index} className={styles.logoSlide}>
+                    <img src={logo} alt="Client logo" className={styles.clientLogo} />
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -257,11 +264,10 @@ export default function PartnersPage() {
       <div className={styles.section}>
         <div className={styles.sectionInner}>
           <h2 className={styles.sectionHeadline}>
-            We charge $2,500/mo + 8% of the increase.<br />
             You earn 15% of what we make.
           </h2>
           <p className={styles.sectionSubtitle}>
-            Your client pays a monthly retainer during the build. We get paid from sale proceeds. You earn commission at closing.
+            Your client pays a small retainer during the build. We take 8% of the valuation increase at closing. You earn commission on both.
           </p>
 
           <div className={styles.exampleCard}>
@@ -281,20 +287,63 @@ export default function PartnersPage() {
               </div>
               <div className={styles.exampleDivider} />
               <div className={styles.exampleRow}>
-                <span className={styles.exampleLabel}>Our fee (4mo retainer + 8%)</span>
-                <span className={styles.exampleValue}>$50,000</span>
+                <span className={styles.exampleLabel}>Our fee (3mo retainer + 8%)</span>
+                <span className={styles.exampleValue}>$47,500</span>
               </div>
               <div className={`${styles.exampleRow} ${styles.exampleHighlight}`}>
                 <span className={styles.exampleLabel}>Your commission (15%)</span>
-                <span className={styles.exampleValue}>$7,500</span>
+                <span className={styles.exampleValue}>$7,125</span>
               </div>
               <div className={styles.exampleDivider} />
               <div className={styles.exampleRow}>
                 <span className={styles.exampleLabel}>Seller nets extra</span>
-                <span className={styles.exampleValueMuted}>$450,000</span>
+                <span className={styles.exampleValueMuted}>$452,500</span>
               </div>
             </div>
             <p className={styles.exampleNote}>If we don't increase the valuation, no success fee is charged.</p>
+          </div>
+        </div>
+      </div>
+
+      {/* Trust Section */}
+      <div className={styles.section}>
+        <div className={styles.sectionInner}>
+          <h2 className={styles.sectionHeadline}>
+            We protect your reputation.
+          </h2>
+          <p className={styles.sectionSubtitle}>
+            Your relationship with your client is everything. We treat your referrals like our own.
+          </p>
+
+          <div className={styles.trustGrid}>
+            <div className={styles.trustItem}>
+              <span className={styles.trustIcon}>✓</span>
+              <div>
+                <strong>You stay in the loop</strong>
+                <p>Weekly updates during implementation so you're never surprised.</p>
+              </div>
+            </div>
+            <div className={styles.trustItem}>
+              <span className={styles.trustIcon}>✓</span>
+              <div>
+                <strong>You approve major decisions</strong>
+                <p>We never make changes without your client's (and your) buy-in.</p>
+              </div>
+            </div>
+            <div className={styles.trustItem}>
+              <span className={styles.trustIcon}>✓</span>
+              <div>
+                <strong>Satisfaction guaranteed</strong>
+                <p>If your client isn't happy, we fix it or refund the retainer.</p>
+              </div>
+            </div>
+            <div className={styles.trustItem}>
+              <span className={styles.trustIcon}>✓</span>
+              <div>
+                <strong>Professional delivery</strong>
+                <p>Clean handoffs, clear communication, no drama.</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -347,8 +396,8 @@ export default function PartnersPage() {
               <div className={styles.stepContent}>
                 <h3 className={styles.stepTitle}>We systematize the business</h3>
                 <p className={styles.stepDesc}>
-                  3-6 month implementation. The business becomes turnkey and
-                  buyer-ready with full documentation.
+                  90-day implementation. Client pays $2,500/month during this period.
+                  Once complete, retainer stops and business goes to market.
                 </p>
               </div>
             </div>
@@ -430,6 +479,22 @@ export default function PartnersPage() {
                 If we don't increase the valuation,
                 there's no success fee.
               </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Trusted By Section */}
+      <div className={styles.section}>
+        <div className={styles.sectionInner}>
+          <p className={styles.trustedLabel}>Businesses we've worked with</p>
+          <div className={styles.logoSlider}>
+            <div className={styles.logoTrack}>
+              {[...Array.from({ length: 13 }, (_, i) => `/clients/${i + 1}.png`), ...Array.from({ length: 13 }, (_, i) => `/clients/${i + 1}.png`)].map((logo, index) => (
+                <div key={index} className={styles.logoSlide}>
+                  <img src={logo} alt="Client logo" className={styles.clientLogo} />
+                </div>
+              ))}
             </div>
           </div>
         </div>
@@ -536,7 +601,7 @@ export default function PartnersPage() {
                 </div>
 
                 <div className={styles.formGroup}>
-                  <label htmlFor="email">Work Email</label>
+                  <label htmlFor="email">Email</label>
                   <input
                     type="email"
                     id="email"
@@ -548,69 +613,27 @@ export default function PartnersPage() {
                 </div>
 
                 <div className={styles.formGroup}>
-                  <label htmlFor="firm">Firm / Brokerage</label>
+                  <label htmlFor="firm">Firm name</label>
                   <input
                     type="text"
                     id="firm"
                     required
                     value={formData.firm}
                     onChange={(e) => setFormData({ ...formData, firm: e.target.value })}
-                    placeholder="Your firm name"
+                    placeholder="Your firm or brokerage"
                   />
                 </div>
 
                 <div className={styles.formGroup}>
-                  <label htmlFor="website">Website</label>
+                  <label htmlFor="dealSize">Typical deal size</label>
                   <input
                     type="text"
-                    id="website"
-                    value={formData.website}
-                    onChange={(e) => setFormData({ ...formData, website: e.target.value })}
-                    placeholder="yourfirm.com"
+                    id="dealSize"
+                    value={formData.dealSize}
+                    onChange={(e) => setFormData({ ...formData, dealSize: e.target.value })}
+                    placeholder="e.g. $1M-$5M (optional)"
                   />
                 </div>
-
-                <div className={styles.formGroup}>
-                  <label htmlFor="dealsPerYear">Deals Closed / Year</label>
-                  <select
-                    id="dealsPerYear"
-                    value={formData.dealsPerYear}
-                    onChange={(e) => setFormData({ ...formData, dealsPerYear: e.target.value })}
-                  >
-                    <option value="">Select one (optional)</option>
-                    <option value="1-5">1-5 deals</option>
-                    <option value="6-15">6-15 deals</option>
-                    <option value="16-30">16-30 deals</option>
-                    <option value="30+">30+ deals</option>
-                  </select>
-                </div>
-
-                <div className={styles.formGroup}>
-                  <label htmlFor="clientTypes">Types of Clients</label>
-                  <select
-                    id="clientTypes"
-                    required
-                    value={formData.clientTypes}
-                    onChange={(e) => setFormData({ ...formData, clientTypes: e.target.value })}
-                  >
-                    <option value="">Select one</option>
-                    <option value="service">Service businesses</option>
-                    <option value="ecommerce">E-commerce / retail</option>
-                    <option value="manufacturing">Manufacturing / distribution</option>
-                    <option value="mixed">Mix of industries</option>
-                  </select>
-                </div>
-              </div>
-
-              <div className={styles.formGroup}>
-                <label htmlFor="notes">Anything else we should know?</label>
-                <textarea
-                  id="notes"
-                  value={formData.notes}
-                  onChange={(e) => setFormData({ ...formData, notes: e.target.value })}
-                  placeholder="Tell us about your typical clients, deal sizes, or questions you have..."
-                  rows={3}
-                />
               </div>
 
               <button type="submit" className={styles.formSubmitBtn}>
@@ -620,6 +643,16 @@ export default function PartnersPage() {
           )}
 
           {formStep === 1 && <PartnerCalEmbed />}
+
+          <div className={styles.nextSteps}>
+            <h3 className={styles.nextStepsTitle}>What happens next?</h3>
+            <ol className={styles.nextStepsList}>
+              <li>We'll email within 24 hours to schedule a 15-minute call</li>
+              <li>We'll discuss your client pipeline and deal flow</li>
+              <li>If it's a fit, we'll send the partnership agreement</li>
+              <li>You start referring clients and earning commission</li>
+            </ol>
+          </div>
 
           <p className={styles.ctaEmail}>
             Prefer email? <a href="mailto:info@harmon-digital.com">info@harmon-digital.com</a>

@@ -785,6 +785,46 @@
   opacity: 0.9;
 }
 
+/* Guarantee Section */
+.guaranteeSection {
+  background: #0a0a0a;
+  padding: var(--section-padding);
+}
+
+.guaranteeSectionInner {
+  max-width: var(--section-max-width);
+  margin: 0 auto;
+  padding: 0 var(--section-padding-x);
+}
+
+.guaranteeHeadline {
+  font-size: var(--heading-size);
+  font-weight: 400;
+  line-height: 1.2;
+  color: #fff;
+  margin: 0 0 24px 0;
+  letter-spacing: -0.02em;
+}
+
+.guaranteeText {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #888;
+  margin: 0 0 16px 0;
+  max-width: 550px;
+}
+
+.guaranteeText strong {
+  color: #fff;
+}
+
+.guaranteeTagline {
+  font-size: 14px;
+  color: #3959ff;
+  font-weight: 500;
+  margin: 0;
+}
+
 /* Pricing Section */
 .pricingSection {
   background: #0a0a0a;
@@ -954,13 +994,83 @@
 
 .pricingModels {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 1.5fr 1fr;
   gap: 24px;
   margin-top: 48px;
+  max-width: 900px;
 }
 
 .pricingModel {
+  background: #111;
+  border-radius: 12px;
+  padding: 40px;
+  border: 1px solid #222;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.pricingModelFeatured {
   background: #141414;
+}
+
+/* Exit Systematization Cards */
+.exitCards {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  column-gap: 0;
+  margin-top: 48px;
+  align-items: stretch;
+}
+
+.exitCardsArrow {
+  font-size: 24px;
+  color: #333;
+  display: flex;
+  align-items: center;
+  padding: 0 12px;
+}
+
+.exitCardLeft {
+  display: flex;
+  flex-direction: column;
+  background: #111;
+  border-radius: 12px;
+  padding: 40px;
+  border: 1px solid #222;
+}
+
+.exitCardName {
+  font-size: 24px;
+  font-weight: 500;
+  color: #fff;
+  margin: 0 0 8px 0;
+}
+
+.exitCardFor {
+  font-size: 14px;
+  color: #888;
+  margin: 0 0 24px 0;
+}
+
+.exitCardFeatures {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 32px 0;
+  flex-grow: 1;
+}
+
+.exitCardFeatures li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+  color: #aaa;
+  margin-bottom: 12px;
+}
+
+.exitCardRight {
+  background: #111;
   border-radius: 12px;
   padding: 32px;
   border: 1px solid #222;
@@ -968,67 +1078,187 @@
   flex-direction: column;
 }
 
-.pricingModelFeatured {
-  border-color: #3959ff;
-  position: relative;
-}
-
-.modelLabel {
+.breakdownTitle {
   font-size: 12px;
+  font-weight: 500;
   color: #666;
   text-transform: uppercase;
-  letter-spacing: 1px;
-  margin-bottom: 8px;
+  letter-spacing: 0.05em;
+  margin: 0 0 24px 0;
+}
+
+.breakdownRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  color: #888;
+  margin-bottom: 16px;
+  gap: 16px;
+}
+
+.breakdownRow span:first-child {
+  flex: 1;
+}
+
+.breakdownRow span:last-child {
+  color: #fff;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.breakdownDivider {
+  height: 1px;
+  background: #222;
+  margin: 20px 0;
+}
+
+.breakdownExample {
+  margin-top: 8px;
+}
+
+.breakdownExampleLabel {
+  font-size: 12px;
+  color: #666;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.breakdownTotal {
+  margin-top: 8px;
+  padding-top: 12px;
+  border-top: 1px solid #222;
+}
+
+.breakdownTotal span:last-child {
+  color: #4ade80;
+  font-weight: 500;
+}
+
+.breakdownRoi {
+  margin-top: 4px;
+}
+
+.breakdownRoi span:last-child {
+  color: #4ade80;
+  font-weight: 600;
+}
+
+.breakdownNote {
+  font-size: 12px;
+  color: #666;
+  font-style: italic;
+  margin: 16px 0 0 0;
+}
+
+/* Ongoing Retainer Compact Card */
+.retainerCard {
+  background: #111;
+  border-radius: 12px;
+  padding: 24px 32px;
+  border: 1px solid #222;
+  margin-top: 24px;
+}
+
+.retainerCardMain {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.retainerCardInfo {
+  flex: 1;
+}
+
+.retainerCardName {
+  font-size: 18px;
+  font-weight: 500;
+  color: #fff;
+  margin: 0 0 4px 0;
+}
+
+.retainerCardFor {
+  font-size: 13px;
+  color: #666;
+  margin: 0;
+}
+
+.retainerCardPrice {
+  display: flex;
+  align-items: baseline;
+}
+
+.retainerPrice {
+  font-size: 20px;
+  font-weight: 500;
+  color: #fff;
+}
+
+.retainerPeriod {
+  font-size: 14px;
+  color: #666;
+}
+
+.retainerCta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+  background: transparent;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+  border: 1px solid #333;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: all 0.2s;
+  margin-left: 24px;
+}
+
+.retainerCta:hover {
+  background: #fff;
+  color: #0a0a0a;
+  border-color: #fff;
+}
+
+.modelBars {
+  font-size: 24px;
+  color: #444;
+  letter-spacing: 2px;
+  display: block;
+  margin-bottom: 32px;
 }
 
 .modelName {
-  font-size: 24px;
-  font-weight: 600;
+  font-size: 22px;
+  font-weight: 500;
   color: #fff;
   margin: 0 0 8px 0;
 }
 
 .modelFor {
   font-size: 14px;
-  color: #888;
+  color: #666;
   margin: 0 0 24px 0;
 }
 
 .modelPrice {
-  font-size: 36px;
-  font-weight: 600;
+  font-size: 32px;
+  font-weight: 500;
   color: #fff;
-  margin-bottom: 4px;
+  margin-bottom: 8px;
 }
 
 .modelPrice span {
   font-size: 16px;
   font-weight: 400;
-  color: #888;
+  color: #666;
 }
 
-.modelPriceSecondary {
-  font-size: 14px;
-  color: #3959ff;
-  margin-bottom: 24px;
-}
-
-.modelDetails {
-  list-style: none;
-  padding: 0;
+.modelPriceNote {
+  font-size: 13px;
+  color: #f5a623;
   margin: 0 0 24px 0;
-  flex: 1;
-}
-
-.modelDetails li {
-  font-size: 14px;
-  color: #aaa;
-  padding: 8px 0;
-  border-bottom: 1px solid #222;
-}
-
-.modelDetails li:last-child {
-  border-bottom: none;
 }
 
 .modelCta {
@@ -1036,11 +1266,11 @@
   align-items: center;
   justify-content: center;
   padding: 12px 24px;
-  background: transparent;
-  color: #fff;
+  background: #fff;
+  color: #0a0a0a;
   font-size: 14px;
   font-weight: 500;
-  border: 1px solid #444;
+  border: none;
   border-radius: 6px;
   text-decoration: none;
   transition: all 0.2s;
@@ -1048,20 +1278,36 @@
 }
 
 .modelCta:hover {
-  background: #fff;
-  color: #0a0a0a;
-  border-color: #fff;
+  opacity: 0.9;
 }
 
-.pricingModelFeatured .modelCta {
-  background: #3959ff;
-  border-color: #3959ff;
+.modelFeatures {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 32px 0;
+  border-top: 1px solid #222;
+  padding-top: 24px;
+  flex-grow: 1;
 }
 
-.pricingModelFeatured .modelCta:hover {
-  background: #2a47cc;
-  border-color: #2a47cc;
-  color: #fff;
+.modelFeatures li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+  color: #aaa;
+  padding: 10px 0;
+}
+
+.featureIcon {
+  font-size: 14px;
+  color: #666;
+  width: 20px;
+  text-align: center;
+}
+
+.modelFeatures li:nth-child(2) .featureIcon {
+  color: #f5a623;
 }
 
 .planBtn {
@@ -1610,6 +1856,10 @@
   gap: 8px;
 }
 
+.formGroupFull {
+  grid-column: 1 / -1;
+}
+
 .formGroup label {
   font-size: 14px;
   color: #888;
@@ -1878,6 +2128,30 @@
 
   .pricingModels {
     grid-template-columns: 1fr;
+  }
+
+  .exitCards {
+    grid-template-columns: 1fr;
+  }
+
+  .exitCardsArrow {
+    transform: rotate(90deg);
+    justify-self: center;
+  }
+
+  .retainerCardMain {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .retainerCardPrice {
+    text-align: left;
+  }
+
+  .retainerCardFeatures {
+    flex-direction: column;
+    gap: 8px;
   }
 
   .pricingOptions {

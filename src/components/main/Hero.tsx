@@ -67,28 +67,28 @@ const projects = [
   {
     title: "ProducifyX",
     slug: "producifyx",
-    description: "ATS and internal operations portal for a staffing agency.",
+    description: "ATS and operations portal. Reduced owner involvement from 60 hrs/week to 15.",
     year: "2024",
     image: "/portfolio/producifyx/hero.jpg",
   },
   {
     title: "Happy Endings",
     slug: "happy-endings",
-    description: "AI email agent and full internal operations system.",
+    description: "AI email agent handling 80% of customer inquiries autonomously.",
     year: "2025",
     image: "/portfolio/happyendings/hero.jpg",
   },
   {
     title: "Hoplite Capital",
     slug: "hoplite-capital",
-    description: "Custom work software for multi-location golf cart dealership.",
+    description: "Operations system for 3-location dealership. Owner reduced to 20 hrs/week.",
     year: "2025",
     image: "/portfolio/hoplite/hero.jpg",
   },
   {
     title: "Neighbors Bank",
     slug: "neighbors-bank",
-    description: "RAG-powered Slack bot for 200+ team members.",
+    description: "RAG-powered Slack bot serving 200+ team members.",
     year: "2025",
     image: "/portfolio/neighborsbank/slack-conversation.png",
   },
@@ -110,9 +110,6 @@ export function Hero() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    company: '',
-    website: '',
-    businessStage: '',
     lookingFor: '',
     needs: '',
     honeypot: '', // spam trap - should remain empty
@@ -178,25 +175,6 @@ export function Hero() {
   const handleMouseLeave = () => {
     setHoveredIndex(null)
     setIsVisible(false)
-  }
-
-  // Normalize website URL - auto-add https:// if missing
-  const normalizeUrl = (url: string): string => {
-    if (!url) return ''
-    let normalized = url.trim().toLowerCase()
-    // Remove any leading/trailing whitespace
-    normalized = normalized.replace(/\s/g, '')
-    // If it doesn't start with http:// or https://, add https://
-    if (normalized && !normalized.startsWith('http://') && !normalized.startsWith('https://')) {
-      normalized = 'https://' + normalized
-    }
-    return normalized
-  }
-
-  const handleWebsiteBlur = () => {
-    if (formData.website) {
-      setFormData({ ...formData, website: normalizeUrl(formData.website) })
-    }
   }
 
   const handleFormSubmit = async (e: React.FormEvent) => {
@@ -521,7 +499,7 @@ export function Hero() {
         <div className={styles.howSectionInner}>
           <h2 className={styles.howHeadline}>
             How it works.<br />
-            Buyer-ready in 3-6 months.
+            Buyer-ready in 60-90 days.
           </h2>
           <p className={styles.howSubtitle}>
             We systematize your business. You sell for more. We get paid from the increase.
@@ -552,7 +530,7 @@ export function Hero() {
                 <h3 className={styles.stepTitle}>We systematize</h3>
                 <p className={styles.stepDesc}>
                   Custom automation, AI agents, and documentation—everything
-                  buyers want to see. The business runs without you in 3-6 months.
+                  buyers want to see. Owner involvement reduced by 60-70% within 90 days.
                 </p>
               </div>
             </div>
@@ -685,6 +663,18 @@ export function Hero() {
         </div>
       </div>
 
+      {/* Guarantee Section */}
+      <div className={styles.guaranteeSection}>
+        <div className={styles.guaranteeSectionInner}>
+          <h2 className={styles.guaranteeHeadline}>Zero-Risk Guarantee</h2>
+          <p className={styles.guaranteeText}>
+            If your business sells for less than <strong>$150K above</strong> baseline valuation:
+            full refund of upfront cost, no success fee owed, and you keep all the systems we built.
+          </p>
+          <p className={styles.guaranteeTagline}>We only win if you win.</p>
+        </div>
+      </div>
+
       {/* Pricing Section */}
       <div className={styles.pricingSection} id="pricing">
         <div className={styles.pricingSectionInner}>
@@ -695,36 +685,71 @@ export function Hero() {
             Whether you're growing or exiting, we build the systems you need.
           </p>
 
-          <div className={styles.pricingModels}>
-            <div className={styles.pricingModel}>
-              <span className={styles.modelLabel}>Model 1</span>
-              <h3 className={styles.modelName}>Ongoing Retainer</h3>
-              <p className={styles.modelFor}>For growing businesses, not selling</p>
-              <div className={styles.modelPrice}>$2,500–$5,000<span>/month</span></div>
-              <ul className={styles.modelDetails}>
-                <li>Month-to-month, cancel anytime</li>
-                <li>Custom software & automation</li>
-                <li>Ongoing development & support</li>
+          {/* Exit Systematization - Two Cards */}
+          <div className={styles.exitCards}>
+            <div className={styles.exitCardLeft}>
+              <span className={styles.modelBars}>||||</span>
+              <h3 className={styles.exitCardName}>Exit Systematization</h3>
+              <p className={styles.exitCardFor}>For businesses selling in 6-12 months.</p>
+              <ul className={styles.exitCardFeatures}>
+                <li><span className={styles.featureIcon}>✓</span>Full systematization package</li>
+                <li><span className={styles.featureIcon}>⚡</span>AI agents & automation</li>
+                <li><span className={styles.featureIcon}>◎</span>90-day engagement</li>
+                <li><span className={styles.featureIcon}>○</span>Success fee paid from proceeds</li>
               </ul>
-              <a href="#book" className={styles.modelCta}>Get Started</a>
+              <a href="#book" className={styles.modelCta}>Get started</a>
             </div>
-
-            <div className={`${styles.pricingModel} ${styles.pricingModelFeatured}`}>
-              <span className={styles.modelLabel}>Model 2</span>
-              <h3 className={styles.modelName}>Exit Systematization</h3>
-              <p className={styles.modelFor}>For businesses selling in 6-12 months</p>
-              <div className={styles.modelPrice}>$2,500<span>/month × 3</span></div>
-              <div className={styles.modelPriceSecondary}>+ 8% of valuation increase at closing</div>
-              <ul className={styles.modelDetails}>
-                <li>3-month minimum engagement</li>
-                <li>Full systematization package</li>
-                <li>Success fee paid from proceeds</li>
-              </ul>
-              <a href="#book" className={styles.modelCta}>Get Started</a>
+            <div className={styles.exitCardsArrow}>→</div>
+            <div className={styles.exitCardRight}>
+              <h4 className={styles.breakdownTitle}>Example</h4>
+              <div className={styles.breakdownRow}>
+                <span>Business valued today</span>
+                <span>$2,000,000</span>
+              </div>
+              <div className={styles.breakdownRow}>
+                <span>Sells for after systematization</span>
+                <span>$2,500,000</span>
+              </div>
+              <div className={styles.breakdownRow}>
+                <span>Valuation increase</span>
+                <span>$500,000</span>
+              </div>
+              <div className={styles.breakdownDivider} />
+              <div className={styles.breakdownRow}>
+                <span>Retainer ($2,500 × 3 months)</span>
+                <span>$7,500</span>
+              </div>
+              <div className={styles.breakdownRow}>
+                <span>Success fee (8% of increase)</span>
+                <span>$40,000</span>
+              </div>
+              <div className={styles.breakdownDivider} />
+              <div className={`${styles.breakdownRow} ${styles.breakdownTotal}`}>
+                <span>You net extra</span>
+                <span>$452,500</span>
+              </div>
+              <div className={`${styles.breakdownRow} ${styles.breakdownRoi}`}>
+                <span>ROI</span>
+                <span>951%</span>
+              </div>
+              <p className={styles.breakdownNote}>If we don't increase the valuation, no success fee is charged.</p>
             </div>
           </div>
 
-          <a href="#book" className={styles.pricingCta}>Book a Free Assessment</a>
+          {/* Ongoing Retainer - Compact Card */}
+          <div className={styles.retainerCard}>
+            <div className={styles.retainerCardMain}>
+              <div className={styles.retainerCardInfo}>
+                <h3 className={styles.retainerCardName}>Ongoing Retainer</h3>
+                <p className={styles.retainerCardFor}>For growing businesses. Month-to-month.</p>
+              </div>
+              <div className={styles.retainerCardPrice}>
+                <span className={styles.retainerPrice}>$2,500–$5,000</span>
+                <span className={styles.retainerPeriod}>/mo</span>
+              </div>
+              <a href="#book" className={styles.retainerCta}>Get started</a>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -773,7 +798,7 @@ export function Hero() {
                 <span className={`${styles.faqIcon} ${openFaq === 2 ? styles.faqIconOpen : ''}`}>▼</span>
               </button>
               <div className={`${styles.faqAnswer} ${openFaq === 2 ? styles.faqAnswerOpen : ''}`}>
-                <p>3-6 months for full systematization, depending on complexity. After that, your business runs without you and buyers see turnkey operations instead of key-person risk.</p>
+                <p>60-90 days for full implementation. Most clients go to market within 3-4 months of starting. After that, buyers see turnkey operations instead of key-person risk.</p>
               </div>
             </div>
             <div className={styles.faqItem}>
@@ -813,7 +838,7 @@ export function Hero() {
 
           {formStep === 0 && (
             <form className={styles.qualifyForm} onSubmit={handleFormSubmit}>
-              <p className={styles.formSubtitle}>Tell us about your exit timeline so we can come prepared.</p>
+              <p className={styles.formSubtitle}>Tell us what you need so we can come prepared.</p>
 
               {/* Honeypot field - hidden from users, bots will fill it */}
               <input
@@ -840,7 +865,7 @@ export function Hero() {
                 </div>
 
                 <div className={styles.formGroup}>
-                  <label htmlFor="email">Work Email</label>
+                  <label htmlFor="email">Email</label>
                   <input
                     type="email"
                     id="email"
@@ -851,47 +876,7 @@ export function Hero() {
                   />
                 </div>
 
-                <div className={styles.formGroup}>
-                  <label htmlFor="company">Company</label>
-                  <input
-                    type="text"
-                    id="company"
-                    required
-                    value={formData.company}
-                    onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-                    placeholder="Company name"
-                  />
-                </div>
-
-                <div className={styles.formGroup}>
-                  <label htmlFor="website">Website</label>
-                  <input
-                    type="text"
-                    id="website"
-                    value={formData.website}
-                    onChange={(e) => setFormData({ ...formData, website: e.target.value })}
-                    onBlur={handleWebsiteBlur}
-                    placeholder="yourcompany.com"
-                  />
-                </div>
-
-                <div className={styles.formGroup}>
-                  <label htmlFor="businessStage">Business Stage</label>
-                  <select
-                    id="businessStage"
-                    value={formData.businessStage}
-                    onChange={(e) => setFormData({ ...formData, businessStage: e.target.value })}
-                  >
-                    <option value="">Select one (optional)</option>
-                    <option value="growing">Growing / scaling</option>
-                    <option value="acquired">Recently acquired</option>
-                    <option value="exit-1-3">Planning to sell in 1-3 years</option>
-                    <option value="exit-3-7">Planning to sell in 3-7 years</option>
-                    <option value="long-term">Building for the long haul</option>
-                  </select>
-                </div>
-
-                <div className={styles.formGroup}>
+                <div className={`${styles.formGroup} ${styles.formGroupFull}`}>
                   <label htmlFor="lookingFor">What are you looking for?</label>
                   <select
                     id="lookingFor"
@@ -910,13 +895,12 @@ export function Hero() {
               </div>
 
               <div className={styles.formGroup}>
-                <label htmlFor="needs">What do you want to build?</label>
+                <label htmlFor="needs">Tell us about your project</label>
                 <textarea
                   id="needs"
-                  required
                   value={formData.needs}
                   onChange={(e) => setFormData({ ...formData, needs: e.target.value })}
-                  placeholder="Describe the tool, automation, or system you have in mind..."
+                  placeholder="What would you like to build or automate? (optional)"
                   rows={3}
                 />
               </div>
