@@ -688,7 +688,6 @@ export function Hero() {
           {/* Exit Systematization - Two Cards */}
           <div className={styles.exitCards}>
             <div className={styles.exitCardLeft}>
-              <span className={styles.modelBars}>||||</span>
               <h3 className={styles.exitCardName}>Exit Systematization</h3>
               <p className={styles.exitCardFor}>For businesses selling in 6-12 months.</p>
               <ul className={styles.exitCardFeatures}>
