@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from 'react'
 import Link from 'next/link'
 import styles from './partners.module.css'
+import { trackMetaEvent } from '@/components/analytics/MetaPixel'
 
 declare global {
   interface Window {
@@ -23,6 +24,15 @@ function PartnerCalEmbed() {
         config: { layout: 'month_view', useSlotsViewOnSmallScreen: 'true' },
         calLink: 'harmon-digital/partner-intro',
       })
+      window.Cal.ns['partner-intro']('on', {
+        action: 'bookingSuccessful',
+        callback: () => {
+          trackMetaEvent('Schedule', {
+            content_name: 'Partner Cal Booking',
+            content_category: 'Partners',
+          })
+        }
+      })
     } else {
       const script = document.createElement('script')
       script.innerHTML = `
@@ -34,6 +44,17 @@ function PartnerCalEmbed() {
           calLink: "harmon-digital/partner-intro",
         });
         Cal.ns["partner-intro"]("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
+        Cal.ns["partner-intro"]("on", {
+          action: "bookingSuccessful",
+          callback: function() {
+            if (window.fbq) {
+              window.fbq('track', 'Schedule', {
+                content_name: 'Partner Cal Booking',
+                content_category: 'Partners'
+              });
+            }
+          }
+        });
       `
       document.body.appendChild(script)
     }
@@ -65,6 +86,14 @@ export default function PartnersPage() {
     dealSize: '',
     honeypot: '',
   })
+
+  // Track partners page view for Meta Pixel
+  useEffect(() => {
+    trackMetaEvent('ViewContent', {
+      content_name: 'Partner Program',
+      content_category: 'Partners',
+    })
+  }, [])
 
   // Intersection observer for headline animation
   useEffect(() => {
@@ -110,6 +139,12 @@ export default function PartnersPage() {
     } catch (error) {
       console.error('Failed to send inquiry:', error)
     }
+
+    // Track Lead event for Meta Pixel
+    trackMetaEvent('Lead', {
+      content_name: 'Partner Form Submission',
+      content_category: 'Partners',
+    })
 
     setFormStep(1)
   }

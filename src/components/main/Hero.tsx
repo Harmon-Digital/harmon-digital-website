@@ -15,6 +15,7 @@ import {
 } from 'lucide-react'
 import Link from 'next/link'
 import styles from './Hero.module.css'
+import { trackMetaEvent } from '@/components/analytics/MetaPixel'
 
 // Cal.com embed component
 function CalEmbed() {
@@ -30,6 +31,16 @@ function CalEmbed() {
         config: { layout: "month_view", useSlotsViewOnSmallScreen: "true" },
         calLink: "harmon-digital/15min",
       })
+      // @ts-ignore
+      window.Cal.ns["15min"]("on", {
+        action: "bookingSuccessful",
+        callback: () => {
+          trackMetaEvent('Schedule', {
+            content_name: 'Homepage Cal Booking',
+            content_category: 'Contact',
+          })
+        }
+      })
     } else {
       // Load Cal.com embed script
       const script = document.createElement('script')
@@ -42,6 +53,17 @@ function CalEmbed() {
           calLink: "harmon-digital/15min",
         });
         Cal.ns["15min"]("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
+        Cal.ns["15min"]("on", {
+          action: "bookingSuccessful",
+          callback: function() {
+            if (window.fbq) {
+              window.fbq('track', 'Schedule', {
+                content_name: 'Homepage Cal Booking',
+                content_category: 'Contact'
+              });
+            }
+          }
+        });
       `
       document.body.appendChild(script)
     }
@@ -203,6 +225,12 @@ export function Hero() {
     } catch (error) {
       console.error('Failed to submit form:', error)
     }
+
+    // Track Lead event for Meta Pixel
+    trackMetaEvent('Lead', {
+      content_name: 'Homepage Contact Form',
+      content_category: 'Contact',
+    })
 
     // Everyone else is qualified
     setFormStep(1)
