@@ -24,11 +24,6 @@ const projects: Record<string, { title: string; description: string; image?: str
     title: "Table Rock Black Lights - E-Commerce & Automation",
     description: "Website redesign with e-commerce and automated order workflows for a fishing lighting company.",
   },
-  'producifyx': {
-    title: "ProducifyX - Staffing Agency Portal & ATS",
-    description: "Custom portal and applicant tracking system. Owner saved 20+ hours/week with unified operations.",
-    image: "/portfolio/producifyx/hero.jpg",
-  },
 }
 
 export function generateProjectMetadata(slug: string): Metadata {

@@ -125,34 +125,6 @@ const projects = [
     testimonial: null,
     screenshots: [],
   },
-  {
-    title: "ProducifyX",
-    slug: "producifyx",
-    category: "Internal Portal",
-    description: "ATS and operations portal for a staffing agency.",
-    fullDescription: "ProducifyX was copying and pasting applicants and data across different applications—several tools that weren't wired up or compatible with each other. We built a custom portal for their internal team that handles onboarding and serves as an ATS for their clients. Everything in one place, no more manual data entry between systems.",
-    year: "2024",
-    services: ["Custom Airtable Base", "Applicant Tracking System", "Client Portal", "Automated Workflows", "Reporting Dashboard"],
-    results: ["All operations in one system", "Owner reclaimed 20+ hours/week", "Zero dropped applications", "Automated client updates"],
-    stats: [
-      { value: "20+", label: "Hours Saved/Week" },
-      { value: "1", label: "Unified System" },
-      { value: "0", label: "Dropped Apps" },
-      { value: "4", label: "Month Build" },
-    ],
-    timeline: "4 months",
-    testimonial: {
-      quote: "I went from 60+ hour weeks to actually taking vacations. Everything's in one place now. I can see exactly what's happening without asking anyone.",
-      author: "Owner",
-      role: "ProducifyX"
-    },
-    screenshots: [
-      { src: "/portfolio/producifyx/hero.jpg", alt: "ProducifyX Team", large: true },
-      { src: "/portfolio/producifyx/client-dashboard.png", alt: "Client Management", large: true },
-      { src: "/portfolio/producifyx/admin-dashboard.png", alt: "Admin Dashboard" },
-      { src: "/portfolio/producifyx/admin-overview.png", alt: "Admin Overview" },
-    ],
-  },
 ]
 
 export default function ProjectPage() {

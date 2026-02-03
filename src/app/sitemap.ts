@@ -10,7 +10,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     'neighbors-bank',
     'happy-endings',
     'table-rock-black-lights',
-    'producifyx',
   ]
 
   const projectUrls = projects.map((slug) => ({

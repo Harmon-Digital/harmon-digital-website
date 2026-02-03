@@ -46,14 +46,6 @@ const projects = [
     year: "2024",
     logo: null,
   },
-  {
-    title: "ProducifyX",
-    slug: "producifyx",
-    category: "Internal Portal",
-    description: "Custom portal for a staffing agency's internal team. Handles onboarding and serves as an ATS for their clients—no more copying data between incompatible tools.",
-    year: "2024",
-    logo: "/clients/1.png",
-  },
 ]
 
 export default function PortfolioPage() {

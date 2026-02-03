@@ -87,13 +87,6 @@ const clientLogos = Array.from({ length: 13 }, (_, i) => `/clients/${i + 1}.png`
 
 const projects = [
   {
-    title: "ProducifyX",
-    slug: "producifyx",
-    description: "ATS and operations portal. Reduced owner involvement from 60 hrs/week to 15.",
-    year: "2024",
-    image: "/portfolio/producifyx/hero.jpg",
-  },
-  {
     title: "Happy Endings",
     slug: "happy-endings",
     description: "AI email agent handling 80% of customer inquiries autonomously.",
