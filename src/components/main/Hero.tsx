@@ -239,19 +239,23 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <span className={styles.heroLabel}>Custom Software & Automation</span>
+          <span className={styles.heroLabel}>AI Agent Operations</span>
           <h1 className={styles.headline}>
-            We systematize your business. You sell for more.
+            AI agents that run your business. 24/7.
           </h1>
 
           <p className={styles.subtitle}>
-            We build custom software and automation that lets your business run without you.
-            Buyers pay a premium for turnkey operations.
+            We install AI agents into your business that handle email, scheduling, project management, and customer service — so your team can focus on what matters.
           </p>
 
-          <a href="#book" className={styles.ctaBtn}>
-            Book a free assessment
-          </a>
+          <div style={{ display: 'flex', gap: '16px', alignItems: 'center', marginBottom: '48px' }}>
+            <a href="#book" className={styles.ctaBtn} style={{ marginBottom: 0 }}>
+              Book a free call
+            </a>
+            <Link href="/services/ai-agents" style={{ fontSize: '14px', fontWeight: 500, color: '#888', textDecoration: 'none', transition: 'color 0.2s' }}>
+              Learn more →
+            </Link>
+          </div>
 
           <div className={styles.trust}>
             <p className={styles.trustLabel}>Businesses we've worked with</p>
@@ -965,6 +969,7 @@ export function Hero() {
           <div className={styles.footerBottom}>
             <p className={styles.footerCredit}>Made with love by Harmon Digital.</p>
             <div className={styles.footerLinks}>
+              <Link href="/services/ai-agents">AI Agents</Link>
               <Link href="/partner">Partners</Link>
               <Link href="/privacy">Privacy</Link>
               <Link href="/terms">Terms</Link>

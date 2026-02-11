@@ -12,10 +12,10 @@ import {
 
 export const metadata: Metadata = {
   title: {
-    default: 'Harmon Digital | Custom Software & Automation',
+    default: 'Harmon Digital | AI Agents for Business Operations',
     template: '%s | Harmon Digital',
   },
-  description: 'Custom software and automation for businesses built to exit or scale. AI-powered development delivered in 3-6 months.',
+  description: 'We install AI agents into your business that handle email, scheduling, project management, reporting, and customer service — 24/7.',
   keywords: [
     'custom software development',
     'business automation',
@@ -37,8 +37,8 @@ export const metadata: Metadata = {
     canonical: 'https://harmon-digital.com',
   },
   openGraph: {
-    title: 'Harmon Digital | Custom Software & Automation',
-    description: 'Custom software and automation for businesses built to exit or scale. AI-powered development delivered in 3-6 months.',
+    title: 'Harmon Digital | AI Agents for Business Operations',
+    description: 'We install AI agents into your business that handle email, scheduling, project management, reporting, and customer service — 24/7.',
     url: 'https://harmon-digital.com',
     siteName: 'Harmon Digital',
     images: [
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
         url: '/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'Harmon Digital - Custom Software & Automation',
+        alt: 'Harmon Digital - AI Agents for Business Operations',
       },
     ],
     locale: 'en_US',
@@ -54,8 +54,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Harmon Digital | Custom Software & Automation',
-    description: 'Custom software and automation for businesses built to exit or scale.',
+    title: 'Harmon Digital | AI Agents for Business Operations',
+    description: 'We install AI agents into your business that run operations 24/7.',
     images: ['/og-image.png'],
   },
   robots: {

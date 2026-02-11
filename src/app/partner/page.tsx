@@ -156,12 +156,12 @@ export default function PartnersPage() {
         <div className={styles.heroInner}>
           <span className={styles.label}>Partner Program</span>
           <h1 className={styles.headline}>
-            Increase your deal values <span style={{whiteSpace: 'nowrap'}}>15-25%.</span><br />
+            Refer businesses for AI agent setup.<br />
             Earn <span style={{whiteSpace: 'nowrap'}}>$5K-$15K</span> per referral.
           </h1>
           <p className={styles.subtitle}>
-            M&A advisors and brokers: we systematize your client's business,
-            get paid from the valuation increase, and you earn a commission.
+            We install AI agents that run business operations 24/7.
+            You make the intro, we handle everything else, and you earn a commission on every deal.
           </p>
           <div className={styles.heroCtas}>
             <a href="#book" className={styles.ctaBtn}>
@@ -191,12 +191,12 @@ export default function PartnersPage() {
       <div className={styles.section}>
         <div className={styles.sectionInner}>
           <h2 className={styles.sectionHeadline}>
-            The problem with<br />
-            owner-dependent businesses.
+            Every business has the<br />
+            same problem.
           </h2>
           <p className={styles.sectionSubtitle}>
-            Buyers discount heavily for key-person risk. Deals take longer.
-            Valuations suffer.
+            Teams drowning in manual work. Owners stuck in the day-to-day.
+            AI agents fix that.
           </p>
 
           <div className={styles.problemGrid}>
@@ -207,10 +207,10 @@ export default function PartnersPage() {
                   <circle cx="12" cy="7" r="4"/>
                 </svg>
               </div>
-              <h3 className={styles.problemTitle}>Owner is the bottleneck</h3>
+              <h3 className={styles.problemTitle}>Teams buried in busywork</h3>
               <p className={styles.problemDesc}>
-                Everything runs through the seller.
-                No systems, no documentation.
+                Email, scheduling, data entry, reporting —
+                hours lost every day on tasks AI can handle.
               </p>
             </div>
 
@@ -221,10 +221,10 @@ export default function PartnersPage() {
                   <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
                 </svg>
               </div>
-              <h3 className={styles.problemTitle}>Buyers discount heavily</h3>
+              <h3 className={styles.problemTitle}>Money left on the table</h3>
               <p className={styles.problemDesc}>
-                Key-person risk means lower
-                multiples and harder negotiations.
+                Slow response times, missed follow-ups,
+                and bottlenecks that cost real revenue.
               </p>
             </div>
 
@@ -235,10 +235,10 @@ export default function PartnersPage() {
                   <polyline points="12 6 12 12 16 14"/>
                 </svg>
               </div>
-              <h3 className={styles.problemTitle}>Deals drag on</h3>
+              <h3 className={styles.problemTitle}>Owner is the bottleneck</h3>
               <p className={styles.problemDesc}>
-                Due diligence takes longer when
-                there's nothing documented.
+                Everything runs through one person.
+                The business can't scale.
               </p>
             </div>
 
@@ -250,10 +250,10 @@ export default function PartnersPage() {
                   <line x1="12" y1="17" x2="12.01" y2="17"/>
                 </svg>
               </div>
-              <h3 className={styles.problemTitle}>Deals fall through</h3>
+              <h3 className={styles.problemTitle}>They don't know where to start</h3>
               <p className={styles.problemDesc}>
-                Buyers walk away when they see
-                how dependent the business is.
+                AI sounds great but feels overwhelming.
+                They need someone to just do it for them.
               </p>
             </div>
           </div>
@@ -264,37 +264,36 @@ export default function PartnersPage() {
       <div className={styles.section}>
         <div className={styles.sectionInner}>
           <h2 className={styles.sectionHeadline}>
-            We build automated systems that increase what buyers will pay.
+            We install AI agents that handle operations for them.
           </h2>
           <p className={styles.sectionSubtitle}>
-            Custom automation, AI agents, and documentation that let the
-            business run without the owner.
+            Custom AI agents deployed into the business. Email, scheduling, project management, customer service, reporting — all automated.
           </p>
 
           <div className={styles.solutionGrid}>
             <div className={styles.solutionItem}>
-              <span className={styles.solutionIcon}>◇</span>
-              <span>Operational infrastructure</span>
+              <span className={styles.solutionIcon}>◎</span>
+              <span>AI agents for every role</span>
             </div>
             <div className={styles.solutionItem}>
-              <span className={styles.solutionIcon}>◎</span>
-              <span>AI agents for customer service</span>
+              <span className={styles.solutionIcon}>✉</span>
+              <span>Email & communication automation</span>
             </div>
             <div className={styles.solutionItem}>
               <span className={styles.solutionIcon}>▤</span>
-              <span>Workflow automation</span>
+              <span>Workflow & process automation</span>
             </div>
             <div className={styles.solutionItem}>
               <span className={styles.solutionIcon}>▣</span>
-              <span>System integrations</span>
+              <span>Tool & system integrations</span>
             </div>
             <div className={styles.solutionItem}>
               <span className={styles.solutionIcon}>◈</span>
-              <span>Custom software & portals</span>
+              <span>Local or cloud deployment</span>
             </div>
             <div className={styles.solutionItem}>
               <span className={styles.solutionIcon}>△</span>
-              <span>Complete documentation & SOPs</span>
+              <span>24/7 autonomous operation</span>
             </div>
           </div>
         </div>
@@ -304,43 +303,39 @@ export default function PartnersPage() {
       <div className={styles.section} id="example">
         <div className={styles.sectionInner}>
           <h2 className={styles.sectionHeadline}>
-            You earn 15% of what we make.
+            You earn 15% of every deal.
           </h2>
           <p className={styles.sectionSubtitle}>
-            Your client pays a small retainer during the build. We take 8% of the valuation increase at closing. You earn commission on both.
+            Simple revenue share. Your referral signs a monthly retainer with us, and you earn 15% for as long as they're a client.
           </p>
 
           <div className={styles.exampleCard}>
             <h3 className={styles.exampleTitle}>Example</h3>
             <div className={styles.exampleGrid}>
               <div className={styles.exampleRow}>
-                <span className={styles.exampleLabel}>Business valued today</span>
-                <span className={styles.exampleValue}>$2,000,000</span>
+                <span className={styles.exampleLabel}>Client retainer</span>
+                <span className={styles.exampleValue}>$4,000/mo</span>
               </div>
               <div className={styles.exampleRow}>
-                <span className={styles.exampleLabel}>Sells for after systematization</span>
-                <span className={styles.exampleValue}>$2,500,000</span>
-              </div>
-              <div className={styles.exampleRow}>
-                <span className={styles.exampleLabel}>Valuation increase</span>
-                <span className={styles.exampleValue}>$500,000</span>
+                <span className={styles.exampleLabel}>Average engagement</span>
+                <span className={styles.exampleValue}>12 months</span>
               </div>
               <div className={styles.exampleDivider} />
               <div className={styles.exampleRow}>
-                <span className={styles.exampleLabel}>Our fee (3mo retainer + 8%)</span>
-                <span className={styles.exampleValue}>$47,500</span>
+                <span className={styles.exampleLabel}>Total contract value</span>
+                <span className={styles.exampleValue}>$48,000</span>
               </div>
               <div className={`${styles.exampleRow} ${styles.exampleHighlight}`}>
                 <span className={styles.exampleLabel}>Your commission (15%)</span>
-                <span className={styles.exampleValue}>$7,125</span>
+                <span className={styles.exampleValue}>$7,200</span>
               </div>
               <div className={styles.exampleDivider} />
               <div className={styles.exampleRow}>
-                <span className={styles.exampleLabel}>Seller nets extra</span>
-                <span className={styles.exampleValueMuted}>$452,500</span>
+                <span className={styles.exampleLabel}>Per referral, paid monthly</span>
+                <span className={styles.exampleValueMuted}>$600/mo</span>
               </div>
             </div>
-            <p className={styles.exampleNote}>If we don't increase the valuation, no success fee is charged.</p>
+            <p className={styles.exampleNote}>Commission paid monthly for the life of the client relationship.</p>
           </div>
         </div>
       </div>
@@ -406,10 +401,10 @@ export default function PartnersPage() {
                 <div className={styles.stepLine} />
               </div>
               <div className={styles.stepContent}>
-                <h3 className={styles.stepTitle}>Identify a seller</h3>
+                <h3 className={styles.stepTitle}>Identify a business</h3>
                 <p className={styles.stepDesc}>
-                  You're working with a business owner preparing to sell who needs
-                  to reduce owner dependency before going to market.
+                  You know a business owner drowning in manual operations — email,
+                  scheduling, customer service, reporting. They need AI agents.
                 </p>
               </div>
             </div>
@@ -423,7 +418,7 @@ export default function PartnersPage() {
                 <h3 className={styles.stepTitle}>Make an introduction</h3>
                 <p className={styles.stepDesc}>
                   Simple email intro to us. We'll handle the discovery call,
-                  scoping, and follow-up. $2,500/month retainer from your client.
+                  audit, and proposal. Zero work on your end.
                 </p>
               </div>
             </div>
@@ -434,10 +429,10 @@ export default function PartnersPage() {
                 <div className={styles.stepLine} />
               </div>
               <div className={styles.stepContent}>
-                <h3 className={styles.stepTitle}>We systematize the business</h3>
+                <h3 className={styles.stepTitle}>We install AI agents</h3>
                 <p className={styles.stepDesc}>
-                  90-day implementation. Client pays $2,500/month during this period.
-                  Once complete, retainer stops and business goes to market.
+                  We audit their operations, build custom agents for each role,
+                  and deploy them locally or in the cloud. 30-day setup.
                 </p>
               </div>
             </div>
@@ -447,10 +442,10 @@ export default function PartnersPage() {
                 <span>4</span>
               </div>
               <div className={styles.stepContent}>
-                <h3 className={styles.stepTitle}>Everyone gets paid at closing</h3>
+                <h3 className={styles.stepTitle}>You earn monthly commission</h3>
                 <p className={styles.stepDesc}>
-                  When the business sells, we take 8% of the valuation increase.
-                  You earn 15% of our fee. Your client nets the rest.
+                  You earn 15% of the client's monthly retainer for as long as
+                  they're a client. Paid monthly, no caps.
                 </p>
               </div>
             </div>
@@ -474,10 +469,10 @@ export default function PartnersPage() {
                   <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
                 </svg>
               </div>
-              <h3 className={styles.benefitTitle}>Affordable</h3>
+              <h3 className={styles.benefitTitle}>Revenue share</h3>
               <p className={styles.benefitDesc}>
-                $2,500/month from your client.
-                Big ROI comes at closing.
+                15% recurring commission.
+                Not a one-time referral fee.
               </p>
             </div>
 
@@ -488,10 +483,10 @@ export default function PartnersPage() {
                   <polyline points="12 6 12 12 16 14"/>
                 </svg>
               </div>
-              <h3 className={styles.benefitTitle}>Faster closes</h3>
+              <h3 className={styles.benefitTitle}>White-label available</h3>
               <p className={styles.benefitDesc}>
-                Turnkey operations mean fewer
-                buyer objections and faster due diligence.
+                Offer AI agent setup under your
+                own brand. We build, you deliver.
               </p>
             </div>
 
@@ -501,10 +496,10 @@ export default function PartnersPage() {
                   <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
                 </svg>
               </div>
-              <h3 className={styles.benefitTitle}>Stand out</h3>
+              <h3 className={styles.benefitTitle}>Easy sell</h3>
               <p className={styles.benefitDesc}>
-                Offer something other advisors can't.
-                Exit systematization as a service.
+                Every business has manual operations.
+                AI agents are a no-brainer upgrade.
               </p>
             </div>
 
@@ -516,8 +511,8 @@ export default function PartnersPage() {
               </div>
               <h3 className={styles.benefitTitle}>Zero risk</h3>
               <p className={styles.benefitDesc}>
-                If we don't increase the valuation,
-                there's no success fee.
+                We handle delivery and support.
+                Your reputation stays protected.
               </p>
             </div>
           </div>
@@ -553,11 +548,11 @@ export default function PartnersPage() {
                 className={styles.faqQuestion}
                 onClick={() => setOpenFaq(openFaq === 0 ? null : 0)}
               >
-                <span>What if the valuation doesn't increase?</span>
+                <span>How does the revenue share work?</span>
                 <span className={`${styles.faqIcon} ${openFaq === 0 ? styles.faqIconOpen : ''}`}>▼</span>
               </button>
               <div className={`${styles.faqAnswer} ${openFaq === 0 ? styles.faqAnswerOpen : ''}`}>
-                <p>Your client pays the monthly retainer during the build. Our success fee is 8% of the valuation increase, paid from sale proceeds. No increase means no success fee.</p>
+                <p>You earn 15% of the client's monthly retainer for as long as they're a client. Commission is paid monthly, typically within the first week of each month. No caps, no clawbacks.</p>
               </div>
             </div>
 
@@ -570,7 +565,7 @@ export default function PartnersPage() {
                 <span className={`${styles.faqIcon} ${openFaq === 1 ? styles.faqIconOpen : ''}`}>▼</span>
               </button>
               <div className={`${styles.faqAnswer} ${openFaq === 1 ? styles.faqAnswerOpen : ''}`}>
-                <p>Commission is paid within 30 days of the business closing. You earn 15% of our success fee—paid from sale proceeds, same as us.</p>
+                <p>Monthly. You earn 15% of your referral's retainer every month they're a client. First payment goes out within 30 days of the client signing.</p>
               </div>
             </div>
 
@@ -579,11 +574,11 @@ export default function PartnersPage() {
                 className={styles.faqQuestion}
                 onClick={() => setOpenFaq(openFaq === 2 ? null : 2)}
               >
-                <span>What if my client isn't ready to sell yet?</span>
+                <span>What's the white-label option?</span>
                 <span className={`${styles.faqIcon} ${openFaq === 2 ? styles.faqIconOpen : ''}`}>▼</span>
               </button>
               <div className={`${styles.faqAnswer} ${openFaq === 2 ? styles.faqAnswerOpen : ''}`}>
-                <p>We work best with businesses actively preparing to go to market. If they're 6+ months out, let's talk—we can discuss whether the timing makes sense or if they should reach out when they're closer.</p>
+                <p>If you want to offer AI agent setup as part of your own service, we can build and deploy under your brand. You handle the client relationship, we handle the tech. Great for consultants, agencies, and MSPs.</p>
               </div>
             </div>
 
@@ -596,7 +591,7 @@ export default function PartnersPage() {
                 <span className={`${styles.faqIcon} ${openFaq === 3 ? styles.faqIconOpen : ''}`}>▼</span>
               </button>
               <div className={`${styles.faqAnswer} ${openFaq === 3 ? styles.faqAnswerOpen : ''}`}>
-                <p>Service businesses, agencies, distributors, and companies doing $500K+ in revenue where the owner is currently the bottleneck. We'll tell you honestly if a referral is a fit.</p>
+                <p>Any business with a team doing repetitive manual work — service businesses, agencies, distributors, e-commerce, professional services. If they have employees handling email, scheduling, or operations tasks, we can help. We'll tell you honestly if a referral is a fit.</p>
               </div>
             </div>
           </div>
@@ -715,6 +710,7 @@ export default function PartnersPage() {
           <div className={styles.footerBottom}>
             <p className={styles.footerCredit}>Made with love by Harmon Digital.</p>
             <div className={styles.footerLinks}>
+              <Link href="/services/ai-agents">AI Agents</Link>
               <Link href="/privacy">Privacy</Link>
               <Link href="/terms">Terms</Link>
             </div>

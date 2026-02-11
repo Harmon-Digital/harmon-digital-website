@@ -24,9 +24,12 @@ export function Header() {
           <span>Harmon Digital</span>
         </a>
 
-        <a href="#book" className={styles.ctaBtn}>
-          Book a call
-        </a>
+        <nav className={styles.nav}>
+          <a href="/services/ai-agents" className={styles.navLink}>AI Agents</a>
+          <a href="#book" className={styles.ctaBtn}>
+            Book a call
+          </a>
+        </nav>
       </div>
     </header>
   )
