@@ -965,7 +965,7 @@ export function Hero() {
           <div className={styles.footerBottom}>
             <p className={styles.footerCredit}>Made with love by Harmon Digital.</p>
             <div className={styles.footerLinks}>
-              <Link href="/partners">Partners</Link>
+              <Link href="/partner">Partners</Link>
               <Link href="/privacy">Privacy</Link>
               <Link href="/terms">Terms</Link>
             </div>
