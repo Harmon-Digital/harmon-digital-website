@@ -5,7 +5,7 @@ export function OrganizationSchema() {
     name: 'Harmon Digital, LLC',
     url: 'https://harmon-digital.com',
     logo: 'https://harmon-digital.com/logo/icon.png',
-    description: 'We help businesses cut operational costs 30-50% with AI-powered automation. Measurable savings, documented quarterly.',
+    description: 'Sell your business for more. We systematize owner-dependent businesses so buyers pay a premium.',
     foundingDate: '2024',
     sameAs: [
       'https://www.linkedin.com/company/harmon-digital/',
@@ -37,22 +37,22 @@ export function ProfessionalServiceSchema() {
     name: 'Harmon Digital, LLC',
     url: 'https://harmon-digital.com',
     image: 'https://harmon-digital.com/logo/icon.png',
-    description: 'AI operations consulting that cuts business costs 30-50%. Custom automation, AI agents, and process optimization with performance-based pricing.',
-    priceRange: '$3,000-$5,000/mo + Performance-based',
+    description: 'Exit systematization for owner-dependent businesses. We build turnkey operations so buyers pay a premium.',
+    priceRange: '$2,500/mo + Success-based',
     areaServed: {
       '@type': 'Country',
       name: 'United States',
     },
     hasOfferCatalog: {
       '@type': 'OfferCatalog',
-      name: 'AI Operations Services',
+      name: 'Exit Systematization Services',
       itemListElement: [
         {
           '@type': 'Offer',
           itemOffered: {
             '@type': 'Service',
             name: 'Operations Portal',
-            description: 'Custom internal portal for streamlined operations and real-time visibility.',
+            description: 'Custom internal portal so the business runs without you.',
           },
         },
         {
@@ -60,15 +60,15 @@ export function ProfessionalServiceSchema() {
           itemOffered: {
             '@type': 'Service',
             name: 'AI Customer Service Agent',
-            description: 'AI agent to handle customer inquiries autonomously, reducing support costs.',
+            description: 'AI agent to handle customer inquiries without owner involvement.',
           },
         },
         {
           '@type': 'Offer',
           itemOffered: {
             '@type': 'Service',
-            name: 'Process Documentation & SOPs',
-            description: 'Full documentation and standard operating procedures for operational consistency.',
+            name: 'Complete SOPs & Documentation',
+            description: 'Full documentation and standard operating procedures for due diligence.',
           },
         },
         {
@@ -76,7 +76,7 @@ export function ProfessionalServiceSchema() {
           itemOffered: {
             '@type': 'Service',
             name: 'Workflow Automation',
-            description: 'Automated workflows that eliminate manual processes and reduce costs.',
+            description: 'Automated workflows that eliminate owner dependency.',
           },
         },
       ],
@@ -98,50 +98,42 @@ export function FAQSchema() {
     mainEntity: [
       {
         '@type': 'Question',
-        name: 'How do you measure cost savings?',
+        name: "What if my valuation doesn't increase?",
         acceptedAnswer: {
           '@type': 'Answer',
-          text: "We baseline your current operational costs in Month 1 — labor hours, software spend, throughput rates. Every quarter, we measure the same metrics. The difference is your savings. Everything is tracked in a transparent dashboard you can access anytime.",
+          text: "You pay the monthly retainer during the build. Our success fee is 8% of the valuation increase, paid from sale proceeds. If systematization doesn't increase what buyers will pay, we don't collect the success fee.",
         },
       },
       {
         '@type': 'Question',
-        name: "What's the minimum commitment?",
+        name: 'How do you measure the valuation increase?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: "6 months. It takes 60-90 days to build and deploy, then we need at least one quarter to measure and optimize. Most clients stay much longer as we expand to new processes.",
+          text: "We work with your broker or get an independent assessment to establish your baseline valuation before we start. When you sell, the increase is the difference between what you actually sell for and that baseline. Simple, transparent, no games.",
         },
       },
       {
         '@type': 'Question',
-        name: 'What kinds of businesses do you work with?',
+        name: 'How long until my business is ready to sell?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: "Service businesses, agencies, distributors, and companies doing $500K+ in revenue with significant manual operations. We also work with PE firms to optimize across portfolio companies.",
+          text: "3-6 months for full systematization, depending on complexity. After that, your business runs without you and buyers see turnkey operations instead of key-person risk.",
         },
       },
       {
         '@type': 'Question',
-        name: "What if the savings don't materialize?",
+        name: "What if I'm not ready to sell yet?",
         acceptedAnswer: {
           '@type': 'Answer',
-          text: "Our performance bonus is tied to documented savings. No savings, no bonus — you only pay the retainer. And if we can't document at least 2x the retainer in savings within 6 months, we refund your last month.",
+          text: "We work best with businesses actively preparing to go to market. If you're more than 6 months out, let's talk—we can discuss whether the timing makes sense or if you should reach out when you're closer.",
         },
       },
       {
         '@type': 'Question',
-        name: 'Do we need to replace our team?',
+        name: 'Is this right for my business?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: "No. We automate tasks, not people. Most clients redeploy team members to higher-value work rather than cutting headcount. But the cost savings are real either way — fewer hours spent on manual processes means more capacity without more hiring.",
-        },
-      },
-      {
-        '@type': 'Question',
-        name: 'Can you work with multiple companies in our portfolio?',
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: "Yes — this is one of our strengths. We develop repeatable automation playbooks across portfolio companies, so each engagement gets faster and cheaper. One relationship, multiple wins.",
+          text: "If you're doing $500K+ in revenue and you're the bottleneck, probably yes. We work best with service businesses, agencies, distributors, and companies where buyers would discount for key-person risk.",
         },
       },
     ],
@@ -161,7 +153,7 @@ export function WebSiteSchema() {
     '@type': 'WebSite',
     name: 'Harmon Digital',
     url: 'https://harmon-digital.com',
-    description: 'AI operations consulting that helps businesses cut costs 30-50% with automation.',
+    description: 'Custom software and automation for businesses built to exit or scale.',
     publisher: {
       '@type': 'Organization',
       name: 'Harmon Digital, LLC',

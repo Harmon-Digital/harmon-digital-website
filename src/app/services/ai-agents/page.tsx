@@ -474,7 +474,7 @@ export default function AIAgentsPage() {
                 <span className={`${styles.faqIcon} ${openFaq === 4 ? styles.faqIconOpen : ''}`}>▼</span>
               </button>
               <div className={`${styles.faqAnswer} ${openFaq === 4 ? styles.faqAnswerOpen : ''}`}>
-                <p>$5,000 setup fee to build and deploy your custom agents, then $2,000/month ongoing for hosting, maintenance, and improvements. No surprises, no performance fees — just predictable pricing.</p>
+                <p>Pricing depends on the number of agents, complexity of workflows, and deployment type. Most businesses land between $3,000–$5,000/month. Book a call and we'll give you an honest quote after understanding your needs.</p>
               </div>
             </div>
           </div>
