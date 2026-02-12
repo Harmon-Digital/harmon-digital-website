@@ -688,6 +688,26 @@ export function Hero() {
         </div>
       </div>
 
+      {/* Testimonials Section */}
+      <div className={styles.testimonialsSection}>
+        <div className={styles.testimonialsSectionInner}>
+          <div className={styles.testimonialCard}>
+            <div className={styles.testimonialQuote}>
+              "Isaac and the Harmon Digital team have been a game changer for ProducifyX. Before working with them, we were buried in manual processes and spending way too much time on things that should have been automated. Isaac came in, mapped out our workflows, and built us a custom platform that handles what used to take hours. The time savings alone have been huge, but what really stands out is how much smoother everything runs now. Our team can actually focus on growing the business instead of putting out fires. If you're a business owner who feels like you're doing too much yourself, talk to Isaac. He'll find where you're wasting time and fix it."
+            </div>
+            <div className={styles.testimonialAuthor}>
+              <div className={styles.testimonialAvatar}>
+                <img src="https://i.pravatar.cc/60?img=8" alt="George Zimny" />
+              </div>
+              <div className={styles.testimonialInfo}>
+                <div className={styles.testimonialName}>George Zimny</div>
+                <div className={styles.testimonialTitle}>Co-Founder, ProducifyX</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* Guarantee Section */}
       <div className={styles.guaranteeSection}>
         <div className={styles.guaranteeSectionInner}>
