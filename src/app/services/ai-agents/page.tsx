@@ -474,7 +474,7 @@ export default function AIAgentsPage() {
                 <span className={`${styles.faqIcon} ${openFaq === 4 ? styles.faqIconOpen : ''}`}>▼</span>
               </button>
               <div className={`${styles.faqAnswer} ${openFaq === 4 ? styles.faqAnswerOpen : ''}`}>
-                <p>Pricing depends on the number of agents, complexity of workflows, and deployment type. Most businesses land between $3,000–$5,000/month. Book a call and we'll give you an honest quote after understanding your needs.</p>
+                <p>$5K one-time setup + $2K/month ongoing. This covers the initial agent build, custom training, deployment, and monthly management. More complex setups with multiple agents or specialized workflows may cost more. Book a call and we'll give you an honest quote after understanding your needs.</p>
               </div>
             </div>
           </div>
