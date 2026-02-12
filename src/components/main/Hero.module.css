@@ -1788,6 +1788,45 @@
   letter-spacing: 0.5px;
 }
 
+/* Single Testimonial Section */
+.testimonialSection {
+  background: #0a0a0a;
+  padding: var(--section-padding);
+}
+
+.testimonialSectionInner {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 var(--section-padding-x);
+}
+
+.testimonialContainer {
+  text-align: center;
+}
+
+.testimonialQuote {
+  font-size: 18px;
+  line-height: 1.7;
+  color: #bbb;
+  margin: 0 0 32px 0;
+  font-style: italic;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.testimonialAuthor {
+  display: block;
+  font-style: normal;
+  color: #888;
+}
+
+.testimonialAuthor strong {
+  color: #fff;
+  font-weight: 500;
+  margin-right: 8px;
+}
+
 /* Book a Call Section */
 .bookCallSection {
   background: #0a0a0a;
