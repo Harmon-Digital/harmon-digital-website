@@ -420,6 +420,23 @@ export default function AIAgentsPage() {
         </div>
       </div>
 
+      {/* Testimonial Section */}
+      <div className={styles.section}>
+        <div className={styles.sectionInner}>
+          <div className={styles.testimonialContainer}>
+            <div className={styles.testimonial}>
+              <blockquote className={styles.testimonialQuote}>
+                "Isaac and the Harmon Digital team have been a game changer for ProducifyX. Before working with them, we were buried in manual processes and spending way too much time on things that should have been automated. Isaac came in, mapped out our workflows, and built us a custom platform that handles what used to take hours. The time savings alone have been huge, but what really stands out is how much smoother everything runs now. Our team can actually focus on growing the business instead of putting out fires. If you're a business owner who feels like you're doing too much yourself, talk to Isaac. He'll find where you're wasting time and fix it."
+              </blockquote>
+              <cite className={styles.testimonialAuthor}>
+                <strong>George Zimny</strong>
+                <span>Co-Founder, ProducifyX</span>
+              </cite>
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* FAQ Section */}
       <div className={styles.section}>
         <div className={styles.sectionInner}>
@@ -474,7 +491,7 @@ export default function AIAgentsPage() {
                 <span className={`${styles.faqIcon} ${openFaq === 4 ? styles.faqIconOpen : ''}`}>▼</span>
               </button>
               <div className={`${styles.faqAnswer} ${openFaq === 4 ? styles.faqAnswerOpen : ''}`}>
-                <p>Pricing depends on the number of agents, complexity of workflows, and deployment type. Most businesses land between $3,000–$5,000/month. Book a call and we'll give you an honest quote after understanding your needs.</p>
+                <p>$5K one-time setup + $2K/month for ongoing management and support. This includes custom agent development, deployment, training, and continuous optimization. Book a call and we'll walk through exactly what this looks like for your business.</p>
               </div>
             </div>
           </div>
