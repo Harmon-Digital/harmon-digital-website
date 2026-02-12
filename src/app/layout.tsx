@@ -12,10 +12,10 @@ import {
 
 export const metadata: Metadata = {
   title: {
-    default: 'Harmon Digital | AI Agents for Business Operations',
+    default: 'Harmon Digital | AI Operations Consulting',
     template: '%s | Harmon Digital',
   },
-  description: 'We install AI agents into your business that handle email, scheduling, project management, reporting, and customer service — 24/7.',
+  description: 'We help businesses cut operational costs 30-50% with AI-powered automation. $3K-$5K/mo retainer + performance-based pricing tied to documented savings.',
   keywords: [
     'custom software development',
     'business automation',
@@ -37,8 +37,8 @@ export const metadata: Metadata = {
     canonical: 'https://harmon-digital.com',
   },
   openGraph: {
-    title: 'Harmon Digital | AI Agents for Business Operations',
-    description: 'We install AI agents into your business that handle email, scheduling, project management, reporting, and customer service — 24/7.',
+    title: 'Harmon Digital | AI Operations Consulting',
+    description: 'We help businesses cut operational costs 30-50% with AI-powered automation. $3K-$5K/mo retainer + performance-based pricing tied to documented savings.',
     url: 'https://harmon-digital.com',
     siteName: 'Harmon Digital',
     images: [
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
         url: '/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'Harmon Digital - AI Agents for Business Operations',
+        alt: 'Harmon Digital - AI Operations Consulting',
       },
     ],
     locale: 'en_US',
@@ -54,8 +54,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Harmon Digital | AI Agents for Business Operations',
-    description: 'We install AI agents into your business that run operations 24/7.',
+    title: 'Harmon Digital | AI Operations Consulting',
+    description: 'We help businesses cut operational costs 30-50% with AI-powered automation.',
     images: ['/og-image.png'],
   },
   robots: {

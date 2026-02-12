@@ -241,16 +241,16 @@ export function Hero() {
         >
           <span className={styles.heroLabel}>AI Agent Operations</span>
           <h1 className={styles.headline}>
-            AI agents that run your business. 24/7.
+            Deploy AI agents that run your business operations.
           </h1>
 
           <p className={styles.subtitle}>
-            We install AI agents into your business that handle email, scheduling, project management, and customer service — so your team can focus on what matters.
+            We install AI assistants into your business to handle day-to-day operations automatically. Same setup process every time, customized for your workflows. $5K setup + $2K/month ongoing.
           </p>
 
           <div style={{ display: 'flex', gap: '16px', alignItems: 'center', marginBottom: '48px' }}>
             <a href="#book" className={styles.ctaBtn} style={{ marginBottom: 0 }}>
-              Book a free call
+              See how it works
             </a>
             <Link href="/services/ai-agents" style={{ fontSize: '14px', fontWeight: 500, color: '#888', textDecoration: 'none', transition: 'color 0.2s' }}>
               Learn more →
@@ -376,12 +376,11 @@ export function Hero() {
         <div className={styles.whySectionInner}>
           <div className={styles.whyHeader}>
             <h2 className={styles.whyHeadline}>
-              Owner-dependent businesses<br />
-              sell for less.
+              Your operations are<br />
+              bleeding money.
             </h2>
             <p className={styles.whySubtitle}>
-              Buyers discount heavily for key-person risk. If everything
-              runs through you, expect a lower multiple—or no deal at all.
+              Manual processes, redundant roles, and tribal knowledge are costing you 30-50% more than they should. Most businesses don't realize how much until someone maps it.
             </p>
           </div>
 
@@ -393,11 +392,11 @@ export function Hero() {
                   <circle cx="12" cy="7" r="4"/>
                 </svg>
               </div>
-              <h3 className={styles.benefitTitle}>You are the bottleneck</h3>
+              <h3 className={styles.benefitTitle}>Manual processes everywhere</h3>
               <p className={styles.benefitDesc}>
-                Every decision, every process, every
-                customer issue runs through you.
-                Buyers see risk.
+                Every task requires a person. Email,
+                spreadsheets, copy-paste. It's slow,
+                error-prone, and expensive.
               </p>
             </div>
 
@@ -408,11 +407,11 @@ export function Hero() {
                   <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
                 </svg>
               </div>
-              <h3 className={styles.benefitTitle}>Lower valuations</h3>
+              <h3 className={styles.benefitTitle}>Rising labor costs</h3>
               <p className={styles.benefitDesc}>
-                Key-person risk means lower
-                multiples. Buyers won't pay
-                premium for uncertainty.
+                You keep hiring to keep up.
+                Headcount grows faster than
+                revenue. Margins shrink.
               </p>
             </div>
 
@@ -423,11 +422,11 @@ export function Hero() {
                   <polyline points="12 6 12 12 16 14"/>
                 </svg>
               </div>
-              <h3 className={styles.benefitTitle}>Deals drag on</h3>
+              <h3 className={styles.benefitTitle}>No visibility</h3>
               <p className={styles.benefitDesc}>
-                Due diligence takes longer when
-                there's nothing documented.
-                Buyers get cold feet.
+                You don't know what's working,
+                what's broken, or where the
+                money goes. Decisions are gut calls.
               </p>
             </div>
 
@@ -439,11 +438,11 @@ export function Hero() {
                   <line x1="12" y1="17" x2="12.01" y2="17"/>
                 </svg>
               </div>
-              <h3 className={styles.benefitTitle}>Deals fall through</h3>
+              <h3 className={styles.benefitTitle}>Tribal knowledge</h3>
               <p className={styles.benefitDesc}>
-                Buyers walk away when they see
-                how dependent the business is
-                on you being there.
+                Critical processes live in people's
+                heads. When someone leaves,
+                you start from scratch.
               </p>
             </div>
           </div>
@@ -455,11 +454,11 @@ export function Hero() {
         <div className={styles.servicesSectionInner}>
           <h2 className={styles.servicesHeadline}>
             What we build.<br />
-            Everything buyers want to see.
+            Systems that pay for themselves.
           </h2>
           <p className={styles.servicesSubtitle}>
-            Turnkey operations that prove your business runs without you.
-            The assets that command premium multiples.
+            AI-powered automation that reduces costs, eliminates manual work,
+            and gives you real-time visibility into operations.
           </p>
 
           <div className={styles.servicesGrid}>
@@ -486,7 +485,7 @@ export function Hero() {
               </div>
               <div className={styles.serviceItem}>
                 <span className={styles.serviceIcon}>▧</span>
-                <span>Complete SOPs & Documentation</span>
+                <span>Process Documentation & SOPs</span>
               </div>
             </div>
             <div className={styles.servicesColumn}>
@@ -504,7 +503,7 @@ export function Hero() {
               </div>
               <div className={styles.serviceItem}>
                 <span className={styles.serviceIcon}>△</span>
-                <span>Financial Reporting</span>
+                <span>Cost Tracking Dashboard</span>
               </div>
               <div className={styles.serviceItem}>
                 <span className={styles.serviceIcon}>○</span>
@@ -524,10 +523,10 @@ export function Hero() {
         <div className={styles.howSectionInner}>
           <h2 className={styles.howHeadline}>
             How it works.<br />
-            Buyer-ready in 60-90 days.
+            Results in 90 days.
           </h2>
           <p className={styles.howSubtitle}>
-            We systematize your business. You sell for more. We get paid from the increase.
+            We map your operations, build AI automation, and measure the savings. You see ROI from month one.
           </p>
 
           <div className={styles.stepsContainer}>
@@ -537,11 +536,11 @@ export function Hero() {
                 <div className={styles.stepLine} />
               </div>
               <div className={styles.stepContent}>
-                <h3 className={styles.stepTitle}>Free assessment</h3>
+                <h3 className={styles.stepTitle}>Operations Audit</h3>
                 <p className={styles.stepDesc}>
-                  We analyze your operations, identify what's keeping buyers away,
-                  and show you exactly what needs to be systematized. No cost,
-                  no commitment.
+                  We map every process, quantify what each one costs, and identify
+                  where AI and automation will have the biggest impact. Free for
+                  qualified businesses, or $2,500 applied to your retainer.
                 </p>
               </div>
             </div>
@@ -552,10 +551,11 @@ export function Hero() {
                 <div className={styles.stepLine} />
               </div>
               <div className={styles.stepContent}>
-                <h3 className={styles.stepTitle}>We systematize</h3>
+                <h3 className={styles.stepTitle}>Build & Deploy</h3>
                 <p className={styles.stepDesc}>
-                  Custom automation, AI agents, and documentation—everything
-                  buyers want to see. Owner involvement reduced by 60-70% within 90 days.
+                  Custom AI agents, workflow automation, and integrations — built
+                  specifically for your business. Your team is trained. Systems go
+                  live within 60-90 days.
                 </p>
               </div>
             </div>
@@ -566,10 +566,11 @@ export function Hero() {
                 <div className={styles.stepLine} />
               </div>
               <div className={styles.stepContent}>
-                <h3 className={styles.stepTitle}>You go to market</h3>
+                <h3 className={styles.stepTitle}>Measure & Optimize</h3>
                 <p className={styles.stepDesc}>
-                  List your business with confidence. Buyers see turnkey operations,
-                  complete documentation, and zero key-person risk.
+                  We track cost savings against your baseline: reduced labor hours,
+                  eliminated software, faster throughput. Transparent dashboard
+                  you can see anytime.
                 </p>
               </div>
             </div>
@@ -579,10 +580,11 @@ export function Hero() {
                 <span>4</span>
               </div>
               <div className={styles.stepContent}>
-                <h3 className={styles.stepTitle}>We get paid at closing</h3>
+                <h3 className={styles.stepTitle}>Expand</h3>
                 <p className={styles.stepDesc}>
-                  You sell for more than you would have. We take 8% of the
-                  increase from sale proceeds. You keep the rest.
+                  Quarterly reviews identify new opportunities. As we prove ROI
+                  in one area, we expand to the next. Ongoing partnership, not
+                  a one-time project.
                 </p>
               </div>
             </div>
@@ -600,10 +602,10 @@ export function Hero() {
           <span className={styles.sectionLabel}>Selected Work</span>
           <h2 className={styles.portfolioHeadline}>
             Real results.<br />
-            Businesses we've systematized.
+            Businesses we've optimized.
           </h2>
           <p className={styles.portfolioSubtitle}>
-            Operations portals, AI agents, and automation built for businesses preparing to exit.
+            Operations portals, AI agents, and automation that cut costs and scale businesses.
           </p>
 
           {/* Floating Image Preview */}
@@ -691,12 +693,12 @@ export function Hero() {
       {/* Guarantee Section */}
       <div className={styles.guaranteeSection}>
         <div className={styles.guaranteeSectionInner}>
-          <h2 className={styles.guaranteeHeadline}>Zero-Risk Guarantee</h2>
+          <h2 className={styles.guaranteeHeadline}>Performance Guarantee</h2>
           <p className={styles.guaranteeText}>
-            If your business sells for less than <strong>$150K above</strong> baseline valuation:
-            full refund of upfront cost, no success fee owed, and you keep all the systems we built.
+            If we don't document at least <strong>2x our retainer</strong> in cost savings within the first 6 months:
+            you keep everything we built, and we refund your last month's retainer. We only win when you save.
           </p>
-          <p className={styles.guaranteeTagline}>We only win if you win.</p>
+          <p className={styles.guaranteeTagline}>We eat what we kill.</p>
         </div>
       </div>
 
@@ -704,74 +706,65 @@ export function Hero() {
       <div className={styles.pricingSection} id="pricing">
         <div className={styles.pricingSectionInner}>
           <h2 className={styles.pricingHeadline}>
-            Two ways to work with us.
+            Simple, predictable pricing.
           </h2>
           <p className={styles.pricingSubtitle}>
-            Whether you're growing or exiting, we build the systems you need.
+            One-time setup fee to deploy your agents, then monthly ongoing for hosting, maintenance, and improvements.
           </p>
 
-          {/* Exit Systematization - Two Cards */}
+          {/* AI Agent Deployment - Two Cards */}
           <div className={styles.exitCards}>
             <div className={styles.exitCardLeft}>
-              <h3 className={styles.exitCardName}>Exit Systematization</h3>
-              <p className={styles.exitCardFor}>For businesses selling in 6-12 months.</p>
+              <h3 className={styles.exitCardName}>AI Agent Deployment</h3>
+              <p className={styles.exitCardFor}>$5,000 setup + $2,000/month ongoing</p>
               <ul className={styles.exitCardFeatures}>
-                <li><span className={styles.featureIcon}>✓</span>Full systematization package</li>
-                <li><span className={styles.featureIcon}>⚡</span>AI agents & automation</li>
-                <li><span className={styles.featureIcon}>◎</span>90-day engagement</li>
-                <li><span className={styles.featureIcon}>○</span>Success fee paid from proceeds</li>
+                <li><span className={styles.featureIcon}>✓</span>Full operations audit</li>
+                <li><span className={styles.featureIcon}>⚡</span>Custom AI agents for each role</li>
+                <li><span className={styles.featureIcon}>◎</span>Integration with your tools</li>
+                <li><span className={styles.featureIcon}>○</span>Team training & documentation</li>
+                <li><span className={styles.featureIcon}>✓</span>Hosting & maintenance included</li>
+                <li><span className={styles.featureIcon}>✓</span>Ongoing optimizations</li>
               </ul>
               <a href="#book" className={styles.modelCta}>Get started</a>
             </div>
             <div className={styles.exitCardsArrow}>→</div>
             <div className={styles.exitCardRight}>
-              <h4 className={styles.breakdownTitle}>Example</h4>
+              <h4 className={styles.breakdownTitle}>What you get</h4>
               <div className={styles.breakdownRow}>
-                <span>Business valued today</span>
-                <span>$2,000,000</span>
+                <span>Operations audit & mapping</span>
+                <span>Week 1</span>
               </div>
               <div className={styles.breakdownRow}>
-                <span>Sells for after systematization</span>
-                <span>$2,500,000</span>
+                <span>Custom agent development</span>
+                <span>Weeks 2-3</span>
               </div>
               <div className={styles.breakdownRow}>
-                <span>Valuation increase</span>
-                <span>$500,000</span>
+                <span>Integration & testing</span>
+                <span>Week 4</span>
+              </div>
+              <div className={styles.breakdownRow}>
+                <span>Team training & deployment</span>
+                <span>Week 5</span>
               </div>
               <div className={styles.breakdownDivider} />
               <div className={styles.breakdownRow}>
-                <span>Retainer ($2,500 × 3 months)</span>
-                <span>$7,500</span>
+                <span>Monthly hosting & maintenance</span>
+                <span>Ongoing</span>
               </div>
               <div className={styles.breakdownRow}>
-                <span>Success fee (8% of increase)</span>
-                <span>$40,000</span>
+                <span>Performance monitoring</span>
+                <span>24/7</span>
+              </div>
+              <div className={styles.breakdownRow}>
+                <span>Updates & improvements</span>
+                <span>Monthly</span>
               </div>
               <div className={styles.breakdownDivider} />
               <div className={`${styles.breakdownRow} ${styles.breakdownTotal}`}>
-                <span>You net extra</span>
-                <span>$452,500</span>
+                <span>Ready to go in 30 days</span>
+                <span>Guaranteed</span>
               </div>
-              <div className={`${styles.breakdownRow} ${styles.breakdownRoi}`}>
-                <span>ROI</span>
-                <span>951%</span>
-              </div>
-              <p className={styles.breakdownNote}>If we don't increase the valuation, no success fee is charged.</p>
-            </div>
-          </div>
-
-          {/* Ongoing Retainer - Compact Card */}
-          <div className={styles.retainerCard}>
-            <div className={styles.retainerCardMain}>
-              <div className={styles.retainerCardInfo}>
-                <h3 className={styles.retainerCardName}>Ongoing Retainer</h3>
-                <p className={styles.retainerCardFor}>For growing businesses. Month-to-month.</p>
-              </div>
-              <div className={styles.retainerCardPrice}>
-                <span className={styles.retainerPrice}>$2,500–$5,000</span>
-                <span className={styles.retainerPeriod}>/mo</span>
-              </div>
-              <a href="#book" className={styles.retainerCta}>Get started</a>
+              <p className={styles.breakdownNote}>Custom software integrations available as add-on services.</p>
             </div>
           </div>
         </div>
@@ -794,11 +787,11 @@ export function Hero() {
                 className={styles.faqQuestion}
                 onClick={() => setOpenFaq(openFaq === 0 ? null : 0)}
               >
-                <span>What if my valuation doesn't increase?</span>
+                <span>What does the setup include?</span>
                 <span className={`${styles.faqIcon} ${openFaq === 0 ? styles.faqIconOpen : ''}`}>▼</span>
               </button>
               <div className={`${styles.faqAnswer} ${openFaq === 0 ? styles.faqAnswerOpen : ''}`}>
-                <p>You pay the monthly retainer during the build. Our success fee is 8% of the valuation increase, paid from sale proceeds. If systematization doesn't increase what buyers will pay, we don't collect the success fee.</p>
+                <p>Complete operations audit, custom AI agent development for your team's specific roles, integration with your existing tools, deployment, team training, and documentation. You're fully operational in 30 days.</p>
               </div>
             </div>
             <div className={styles.faqItem}>
@@ -806,11 +799,11 @@ export function Hero() {
                 className={styles.faqQuestion}
                 onClick={() => setOpenFaq(openFaq === 1 ? null : 1)}
               >
-                <span>How do you measure the valuation increase?</span>
+                <span>What's the minimum commitment?</span>
                 <span className={`${styles.faqIcon} ${openFaq === 1 ? styles.faqIconOpen : ''}`}>▼</span>
               </button>
               <div className={`${styles.faqAnswer} ${openFaq === 1 ? styles.faqAnswerOpen : ''}`}>
-                <p>We work with your broker or get an independent assessment to establish your baseline valuation before we start. When you sell, the increase is the difference between what you actually sell for and that baseline. Simple, transparent, no games.</p>
+                <p>3 months after deployment to give your team time to adapt to their new AI agents. Most clients stay much longer as we expand agents to new roles and processes.</p>
               </div>
             </div>
             <div className={styles.faqItem}>
@@ -818,11 +811,11 @@ export function Hero() {
                 className={styles.faqQuestion}
                 onClick={() => setOpenFaq(openFaq === 2 ? null : 2)}
               >
-                <span>How long until my business is ready to sell?</span>
+                <span>What kinds of businesses do you work with?</span>
                 <span className={`${styles.faqIcon} ${openFaq === 2 ? styles.faqIconOpen : ''}`}>▼</span>
               </button>
               <div className={`${styles.faqAnswer} ${openFaq === 2 ? styles.faqAnswerOpen : ''}`}>
-                <p>60-90 days for full implementation. Most clients go to market within 3-4 months of starting. After that, buyers see turnkey operations instead of key-person risk.</p>
+                <p>Service businesses, agencies, distributors, and companies doing $500K+ in revenue with significant manual operations. We also work with PE firms to optimize across portfolio companies. Book a call — we'll tell you honestly if we can help.</p>
               </div>
             </div>
             <div className={styles.faqItem}>
@@ -830,11 +823,11 @@ export function Hero() {
                 className={styles.faqQuestion}
                 onClick={() => setOpenFaq(openFaq === 3 ? null : 3)}
               >
-                <span>What if I'm not ready to sell yet?</span>
+                <span>What if the agents don't work as expected?</span>
                 <span className={`${styles.faqIcon} ${openFaq === 3 ? styles.faqIconOpen : ''}`}>▼</span>
               </button>
               <div className={`${styles.faqAnswer} ${openFaq === 3 ? styles.faqAnswerOpen : ''}`}>
-                <p>We work best with businesses actively preparing to go to market. If you're more than 6 months out, let's talk—we can discuss whether the timing makes sense or if you should reach out when you're closer.</p>
+                <p>We guarantee your agents will be operational and perform their designated tasks within 30 days of deployment. If they don't meet the agreed-upon specifications, we'll continue working until they do — at no extra charge.</p>
               </div>
             </div>
             <div className={styles.faqItem}>
@@ -842,11 +835,23 @@ export function Hero() {
                 className={styles.faqQuestion}
                 onClick={() => setOpenFaq(openFaq === 4 ? null : 4)}
               >
-                <span>Is this right for my business?</span>
+                <span>Do we need to replace our team?</span>
                 <span className={`${styles.faqIcon} ${openFaq === 4 ? styles.faqIconOpen : ''}`}>▼</span>
               </button>
               <div className={`${styles.faqAnswer} ${openFaq === 4 ? styles.faqAnswerOpen : ''}`}>
-                <p>If you're doing $500K+ in revenue and you're the bottleneck, probably yes. We work best with service businesses, agencies, distributors, and companies where buyers would discount for key-person risk. Book a call—we'll tell you honestly if we can help.</p>
+                <p>No. We automate tasks, not people. Most clients redeploy team members to higher-value work rather than cutting headcount. But the cost savings are real either way — fewer hours spent on manual processes means more capacity without more hiring.</p>
+              </div>
+            </div>
+            <div className={styles.faqItem}>
+              <button
+                className={styles.faqQuestion}
+                onClick={() => setOpenFaq(openFaq === 5 ? null : 5)}
+              >
+                <span>Can you work with multiple companies in our portfolio?</span>
+                <span className={`${styles.faqIcon} ${openFaq === 5 ? styles.faqIconOpen : ''}`}>▼</span>
+              </button>
+              <div className={`${styles.faqAnswer} ${openFaq === 5 ? styles.faqAnswerOpen : ''}`}>
+                <p>Yes — this is one of our strengths. We develop repeatable automation playbooks across portfolio companies, so each engagement gets faster and cheaper. One relationship, multiple wins.</p>
               </div>
             </div>
           </div>
