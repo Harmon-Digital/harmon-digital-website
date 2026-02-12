@@ -491,7 +491,7 @@ export default function AIAgentsPage() {
                 <span className={`${styles.faqIcon} ${openFaq === 4 ? styles.faqIconOpen : ''}`}>▼</span>
               </button>
               <div className={`${styles.faqAnswer} ${openFaq === 4 ? styles.faqAnswerOpen : ''}`}>
-                <p>$5K one-time setup + $2K/month for ongoing management and support. This includes custom agent development, deployment, training, and continuous optimization. Book a call and we'll walk through exactly what this looks like for your business.</p>
+                <p>$5K one-time setup + $1.5–2K/month for ongoing management and support. This includes custom agent development, deployment, training, and continuous optimization. Book a call and we'll walk through exactly what this looks like for your business.</p>
               </div>
             </div>
           </div>
