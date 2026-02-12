@@ -688,23 +688,6 @@ export function Hero() {
         </div>
       </div>
 
-      {/* Testimonial Section */}
-      <div className={styles.testimonialSection}>
-        <div className={styles.testimonialSectionInner}>
-          <div className={styles.testimonialContainer}>
-            <div className={styles.testimonial}>
-              <blockquote className={styles.testimonialQuote}>
-                "Isaac and the Harmon Digital team have been a game changer for ProducifyX. Before working with them, we were buried in manual processes and spending way too much time on things that should have been automated. Isaac came in, mapped out our workflows, and built us a custom platform that handles what used to take hours. The time savings alone have been huge, but what really stands out is how much smoother everything runs now. Our team can actually focus on growing the business instead of putting out fires."
-              </blockquote>
-              <cite className={styles.testimonialAuthor}>
-                <strong>George Zimny</strong>
-                <span>Co-Founder, ProducifyX</span>
-              </cite>
-            </div>
-          </div>
-        </div>
-      </div>
-
       {/* Guarantee Section */}
       <div className={styles.guaranteeSection}>
         <div className={styles.guaranteeSectionInner}>
