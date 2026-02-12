@@ -371,27 +371,6 @@ export function Hero() {
         </motion.div>
       </div>
 
-      {/* Testimonial Section */}
-      <div className={styles.testimonialSection}>
-        <div className={styles.testimonialSectionInner}>
-          <blockquote className={styles.testimonial}>
-            <p className={styles.testimonialText}>
-              "Isaac and the Harmon Digital team have been a game changer for ProducifyX. 
-              Isaac came in, mapped out our workflows, and built us a custom platform that 
-              handles what used to take hours. The time savings alone have been huge, but 
-              what really stands out is how much smoother everything runs now. Our team can 
-              actually focus on growing the business instead of putting out fires."
-            </p>
-            <footer className={styles.testimonialFooter}>
-              <div className={styles.testimonialAuthor}>
-                <strong>George Zimny</strong>
-                <span>Co-Founder, ProducifyX</span>
-              </div>
-            </footer>
-          </blockquote>
-        </div>
-      </div>
-
       {/* Problem Section */}
       <div className={styles.whySection}>
         <div className={styles.whySectionInner}>
