@@ -25,9 +25,11 @@ export function Header() {
         </a>
 
         <nav className={styles.nav}>
-          <a href="/services/ai-agents" className={styles.navLink}>AI Agents</a>
+          <a href="/services" className={styles.navLink}>Services</a>
+          <a href="/portfolio" className={styles.navLink}>Work</a>
+          <a href="/about" className={styles.navLink}>About</a>
           <a href="#book" className={styles.ctaBtn}>
-            Book a call
+            Book my free audit
           </a>
         </nav>
       </div>

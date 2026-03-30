@@ -3,33 +3,22 @@ import { Resend } from 'resend'
 
 const resend = new Resend(process.env.RESEND_API_KEY)
 
-// Business stage labels
-const businessStageLabels: Record<string, string> = {
-  'growing': 'Growing / scaling',
-  'acquired': 'Recently acquired',
-  'exit-1-3': 'Planning to sell in 1-3 years',
-  'exit-3-7': 'Planning to sell in 3-7 years',
-  'long-term': 'Building for the long haul',
-}
-
-// Looking for labels
 const lookingForLabels: Record<string, string> = {
-  'build': 'Build internal software/tools',
+  'build': 'Build custom software or an app',
+  'ai': 'AI agents or AI consulting',
   'automate': 'Automate existing processes',
-  'both': 'Both - full systematization',
-  'consulting': 'Just consulting/advice',
+  'website': 'Website or web app',
+  'consulting': 'Not sure yet — just want to talk',
 }
 
 export async function POST(request: Request) {
   try {
     const body = await request.json()
-    const { name, email, company, website, businessStage, lookingFor, needs } = body
+    const { name, email, lookingFor, needs } = body
 
     const firstName = name.split(' ')[0]
-    const businessStageLabel = businessStageLabels[businessStage] || businessStage || 'Not specified'
-    const lookingForLabel = lookingForLabels[lookingFor] || lookingFor
+    const lookingForLabel = lookingForLabels[lookingFor] || lookingFor || 'Not specified'
 
-    // Email template wrapper
     const emailWrapper = (content: string) => `
       <!DOCTYPE html>
       <html>
@@ -82,13 +71,13 @@ export async function POST(request: Request) {
       </html>
     `
 
-    // Internal notification email
+    // Internal notification
     const internalEmailContent = `
       <h1 style="color: #1a1a1a; font-size: 24px; font-weight: 500; margin: 0 0 8px 0;">
         New Lead
       </h1>
       <p style="color: #666; font-size: 14px; margin: 0 0 32px 0;">
-        Someone submitted the contact form on your website.
+        Someone submitted the contact form on harmon-digital.com.
       </p>
 
       <table width="100%" cellpadding="0" cellspacing="0">
@@ -108,36 +97,14 @@ export async function POST(request: Request) {
         </tr>
         <tr>
           <td style="padding: 16px 0; border-bottom: 1px solid #eee;">
-            <p style="color: #888; font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; margin: 0 0 4px 0;">Company</p>
-            <p style="color: #1a1a1a; font-size: 16px; margin: 0;">${company}</p>
-          </td>
-        </tr>
-        ${website ? `
-        <tr>
-          <td style="padding: 16px 0; border-bottom: 1px solid #eee;">
-            <p style="color: #888; font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; margin: 0 0 4px 0;">Website</p>
-            <p style="color: #1a1a1a; font-size: 16px; margin: 0;">
-              <a href="${website}" style="color: #3959ff; text-decoration: none;">${website}</a>
-            </p>
-          </td>
-        </tr>
-        ` : ''}
-        <tr>
-          <td style="padding: 16px 0; border-bottom: 1px solid #eee;">
-            <p style="color: #888; font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; margin: 0 0 4px 0;">Business Stage</p>
-            <p style="color: #1a1a1a; font-size: 16px; margin: 0;">${businessStageLabel}</p>
-          </td>
-        </tr>
-        <tr>
-          <td style="padding: 16px 0; border-bottom: 1px solid #eee;">
             <p style="color: #888; font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; margin: 0 0 4px 0;">Looking For</p>
             <p style="color: #1a1a1a; font-size: 16px; margin: 0;">${lookingForLabel}</p>
           </td>
         </tr>
         <tr>
           <td style="padding: 16px 0;">
-            <p style="color: #888; font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; margin: 0 0 4px 0;">What They Want to Build</p>
-            <p style="color: #1a1a1a; font-size: 16px; margin: 0; line-height: 1.6;">${needs}</p>
+            <p style="color: #888; font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; margin: 0 0 4px 0;">Project Details</p>
+            <p style="color: #1a1a1a; font-size: 16px; margin: 0; line-height: 1.6;">${needs || 'Not provided'}</p>
           </td>
         </tr>
       </table>
@@ -149,18 +116,18 @@ export async function POST(request: Request) {
       </div>
     `
 
-    // User confirmation email
+    // User confirmation
     const userEmailContent = `
       <h1 style="color: #1a1a1a; font-size: 24px; font-weight: 500; margin: 0 0 24px 0;">
         Thanks for reaching out, ${firstName}!
       </h1>
 
       <p style="color: #444; font-size: 16px; line-height: 1.6; margin: 0 0 16px 0;">
-        We received your message and we're excited to learn more about ${company}.
+        We got your message and we're looking forward to learning more about your project.
       </p>
 
       <p style="color: #444; font-size: 16px; line-height: 1.6; margin: 0 0 32px 0;">
-        If you haven't already, book a time on our calendar so we can chat about what you're looking to build.
+        If you haven't already, pick a time on our calendar so we can chat about what you're looking to build.
       </p>
 
       <div style="margin-bottom: 32px;">
@@ -171,33 +138,35 @@ export async function POST(request: Request) {
 
       <div style="border-top: 1px solid #eee; padding-top: 24px; margin-top: 24px;">
         <p style="color: #666; font-size: 14px; line-height: 1.6; margin: 0 0 8px 0;">
-          Here's a summary of what you shared:
+          Here's what you shared:
         </p>
         <div style="background: #f5f5f5; border-radius: 8px; padding: 16px; margin-top: 12px;">
           <p style="color: #666; font-size: 13px; margin: 0 0 8px 0;">
             <span style="color: #888;">Looking for:</span> <span style="color: #1a1a1a;">${lookingForLabel}</span>
           </p>
+          ${needs ? `
           <p style="color: #666; font-size: 13px; margin: 0;">
             <span style="color: #888;">Project:</span> <span style="color: #1a1a1a;">${needs}</span>
           </p>
+          ` : ''}
         </div>
       </div>
 
       <p style="color: #666; font-size: 14px; line-height: 1.6; margin: 32px 0 0 0;">
         Talk soon,<br />
-        <span style="color: #1a1a1a;">The Harmon Digital Team</span>
+        <span style="color: #1a1a1a;">Isaac @ Harmon Digital</span>
       </p>
     `
 
-    // Send notification email to Harmon Digital
+    // Send notification to Harmon Digital
     await resend.emails.send({
       from: 'Harmon Digital <notifications@notifications.harmon-digital.com>',
       to: ['info@harmon-digital.com'],
-      subject: `New Lead: ${company} - ${name}`,
+      subject: `New Lead: ${name}`,
       html: emailWrapper(internalEmailContent),
     })
 
-    // Send confirmation email to the user
+    // Send confirmation to user
     await resend.emails.send({
       from: 'Harmon Digital <hello@notifications.harmon-digital.com>',
       to: [email],

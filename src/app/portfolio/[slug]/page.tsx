@@ -10,6 +10,7 @@ const projects = [
     title: "Mike's Fences",
     slug: "mikes-fences",
     category: "AI Agent",
+    heroImage: "/portfolio/mikesfences-hero.jpg",
     description: "Custom appointment setting agent for a custom wood fence company.",
     fullDescription: "Mike's Fences builds custom wood fences that enhance the privacy, security, and beauty of properties. But Mike was missing leads because he couldn't respond fast enough—customers would submit quote requests and wait days for a callback. We built a custom appointment setting agent that responds immediately, qualifies the lead, gathers project details, and schedules estimates automatically. Now Mike focuses on building fences, not playing phone tag.",
     year: "2025",
@@ -53,9 +54,50 @@ const projects = [
     ],
   },
   {
+    title: "SunMed Growers",
+    slug: "sunmed-growers",
+    category: "Custom Software",
+    heroImage: "/portfolio/sunmed-hero.jpg",
+    description: "Custom investor tracker and document management for a $20M debt round.",
+    fullDescription: "SunMed Growers was raising a $20M debt round and needed a way to track investors, manage documents, and streamline the entire capital raise process. They were juggling spreadsheets, email threads, and manual document sends — a nightmare at that scale. We built a custom tracker and document sending platform that centralized investor communications, automated document distribution, and gave their team real-time visibility into the status of every investor in the pipeline.",
+    year: "2025",
+    services: ["Investor Tracking Platform", "Automated Document Distribution", "Pipeline Dashboard", "Status Tracking", "Investor Communications"],
+    results: ["Centralized $20M raise process", "Eliminated manual document sends", "Real-time investor pipeline visibility", "Streamlined due diligence"],
+    stats: [
+      { value: "$20M", label: "Debt Round" },
+      { value: "0", label: "Manual Doc Sends" },
+      { value: "Real-Time", label: "Pipeline Tracking" },
+      { value: "Custom", label: "Built to Fit" },
+    ],
+    timeline: "6 weeks",
+    testimonial: null,
+    screenshots: [],
+  },
+  {
+    title: "Noble TeleHealth",
+    slug: "noble-telehealth",
+    category: "Custom Application",
+    heroImage: "/portfolio/noble-hero.jpg",
+    description: "Custom healthcare application that replaced manual booking and scheduling.",
+    fullDescription: "Noble TeleHealth needed a custom application to replace their manual booking and scheduling process. Patients and providers were stuck in a clunky workflow that led to missed appointments, double-bookings, and hours of administrative overhead. We built a custom healthcare application that handles the entire scheduling flow — patients book directly, providers manage availability, and the system handles confirmations and reminders automatically.",
+    year: "2025",
+    services: ["Custom Booking Application", "Provider Scheduling", "Patient Portal", "Automated Reminders", "Calendar Integration"],
+    results: ["Eliminated manual scheduling", "Zero double-bookings", "Reduced admin overhead", "Improved patient experience"],
+    stats: [
+      { value: "0", label: "Double Bookings" },
+      { value: "100%", label: "Automated Scheduling" },
+      { value: "Custom", label: "Healthcare App" },
+      { value: "24/7", label: "Patient Booking" },
+    ],
+    timeline: "8 weeks",
+    testimonial: null,
+    screenshots: [],
+  },
+  {
     title: "Neighbors Bank",
     slug: "neighbors-bank",
     category: "AI Agent",
+    heroImage: "/portfolio/neighborsbank-hero.jpg",
     description: "RAG-powered Slack bot for 50+ underwriters.",
     fullDescription: "Neighbors Bank is a national mortgage lender with 50+ underwriters handling USDA, FHA, VA, and conventional loans. Their team was wasting hours searching through shared drives and documents, with manual escalation processes via emails and manager tags. We built a custom Slack bot using RAG technology—underwriters ask questions in plain English and get instant answers from internal documents, with automated escalations and custom commands for advanced workflows.",
     year: "2025",
@@ -73,11 +115,7 @@ const projects = [
       author: "Operations Lead",
       role: "Neighbors Bank"
     },
-    screenshots: [
-      { src: "/portfolio/neighborsbank/slack-conversation.png", alt: "n8n Workflow", large: true },
-      { src: "/portfolio/neighborsbank/slack-bot.png", alt: "Slack Bot Interface", large: true },
-      { src: "/portfolio/neighborsbank/rag-pipeline.png", alt: "RAG Pipeline Architecture", large: true },
-    ],
+    screenshots: [],
   },
   {
     title: "Happy Endings",
@@ -107,23 +145,73 @@ const projects = [
     ],
   },
   {
-    title: "Table Rock Black Lights",
-    slug: "table-rock-black-lights",
-    category: "E-Commerce & Automation",
-    description: "Website redesign and automated order workflows.",
-    fullDescription: "Table Rock Black Lights sells fishing lighting equipment but was held back by an outdated website lacking e-commerce capabilities and automated workflows. We redesigned their website with modern e-commerce functionality and built automated order workflows that handle everything from purchase to fulfillment. Now orders flow smoothly and the team spends less time on manual data entry.",
-    year: "2024",
-    services: ["Website Redesign", "E-Commerce Setup", "Automated Order Workflows", "Payment Integration", "Inventory Sync"],
-    results: ["Modern e-commerce presence", "Automated order processing", "Reduced manual data entry", "Improved customer experience"],
+    title: "Flume Internet",
+    slug: "flume-internet",
+    category: "Custom CRM",
+    heroImage: "/portfolio/flume-hero.jpg",
+    description: "Custom CRM for a growing internet service provider.",
+    fullDescription: "Flume Internet was managing their entire customer pipeline and operations manually — spreadsheets, email threads, and disconnected tools. We built them a custom CRM on Airtable and n8n that handles the full customer lifecycle: lead tracking, pipeline management, customer onboarding, support tickets, and automated follow-ups. Everything connected, nothing falling through the cracks.",
+    year: "2025",
+    services: ["Custom Airtable CRM", "n8n Automation", "Pipeline Management", "Customer Onboarding Workflows", "Automated Follow-ups", "Reporting Dashboard"],
+    results: ["Full pipeline visibility", "Eliminated manual tracking", "Automated customer onboarding", "Connected all operations in one system"],
     stats: [
-      { value: "100%", label: "Order Automation" },
-      { value: "New", label: "E-Commerce Site" },
-      { value: "0", label: "Manual Entry" },
-      { value: "2", label: "Month Build" },
+      { value: "1", label: "Centralized CRM" },
+      { value: "0", label: "Manual Tracking" },
+      { value: "100%", label: "Pipeline Visibility" },
+      { value: "Custom", label: "Built to Fit" },
     ],
-    timeline: "2 months",
+    timeline: "4 weeks",
     testimonial: null,
     screenshots: [],
+  },
+  {
+    title: "Unstack",
+    slug: "unstack",
+    category: "SaaS Product",
+    heroImage: "/portfolio/unstack-hero.jpg",
+    description: "AI-powered business operations platform built by Harmon Digital.",
+    fullDescription: "Unstack is a SaaS product built and operated by Harmon Digital. It's an AI-powered business operations platform that gives each organization its own workspace — complete with AI agents, workflow automation, and custom tools. Built from the ground up as a productized version of the systems we build for clients. Organizations get their own subdomain and a fully managed AI-enabled environment to run their operations.",
+    year: "2025",
+    services: ["Full-Stack SaaS Development", "AI Agent Infrastructure", "Multi-Tenant Architecture", "Organization Management", "Marketplace", "Custom Workspace Builder"],
+    results: ["Multiple organizations onboarded", "AI-powered operations for each client", "Fully productized platform", "Recurring SaaS revenue"],
+    stats: [
+      { value: "10+", label: "Organizations" },
+      { value: "AI", label: "Powered" },
+      { value: "SaaS", label: "Product" },
+      { value: "Live", label: "Platform" },
+    ],
+    timeline: "Ongoing",
+    testimonial: null,
+    screenshots: [],
+  },
+  {
+    title: "ProducifyX",
+    slug: "producifyx",
+    category: "Custom Software",
+    description: "Custom platform replacing hours of manual work with automated workflows.",
+    fullDescription: "ProducifyX was buried in manual processes and spending way too much time on things that should have been automated. We mapped out their workflows and built a custom platform that handles what used to take hours. The time savings alone have been huge, but what really stands out is how much smoother everything runs now. Their team can actually focus on growing the business instead of putting out fires.",
+    year: "2025",
+    services: ["Custom Platform", "Workflow Automation", "Centralized Dashboard", "Process Mapping", "Team Onboarding"],
+    results: ["Hours of manual work eliminated", "All workflows centralized", "Team focused on growth", "Smoother day-to-day operations"],
+    stats: [
+      { value: "5-8", label: "Hrs Saved/Week" },
+      { value: "100%", label: "Workflows Automated" },
+      { value: "1", label: "Platform" },
+      { value: "Custom", label: "Built to Fit" },
+    ],
+    timeline: "6 weeks",
+    testimonial: {
+      quote: "Isaac and the Harmon Digital team have been a game changer for ProducifyX. Before working with them, we were buried in manual processes and spending way too much time on things that should have been automated. Isaac came in, mapped out our workflows, and built us a custom platform that handles what used to take hours. The time savings alone have been huge, but what really stands out is how much smoother everything runs now. Our team can actually focus on growing the business instead of putting out fires. If you're a business owner who feels like you're doing too much yourself, talk to Isaac. He'll find where you're wasting time and fix it.",
+      author: "George Zimny",
+      role: "Co-Founder, ProducifyX"
+    },
+    video: "/testimonial-producifyx.mp4",
+    videoPoster: "/testimonial-poster.jpg",
+    screenshots: [
+      { src: "/portfolio/producifyx/hero.jpg", alt: "ProducifyX Platform", large: true },
+      { src: "/portfolio/producifyx/admin-dashboard.png", alt: "Admin Dashboard", large: true },
+      { src: "/portfolio/producifyx/admin-overview.png", alt: "Admin Overview" },
+    ],
   },
 ]
 
@@ -180,6 +268,12 @@ export default function ProjectPage() {
               alt={project.screenshots[0].alt}
               className={styles.screenshotImage}
             />
+          ) : project.heroImage ? (
+            <img
+              src={project.heroImage}
+              alt={project.title}
+              className={styles.screenshotImage}
+            />
           ) : (
             <div className={styles.screenshotPlaceholder}>
               <div className={styles.placeholderContent}>
@@ -210,6 +304,33 @@ export default function ProjectPage() {
             </div>
           ))}
         </div>
+
+        {/* Video Testimonial */}
+        {project.video && (
+          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', margin: '48px 0' }}>
+            <video
+              controls
+              preload="metadata"
+              playsInline
+              poster={project.videoPoster}
+              style={{ width: '100%', maxWidth: '640px', borderRadius: '12px', background: '#111' }}
+            >
+              <source src={project.video} type="video/mp4" />
+            </video>
+          </div>
+        )}
+
+        {/* Testimonial */}
+        {project.testimonial && (
+          <div style={{ margin: '48px 0', padding: '32px', background: '#141414', borderRadius: '12px' }}>
+            <p style={{ fontSize: '17px', lineHeight: 1.7, color: '#ccc', margin: '0 0 16px 0', fontStyle: 'italic' }}>
+              &ldquo;{project.testimonial.quote}&rdquo;
+            </p>
+            <p style={{ fontSize: '14px', color: '#3959ff', fontWeight: 500, margin: 0 }}>
+              {project.testimonial.author} — {project.testimonial.role}
+            </p>
+          </div>
+        )}
 
         {/* What We Built / Results */}
         <div className={styles.twoColumn}>
@@ -253,23 +374,12 @@ export default function ProjectPage() {
         </div>
       )}
 
-      {/* Testimonial */}
-      {project.testimonial && (
-        <div className={styles.testimonial}>
-          <div className={styles.quoteIcon}>"</div>
-          <p className={styles.quoteText}>{project.testimonial.quote}</p>
-          <p className={styles.quoteAuthor}>
-            <strong>{project.testimonial.author}</strong> — {project.testimonial.role}
-          </p>
-        </div>
-      )}
-
       {/* CTA */}
       <div className={styles.cta}>
         <h2 className={styles.ctaTitle}>Want results like this?</h2>
         <p className={styles.ctaSubtitle}>Let's talk about what we can build for your business.</p>
         <Link href="/#book" className={styles.ctaButton}>
-          Book a call
+          Book my free audit
         </Link>
       </div>
 

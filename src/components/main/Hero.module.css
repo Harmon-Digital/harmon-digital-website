@@ -84,25 +84,30 @@
 /* Trust Section */
 .trust {
   margin-top: 24px;
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .trustLabel {
   font-size: 14px;
   color: #888;
   margin: 0 0 16px 0;
+  text-align: center;
 }
 
 .logoSlider {
   width: 100%;
   overflow: hidden;
-  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
-  -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
 }
 
 .logoTrack {
   display: flex;
-  gap: 40px;
-  animation: slide 50s linear infinite;
+  gap: 60px;
+  animation: slide 40s linear infinite;
   width: max-content;
 }
 
@@ -114,7 +119,7 @@
 }
 
 .clientLogo {
-  height: 24px;
+  height: 40px;
   width: auto;
   opacity: 0.6;
   filter: grayscale(100%) brightness(2);
@@ -130,8 +135,62 @@
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-50%);
+    transform: translateX(-33.33%);
   }
+}
+
+/* Centered Hero */
+.heroCenter {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 80px 24px 60px;
+  min-height: calc(100vh - 140px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.heroCenterContent {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.heroHeadline {
+  font-size: clamp(32px, 5vw, 52px);
+  font-weight: 400;
+  line-height: 1.15;
+  color: #fff;
+  margin: 0 0 24px 0;
+  letter-spacing: -0.03em;
+}
+
+.heroSubtitle {
+  font-size: 17px;
+  line-height: 1.6;
+  color: #888;
+  margin: 0 0 40px 0;
+  max-width: 520px;
+}
+
+.heroCta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 40px;
+  background: #fff;
+  color: #000;
+  font-size: 15px;
+  font-weight: 500;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: opacity 0.2s;
+  margin-bottom: 48px;
+}
+
+.heroCta:hover {
+  opacity: 0.9;
 }
 
 /* Vertical Divider */
@@ -146,6 +205,8 @@
   position: relative;
   display: flex;
   gap: 20px;
+  flex: 1;
+  min-width: 0;
 }
 
 /* Dashboard Card */
@@ -478,6 +539,24 @@
   margin: 0;
 }
 
+.sectionCta {
+  display: inline-flex;
+  align-items: center;
+  margin-top: 40px;
+  padding: 14px 32px;
+  background: #fff;
+  color: #000;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.sectionCta:hover {
+  opacity: 0.9;
+}
+
 /* How It Works Section */
 .howSection {
   background: #0a0a0a;
@@ -788,13 +867,17 @@
 /* Guarantee Section */
 .guaranteeSection {
   background: #0a0a0a;
-  padding: var(--section-padding);
+  padding: 40px 0 100px;
 }
 
 .guaranteeSectionInner {
   max-width: var(--section-max-width);
   margin: 0 auto;
   padding: 0 var(--section-padding-x);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
 .guaranteeHeadline {
@@ -823,6 +906,138 @@
   color: #3959ff;
   font-weight: 500;
   margin: 0;
+}
+
+.videoWrapper {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  margin-bottom: 32px;
+  background: #111;
+}
+
+.videoWrapper:hover .videoPlayBtn {
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+.videoElement {
+  width: 100%;
+  display: block;
+  border-radius: 12px;
+}
+
+.videoPlayBtn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 56px;
+  height: 56px;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+  backdrop-filter: blur(4px);
+}
+
+.videoPlaying .videoPlayBtn {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.videoPlaying .videoElement {
+  max-width: 640px;
+}
+
+/* Hero Form */
+.heroForm {
+  background: #141414;
+  border: 1px solid #222;
+  border-radius: 16px;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+
+.heroFormTitle {
+  font-size: 18px;
+  font-weight: 500;
+  color: #fff;
+  margin: 0 0 8px 0;
+}
+
+.heroFormGroup {
+  display: flex;
+  flex-direction: column;
+}
+
+.heroFormInput,
+.heroFormSelect,
+.heroFormTextarea {
+  background: #0a0a0a;
+  border: 1px solid #333;
+  border-radius: 8px;
+  padding: 12px 16px;
+  font-size: 14px;
+  color: #fff;
+  font-family: inherit;
+  transition: border-color 0.2s;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.heroFormInput::placeholder,
+.heroFormTextarea::placeholder {
+  color: #666;
+}
+
+.heroFormInput:focus,
+.heroFormSelect:focus,
+.heroFormTextarea:focus {
+  outline: none;
+  border-color: #555;
+}
+
+.heroFormSelect {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12' fill='%23666'%3E%3Cpath d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  padding-right: 40px;
+}
+
+.heroFormSelect option {
+  background: #141414;
+  color: #fff;
+}
+
+.heroFormTextarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.heroFormSubmit {
+  background: #fff;
+  color: #000;
+  border: none;
+  border-radius: 8px;
+  padding: 14px 32px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: opacity 0.2s;
+  font-family: inherit;
+}
+
+.heroFormSubmit:hover {
+  opacity: 0.9;
 }
 
 /* Pricing Section */
@@ -1835,6 +2050,7 @@
 /* Qualification Form */
 .qualifyForm {
   max-width: 600px;
+  width: 100%;
 }
 
 .formSubtitle {

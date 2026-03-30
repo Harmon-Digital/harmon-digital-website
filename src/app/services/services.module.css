@@ -1,0 +1,194 @@
+.page {
+  --section-max-width: 700px;
+  --section-padding: 100px 0;
+  --section-padding-x: 24px;
+  --heading-size: clamp(26px, 3vw, 36px);
+
+  min-height: 100vh;
+  background: #0a0a0a;
+  padding-top: 80px;
+}
+
+@media (max-width: 480px) {
+  .page {
+    --section-padding-x: 40px;
+  }
+}
+
+/* Hero */
+.hero {
+  padding: 60px 0 0;
+}
+
+.heroInner {
+  max-width: var(--section-max-width);
+  margin: 0 auto;
+  padding: 0 var(--section-padding-x);
+}
+
+.label {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 500;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 24px;
+}
+
+.headline {
+  font-size: clamp(28px, 4vw, 42px);
+  font-weight: 400;
+  color: #fff;
+  margin: 0 0 16px;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.subtitle {
+  font-size: 16px;
+  color: #888;
+  margin: 0 0 32px;
+  line-height: 1.6;
+  max-width: 500px;
+}
+
+.ctaBtn {
+  display: inline-flex;
+  align-items: center;
+  padding: 14px 32px;
+  background: #fff;
+  color: #000;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.ctaBtn:hover {
+  opacity: 0.9;
+}
+
+/* Service Sections */
+.section {
+  padding: var(--section-padding);
+}
+
+.sectionInner {
+  max-width: var(--section-max-width);
+  margin: 0 auto;
+  padding: 0 var(--section-padding-x);
+}
+
+.sectionHeadline {
+  font-size: var(--heading-size);
+  font-weight: 400;
+  line-height: 1.2;
+  color: #fff;
+  margin: 0 0 16px 0;
+  letter-spacing: -0.02em;
+}
+
+.sectionSubtitle {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #888;
+  margin: 0 0 48px 0;
+  max-width: 500px;
+}
+
+/* Cards Grid - matches homepage benefit cards */
+.cardsGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.card {
+  background: #141414;
+  border-radius: 12px;
+  padding: 32px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: default;
+}
+
+.card:hover {
+  transform: scale(1.03) rotate(-1deg);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.cardIcon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+  color: #888;
+}
+
+.cardTitle {
+  font-size: 18px;
+  font-weight: 500;
+  color: #fff;
+  margin: 0 0 12px 0;
+}
+
+.cardDesc {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #888;
+  margin: 0;
+}
+
+.sectionCta {
+  display: inline-flex;
+  align-items: center;
+  margin-top: 40px;
+  padding: 14px 32px;
+  background: #fff;
+  color: #000;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.sectionCta:hover {
+  opacity: 0.9;
+}
+
+/* CTA Section */
+.ctaSection {
+  padding: var(--section-padding);
+}
+
+.ctaSectionInner {
+  max-width: var(--section-max-width);
+  margin: 0 auto;
+  padding: 0 var(--section-padding-x);
+  text-align: center;
+}
+
+.ctaHeadline {
+  font-size: var(--heading-size);
+  font-weight: 400;
+  line-height: 1.2;
+  color: #fff;
+  margin: 0 0 12px 0;
+  letter-spacing: -0.02em;
+}
+
+.ctaSubtitle {
+  font-size: 16px;
+  color: #888;
+  margin: 0 0 32px;
+}
+
+@media (max-width: 640px) {
+  .cardsGrid {
+    grid-template-columns: 1fr;
+  }
+}

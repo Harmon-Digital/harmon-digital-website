@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import '@/styles/main.css'
 import { Header } from '@/components/main/Header'
+import { Footer } from '@/components/main/Footer'
 import { GoogleAnalytics } from '@/components/analytics/GoogleAnalytics'
 import { MetaPixel } from '@/components/analytics/MetaPixel'
 import {
@@ -12,20 +13,20 @@ import {
 
 export const metadata: Metadata = {
   title: {
-    default: 'Harmon Digital | AI Agents for Business Operations',
+    default: 'Harmon Digital | Custom Software, AI & Automation',
     template: '%s | Harmon Digital',
   },
-  description: 'We install AI agents into your business that handle email, scheduling, project management, reporting, and customer service — 24/7.',
+  description: 'We build custom software, AI agents, websites, and automation for businesses. Not templates — software built around how your team actually works.',
   keywords: [
     'custom software development',
+    'AI agents for business',
     'business automation',
-    'AI development',
-    'internal tools',
+    'custom internal tools',
     'workflow automation',
-    'business systems',
+    'web app development',
+    'AI consulting',
     'software for small business',
-    'operations software',
-    'AI agents',
+    'custom web development',
     'process automation',
   ],
   authors: [{ name: 'Harmon Digital, LLC' }],
@@ -37,8 +38,8 @@ export const metadata: Metadata = {
     canonical: 'https://harmon-digital.com',
   },
   openGraph: {
-    title: 'Harmon Digital | AI Agents for Business Operations',
-    description: 'We install AI agents into your business that handle email, scheduling, project management, reporting, and customer service — 24/7.',
+    title: 'Harmon Digital | Custom Software, AI & Automation',
+    description: 'We build custom software, AI agents, websites, and automation for businesses. Not templates — software built around how your team actually works.',
     url: 'https://harmon-digital.com',
     siteName: 'Harmon Digital',
     images: [
@@ -46,7 +47,7 @@ export const metadata: Metadata = {
         url: '/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'Harmon Digital - AI Agents for Business Operations',
+        alt: 'Harmon Digital - Custom Software, AI & Automation',
       },
     ],
     locale: 'en_US',
@@ -54,8 +55,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Harmon Digital | AI Agents for Business Operations',
-    description: 'We install AI agents into your business that run operations 24/7.',
+    title: 'Harmon Digital | Custom Software, AI & Automation',
+    description: 'Custom software, AI agents, and automation built for your business.',
     images: ['/og-image.png'],
   },
   robots: {
@@ -93,6 +94,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <MetaPixel />
         <Header />
         <main>{children}</main>
+        <Footer />
       </body>
     </html>
   )

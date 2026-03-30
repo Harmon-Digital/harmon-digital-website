@@ -23,6 +23,22 @@ const projects = [
     logo: "/clients/2.png",
   },
   {
+    title: "SunMed Growers",
+    slug: "sunmed-growers",
+    category: "Custom Software",
+    description: "Custom investor tracker and document management platform for a $20M debt round.",
+    year: "2025",
+    logo: null,
+  },
+  {
+    title: "Noble TeleHealth",
+    slug: "noble-telehealth",
+    category: "Custom Application",
+    description: "Custom healthcare application that replaced manual booking and scheduling with an automated patient portal.",
+    year: "2025",
+    logo: null,
+  },
+  {
     title: "Neighbors Bank",
     slug: "neighbors-bank",
     category: "AI Agent",
@@ -39,11 +55,27 @@ const projects = [
     logo: "/clients/10.png",
   },
   {
-    title: "Table Rock Black Lights",
-    slug: "table-rock-black-lights",
-    category: "E-Commerce & Automation",
-    description: "Website redesign and automated order workflows for a fishing lighting company. Modernized e-commerce with streamlined operations.",
-    year: "2024",
+    title: "Flume Internet",
+    slug: "flume-internet",
+    category: "Custom CRM",
+    description: "Custom CRM built on Airtable and n8n for a growing internet service provider. Full pipeline tracking, customer management, and automated workflows.",
+    year: "2025",
+    logo: null,
+  },
+  {
+    title: "Unstack",
+    slug: "unstack",
+    category: "SaaS Product",
+    description: "AI-powered business operations platform built by Harmon Digital. Gives businesses their own AI-enabled workspace.",
+    year: "2025",
+    logo: null,
+  },
+  {
+    title: "ProducifyX",
+    slug: "producifyx",
+    category: "Custom Software",
+    description: "Custom platform replacing hours of manual work with automated workflows and a centralized dashboard.",
+    year: "2025",
     logo: null,
   },
 ]
@@ -64,21 +96,26 @@ export default function PortfolioPage() {
       <div className={styles.header}>
         <span className={styles.label}>Our Work</span>
         <h1 className={styles.title}>
-          Systems we've built.<br />
-          Businesses transformed.
+          Software we've shipped.<br />
+          Results that matter.
         </h1>
         <p className={styles.subtitle}>
-          Real projects for real businesses. Each one designed to let the owner step back.
+          Real projects for real businesses. Custom software, AI agents, and automation.
         </p>
       </div>
 
       <div className={styles.portfolioSection}>
         {/* Project List */}
         <div className={styles.projectList}>
-          {projects.map((project, index) => (
-            <Link
+          {projects.map((project, index) => {
+            const Wrapper = project.slug ? Link : 'div' as any
+            const wrapperProps = project.slug
+              ? { href: `/portfolio/${project.slug}` }
+              : {}
+            return (
+            <Wrapper
               key={project.title}
-              href={`/portfolio/${project.slug}`}
+              {...wrapperProps}
               className={styles.projectItem}
               onMouseEnter={() => handleMouseEnter(index)}
               onMouseLeave={handleMouseLeave}
@@ -121,17 +158,18 @@ export default function PortfolioPage() {
                   </div>
                 </div>
               </div>
-            </Link>
-          ))}
+            </Wrapper>
+            )
+          })}
           <div className={styles.projectListBorder} />
         </div>
       </div>
 
       <div className={styles.cta}>
-        <h2 className={styles.ctaTitle}>Ready to systematize your business?</h2>
-        <p className={styles.ctaSubtitle}>Book a call and we'll show you what's possible.</p>
+        <h2 className={styles.ctaTitle}>Ready to build something?</h2>
+        <p className={styles.ctaSubtitle}>Book my free audit and we'll show you what's possible.</p>
         <Link href="/#book" className={styles.ctaButton}>
-          Book a call
+          Book my free audit
         </Link>
       </div>
     </div>

@@ -5,7 +5,7 @@ export function OrganizationSchema() {
     name: 'Harmon Digital, LLC',
     url: 'https://harmon-digital.com',
     logo: 'https://harmon-digital.com/logo/icon.png',
-    description: 'Sell your business for more. We systematize owner-dependent businesses so buyers pay a premium.',
+    description: 'Custom software, AI agents, websites, and automation built for businesses. Not templates — software built around how your team actually works.',
     foundingDate: '2024',
     sameAs: [
       'https://www.linkedin.com/company/harmon-digital/',
@@ -37,46 +37,46 @@ export function ProfessionalServiceSchema() {
     name: 'Harmon Digital, LLC',
     url: 'https://harmon-digital.com',
     image: 'https://harmon-digital.com/logo/icon.png',
-    description: 'Exit systematization for owner-dependent businesses. We build turnkey operations so buyers pay a premium.',
-    priceRange: '$2,500/mo + Success-based',
+    description: 'Custom software, AI agents, websites, and automation for businesses. We build the tools your team actually needs.',
+    priceRange: 'Contact for pricing',
     areaServed: {
       '@type': 'Country',
       name: 'United States',
     },
     hasOfferCatalog: {
       '@type': 'OfferCatalog',
-      name: 'Exit Systematization Services',
+      name: 'Software & AI Services',
       itemListElement: [
         {
           '@type': 'Offer',
           itemOffered: {
             '@type': 'Service',
-            name: 'Operations Portal',
-            description: 'Custom internal portal so the business runs without you.',
+            name: 'Custom Software & Apps',
+            description: 'Internal tools, portals, dashboards, and apps built for your business.',
           },
         },
         {
           '@type': 'Offer',
           itemOffered: {
             '@type': 'Service',
-            name: 'AI Customer Service Agent',
-            description: 'AI agent to handle customer inquiries without owner involvement.',
+            name: 'AI Agents & Consulting',
+            description: 'Custom AI agents that handle email, customer service, scheduling, and more.',
           },
         },
         {
           '@type': 'Offer',
           itemOffered: {
             '@type': 'Service',
-            name: 'Complete SOPs & Documentation',
-            description: 'Full documentation and standard operating procedures for due diligence.',
+            name: 'Websites & Web Apps',
+            description: 'Modern websites and web applications designed and built from scratch.',
           },
         },
         {
           '@type': 'Offer',
           itemOffered: {
             '@type': 'Service',
-            name: 'Workflow Automation',
-            description: 'Automated workflows that eliminate owner dependency.',
+            name: 'Automation & Integrations',
+            description: 'Connect your tools and automate repetitive workflows.',
           },
         },
       ],
@@ -98,34 +98,34 @@ export function FAQSchema() {
     mainEntity: [
       {
         '@type': 'Question',
-        name: "What if my valuation doesn't increase?",
+        name: 'What kinds of projects do you take on?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: "You pay the monthly retainer during the build. Our success fee is 8% of the valuation increase, paid from sale proceeds. If systematization doesn't increase what buyers will pay, we don't collect the success fee.",
+          text: 'Custom internal tools, AI agents, websites, web apps, automation, integrations — if it involves software and it helps your business run better, we build it. We work best with small to mid-size businesses that need something off-the-shelf tools can\'t do.',
         },
       },
       {
         '@type': 'Question',
-        name: 'How do you measure the valuation increase?',
+        name: 'How long does a typical project take?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: "We work with your broker or get an independent assessment to establish your baseline valuation before we start. When you sell, the increase is the difference between what you actually sell for and that baseline. Simple, transparent, no games.",
+          text: 'Most projects launch in 4-8 weeks. Simple automations or integrations can be done in days. Larger custom software builds may take 2-3 months. We\'ll give you a clear timeline before any work starts.',
         },
       },
       {
         '@type': 'Question',
-        name: 'How long until my business is ready to sell?',
+        name: 'Do you offer ongoing support?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: "3-6 months for full systematization, depending on complexity. After that, your business runs without you and buyers see turnkey operations instead of key-person risk.",
+          text: 'Yes. Most clients keep us on a monthly retainer for updates, new features, and support. But it\'s not required — we can also do one-off projects. Whatever works for your business.',
         },
       },
       {
         '@type': 'Question',
-        name: "What if I'm not ready to sell yet?",
+        name: 'What does it cost?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: "We work best with businesses actively preparing to go to market. If you're more than 6 months out, let's talk—we can discuss whether the timing makes sense or if you should reach out when you're closer.",
+          text: 'Every project is different, so we scope and price based on what you actually need. Book a call and we\'ll give you a straight answer — no generic proposals or surprise invoices.',
         },
       },
       {
@@ -133,7 +133,7 @@ export function FAQSchema() {
         name: 'Is this right for my business?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: "If you're doing $500K+ in revenue and you're the bottleneck, probably yes. We work best with service businesses, agencies, distributors, and companies where buyers would discount for key-person risk.",
+          text: 'If your team is wasting time on manual work, your tools don\'t talk to each other, or you need custom software that doesn\'t exist yet — yes. We work with service businesses, agencies, e-commerce companies, and more.',
         },
       },
     ],
@@ -153,7 +153,7 @@ export function WebSiteSchema() {
     '@type': 'WebSite',
     name: 'Harmon Digital',
     url: 'https://harmon-digital.com',
-    description: 'Custom software and automation for businesses built to exit or scale.',
+    description: 'Custom software, AI agents, websites, and automation for businesses.',
     publisher: {
       '@type': 'Organization',
       name: 'Harmon Digital, LLC',

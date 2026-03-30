@@ -1,0 +1,153 @@
+.page {
+  min-height: 100vh;
+  background: #0a0a0a;
+  padding-top: 120px;
+  padding-bottom: 100px;
+}
+
+.header {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 0 24px 60px;
+}
+
+.label {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 500;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 24px;
+}
+
+.title {
+  font-size: clamp(32px, 5vw, 42px);
+  font-weight: 400;
+  color: #fff;
+  margin: 0 0 16px;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.subtitle {
+  font-size: 16px;
+  color: #888;
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* About Content */
+.content {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.photoSection {
+  margin-bottom: 60px;
+}
+
+.photo {
+  width: 100%;
+  border-radius: 12px;
+  object-fit: cover;
+  max-height: 450px;
+}
+
+.bio {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-bottom: 80px;
+}
+
+.bioText {
+  font-size: 17px;
+  color: #ccc;
+  margin: 0;
+  line-height: 1.7;
+}
+
+.bioText strong {
+  color: #fff;
+  font-weight: 500;
+}
+
+/* Values */
+.valuesSection {
+  margin-bottom: 80px;
+}
+
+.valuesTitle {
+  font-size: clamp(24px, 3.5vw, 28px);
+  font-weight: 400;
+  color: #fff;
+  margin: 0 0 32px;
+  letter-spacing: -0.02em;
+}
+
+.valuesGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.valueItem {
+  padding: 24px;
+  border: 1px solid #1a1a1a;
+  border-radius: 8px;
+}
+
+.valueItemTitle {
+  font-size: 16px;
+  font-weight: 500;
+  color: #fff;
+  margin: 0 0 8px;
+}
+
+.valueItemDesc {
+  font-size: 15px;
+  color: #888;
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* CTA */
+.cta {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 0 24px;
+  text-align: center;
+}
+
+.ctaTitle {
+  font-size: clamp(24px, 4vw, 32px);
+  font-weight: 400;
+  color: #fff;
+  margin: 0 0 12px;
+  letter-spacing: -0.02em;
+}
+
+.ctaSubtitle {
+  font-size: 16px;
+  color: #888;
+  margin: 0 0 32px;
+}
+
+.ctaButton {
+  display: inline-flex;
+  align-items: center;
+  padding: 14px 32px;
+  background: #fff;
+  color: #000;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.ctaButton:hover {
+  opacity: 0.9;
+}

@@ -2,17 +2,7 @@
 
 import { useEffect, useState, useRef } from 'react'
 import { motion } from 'framer-motion'
-import {
-  ArrowUpRight,
-  ClipboardList,
-  Package,
-  Truck,
-  Users,
-  CheckSquare,
-  Inbox,
-  Zap,
-  BarChart3
-} from 'lucide-react'
+import { ArrowUpRight } from 'lucide-react'
 import Link from 'next/link'
 import styles from './Hero.module.css'
 import { trackMetaEvent } from '@/components/analytics/MetaPixel'
@@ -87,25 +77,60 @@ const clientLogos = Array.from({ length: 13 }, (_, i) => `/clients/${i + 1}.png`
 
 const projects = [
   {
-    title: "Happy Endings",
-    slug: "happy-endings",
-    description: "AI email agent handling 80% of customer inquiries autonomously.",
-    year: "2025",
-    image: "/portfolio/happyendings/hero.jpg",
-  },
-  {
-    title: "Hoplite Capital",
+    title: "Etto Leisure Carts",
     slug: "hoplite-capital",
-    description: "Operations system for 3-location dealership. Owner reduced to 20 hrs/week.",
+    description: "Custom operations software for a multi-location golf cart dealership. Inventory, sales, service, and accounting — all connected.",
     year: "2025",
     image: "/portfolio/hoplite/hero.jpg",
   },
   {
+    title: "SunMed Growers",
+    slug: "sunmed-growers",
+    description: "Custom investor tracker and document management for a $20M debt round.",
+    year: "2025",
+    image: "/portfolio/sunmed-hero.jpg",
+  },
+  {
+    title: "Noble TeleHealth",
+    slug: "noble-telehealth",
+    description: "Custom healthcare app that replaced manual booking and scheduling with an automated patient portal.",
+    year: "2025",
+    image: "/portfolio/noble-hero.jpg",
+  },
+  {
     title: "Neighbors Bank",
     slug: "neighbors-bank",
-    description: "RAG-powered Slack bot serving 200+ team members.",
+    description: "RAG-powered Slack bot serving 200+ team members with instant answers from internal docs.",
     year: "2025",
-    image: "/portfolio/neighborsbank/slack-conversation.png",
+    image: "/portfolio/neighborsbank-hero.jpg",
+  },
+  {
+    title: "Happy Endings",
+    slug: "happy-endings",
+    description: "AI email agent and full internal system — orders, kitchen, training, inventory. One platform for the entire business.",
+    year: "2025",
+    image: "/portfolio/happyendings/hero.jpg",
+  },
+  {
+    title: "Flume Internet",
+    slug: "flume-internet",
+    description: "Custom CRM built on Airtable and n8n. Full pipeline tracking, customer management, and automated workflows.",
+    year: "2025",
+    image: "/portfolio/flume-hero.jpg",
+  },
+  {
+    title: "Unstack",
+    slug: "unstack",
+    description: "AI-powered business operations platform built by Harmon Digital. A SaaS product that gives businesses their own AI-enabled workspace.",
+    year: "2025",
+    image: "/portfolio/unstack-hero.jpg",
+  },
+  {
+    title: "ProducifyX",
+    slug: "producifyx",
+    description: "Custom platform that replaced hours of manual work with automated workflows and a centralized dashboard.",
+    year: "2025",
+    image: "/portfolio/producifyx/hero.jpg",
   },
 ]
 
@@ -231,140 +256,33 @@ export function Hero() {
 
   return (
     <section className={styles.hero}>
-      <div className={styles.container}>
-        {/* Left Content */}
+      <div className={styles.heroCenter}>
         <motion.div
-          className={styles.content}
+          className={styles.heroCenterContent}
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <span className={styles.heroLabel}>AI Agent Operations</span>
-          <h1 className={styles.headline}>
-            AI agents that run your business. 24/7.
+          <h1 className={styles.heroHeadline}>
+            We build the AI foundation<br />your business is missing.
           </h1>
 
-          <p className={styles.subtitle}>
-            We install AI agents into your business that handle email, scheduling, project management, and customer service — so your team can focus on what matters.
+          <p className={styles.heroSubtitle}>
+            Custom AI tools, automation, and software that handle the work your team shouldn&apos;t be doing manually. So you can scale without the headcount.
           </p>
 
-          <div style={{ display: 'flex', gap: '16px', alignItems: 'center', marginBottom: '48px' }}>
-            <a href="#book" className={styles.ctaBtn} style={{ marginBottom: 0 }}>
-              Book a free call
-            </a>
-            <Link href="/services/ai-agents" style={{ fontSize: '14px', fontWeight: 500, color: '#888', textDecoration: 'none', transition: 'color 0.2s' }}>
-              Learn more →
-            </Link>
-          </div>
+          <a href="#book" className={styles.heroCta}>
+            Book my free audit
+          </a>
 
           <div className={styles.trust}>
-            <p className={styles.trustLabel}>Businesses we've worked with</p>
             <div className={styles.logoSlider}>
               <div className={styles.logoTrack}>
-                {/* Double the logos for seamless infinite scroll */}
-                {[...clientLogos, ...clientLogos].map((logo, index) => (
+                {[...clientLogos, ...clientLogos, ...clientLogos].map((logo, index) => (
                   <div key={index} className={styles.logoSlide}>
                     <img src={logo} alt="Client logo" className={styles.clientLogo} />
                   </div>
                 ))}
-              </div>
-            </div>
-          </div>
-        </motion.div>
-
-        {/* Vertical Divider */}
-        <div className={styles.heroDivider} />
-
-        {/* Right Screenshots */}
-        <motion.div
-          className={styles.screenshots}
-          initial={{ opacity: 0, x: 30 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-        >
-          {/* Dashboard Card */}
-          <div className={styles.screenshotCard}>
-            <div className={styles.cardHeader}>
-              <div className={styles.userInfo}>
-                <div className={styles.userAvatar}>
-                  <img src="https://i.pravatar.cc/40?img=11" alt="User avatar" />
-                </div>
-                <div className={styles.userDetails}>
-                  <span className={styles.userName}>Operations Hub</span>
-                  <span className={styles.userRole}>Internal Portal</span>
-                </div>
-              </div>
-              <button className={styles.menuBtn}>...</button>
-            </div>
-            <div className={styles.cardBody}>
-              <div className={styles.sidebarSection}>
-                <span className={styles.sectionLabel}>Operations</span>
-                <div className={styles.navItem}><ClipboardList size={16} className={styles.navIcon} /> Orders</div>
-                <div className={styles.navItem}><Package size={16} className={styles.navIcon} /> Inventory</div>
-                <div className={styles.navItem}><Truck size={16} className={styles.navIcon} /> Fulfillment</div>
-              </div>
-              <div className={styles.sidebarSection}>
-                <span className={styles.sectionLabel}>Team</span>
-                <div className={styles.navItem}><Users size={16} className={styles.navIcon} /> Staff</div>
-                <div className={`${styles.navItem} ${styles.navItemActive}`}><CheckSquare size={16} className={styles.navIcon} /> Tasks</div>
-                <div className={styles.navItem}>
-                  <Inbox size={16} className={styles.navIcon} /> Requests
-                  <span className={styles.badge}>8</span>
-                </div>
-              </div>
-              <div className={styles.sidebarSection}>
-                <div className={styles.navItem}><Zap size={16} className={styles.navIcon} /> Automations</div>
-                <div className={styles.navItem}><BarChart3 size={16} className={styles.navIcon} /> Reports</div>
-              </div>
-              <button className={styles.addNewBtn}>+ Add new</button>
-            </div>
-          </div>
-
-          {/* Data Table Card */}
-          <div className={styles.tableCard}>
-            <div className={styles.tableHeader}>
-              <h3 className={styles.tableTitle}>Active Tasks</h3>
-              <button className={styles.exportBtn}>↓ Export as CSV</button>
-            </div>
-            <div className={styles.tableControls}>
-              <button className={styles.sortBtn}>≡ Sort by priority</button>
-              <button className={styles.filterBtn}>▽ Filters</button>
-            </div>
-            <div className={styles.tableContent}>
-              <div className={styles.tableRow}>
-                <span className={styles.customerName}>Process new orders</span>
-                <span className={styles.customerEmail}>Auto-assigned</span>
-                <span className={styles.customerOrders}>12</span>
-                <span className={styles.customerSpent}>High</span>
-                <span className={`${styles.statusBadge} ${styles.statusRunning}`}>Running</span>
-              </div>
-              <div className={styles.tableRow}>
-                <span className={styles.customerName}>Inventory sync</span>
-                <span className={styles.customerEmail}>Scheduled</span>
-                <span className={styles.customerOrders}>—</span>
-                <span className={styles.customerSpent}>Med</span>
-                <span className={`${styles.statusBadge} ${styles.statusComplete}`}>Complete</span>
-              </div>
-              <div className={styles.tableRow}>
-                <span className={styles.customerName}>Send follow-ups</span>
-                <span className={styles.customerEmail}>AI Agent</span>
-                <span className={styles.customerOrders}>8</span>
-                <span className={styles.customerSpent}>Med</span>
-                <span className={`${styles.statusBadge} ${styles.statusPending}`}>Pending</span>
-              </div>
-              <div className={styles.tableRow}>
-                <span className={styles.customerName}>Generate report</span>
-                <span className={styles.customerEmail}>Weekly</span>
-                <span className={styles.customerOrders}>1</span>
-                <span className={styles.customerSpent}>Low</span>
-                <span className={`${styles.statusBadge} ${styles.statusQueued}`}>Queued</span>
-              </div>
-              <div className={styles.tableRow}>
-                <span className={styles.customerName}>Update pricing</span>
-                <span className={styles.customerEmail}>Manual review</span>
-                <span className={styles.customerOrders}>3</span>
-                <span className={styles.customerSpent}>High</span>
-                <span className={`${styles.statusBadge} ${styles.statusRunning}`}>Running</span>
               </div>
             </div>
           </div>
@@ -376,12 +294,12 @@ export function Hero() {
         <div className={styles.whySectionInner}>
           <div className={styles.whyHeader}>
             <h2 className={styles.whyHeadline}>
-              Owner-dependent businesses<br />
-              sell for less.
+              Your team is doing work<br />
+              that should be automated.
             </h2>
             <p className={styles.whySubtitle}>
-              Buyers discount heavily for key-person risk. If everything
-              runs through you, expect a lower multiple—or no deal at all.
+              Every hour spent on manual work is an hour not spent on growth.
+              Most teams don&apos;t realize how much time they&apos;re losing until someone maps it out.
             </p>
           </div>
 
@@ -393,11 +311,11 @@ export function Hero() {
                   <circle cx="12" cy="7" r="4"/>
                 </svg>
               </div>
-              <h3 className={styles.benefitTitle}>You are the bottleneck</h3>
+              <h3 className={styles.benefitTitle}>Paying for tools you work around</h3>
               <p className={styles.benefitDesc}>
-                Every decision, every process, every
-                customer issue runs through you.
-                Buyers see risk.
+                5 SaaS subscriptions and your team
+                still uses spreadsheets to fill the gaps.
+                That&apos;s money and time wasted.
               </p>
             </div>
 
@@ -408,11 +326,11 @@ export function Hero() {
                   <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
                 </svg>
               </div>
-              <h3 className={styles.benefitTitle}>Lower valuations</h3>
+              <h3 className={styles.benefitTitle}>People doing repetitive work</h3>
               <p className={styles.benefitDesc}>
-                Key-person risk means lower
-                multiples. Buyers won't pay
-                premium for uncertainty.
+                Data entry, copy-paste, status updates,
+                follow-ups — your best people are
+                stuck doing the lowest-value tasks.
               </p>
             </div>
 
@@ -423,11 +341,11 @@ export function Hero() {
                   <polyline points="12 6 12 12 16 14"/>
                 </svg>
               </div>
-              <h3 className={styles.benefitTitle}>Deals drag on</h3>
+              <h3 className={styles.benefitTitle}>Nothing is connected</h3>
               <p className={styles.benefitDesc}>
-                Due diligence takes longer when
-                there's nothing documented.
-                Buyers get cold feet.
+                Your CRM doesn&apos;t know what your
+                accounting software knows. So someone
+                manually bridges the gap. Every day.
               </p>
             </div>
 
@@ -439,83 +357,73 @@ export function Hero() {
                   <line x1="12" y1="17" x2="12.01" y2="17"/>
                 </svg>
               </div>
-              <h3 className={styles.benefitTitle}>Deals fall through</h3>
+              <h3 className={styles.benefitTitle}>Growth = more headcount</h3>
               <p className={styles.benefitDesc}>
-                Buyers walk away when they see
-                how dependent the business is
-                on you being there.
+                Right now, the only way to do more
+                is to hire more. That&apos;s the most
+                expensive way to scale.
               </p>
             </div>
           </div>
+
+          <a href="#book" className={styles.sectionCta}>Book my free audit →</a>
         </div>
       </div>
 
       {/* Services Section */}
-      <div className={styles.servicesSection}>
+      <div className={styles.servicesSection} id="services">
         <div className={styles.servicesSectionInner}>
           <h2 className={styles.servicesHeadline}>
-            What we build.<br />
-            Everything buyers want to see.
+            What your AI foundation looks like.
           </h2>
           <p className={styles.servicesSubtitle}>
-            Turnkey operations that prove your business runs without you.
-            The assets that command premium multiples.
+            Every business is different. We audit your operations and build exactly what you need — nothing more, nothing less.
           </p>
 
-          <div className={styles.servicesGrid}>
-            <div className={styles.servicesColumn}>
-              <div className={styles.serviceItem}>
-                <span className={styles.serviceIcon}>◇</span>
-                <span>Operations Portal</span>
+          <div className={styles.benefitsGrid}>
+            <div className={styles.benefitCard}>
+              <div className={styles.benefitIcon}>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
               </div>
-              <div className={styles.serviceItem}>
-                <span className={styles.serviceIcon}>◎</span>
-                <span>AI Customer Service Agent</span>
-              </div>
-              <div className={styles.serviceItem}>
-                <span className={styles.serviceIcon}>▤</span>
-                <span>Order & Fulfillment System</span>
-              </div>
-              <div className={styles.serviceItem}>
-                <span className={styles.serviceIcon}>⌁</span>
-                <span>Sales Pipeline Automation</span>
-              </div>
-              <div className={styles.serviceItem}>
-                <span className={styles.serviceIcon}>▢</span>
-                <span>Employee Onboarding System</span>
-              </div>
-              <div className={styles.serviceItem}>
-                <span className={styles.serviceIcon}>▧</span>
-                <span>Complete SOPs & Documentation</span>
-              </div>
+              <h3 className={styles.benefitTitle}>AI agents that do real work</h3>
+              <p className={styles.benefitDesc}>
+                Not chatbots. Agents that handle email, customer service,
+                lead qualification, scheduling — autonomously.
+              </p>
             </div>
-            <div className={styles.servicesColumn}>
-              <div className={styles.serviceItem}>
-                <span className={styles.serviceIcon}>◈</span>
-                <span>Workflow Automation</span>
+            <div className={styles.benefitCard}>
+              <div className={styles.benefitIcon}>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><polyline points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
               </div>
-              <div className={styles.serviceItem}>
-                <span className={styles.serviceIcon}>▣</span>
-                <span>System Integrations</span>
+              <h3 className={styles.benefitTitle}>Automation that eliminates busywork</h3>
+              <p className={styles.benefitDesc}>
+                Connect your tools, automate your workflows,
+                and stop paying people to move data between systems.
+              </p>
+            </div>
+            <div className={styles.benefitCard}>
+              <div className={styles.benefitIcon}>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
               </div>
-              <div className={styles.serviceItem}>
-                <span className={styles.serviceIcon}>◉</span>
-                <span>Real-time Dashboards</span>
+              <h3 className={styles.benefitTitle}>Custom software built for your workflow</h3>
+              <p className={styles.benefitDesc}>
+                Internal tools, portals, dashboards, and apps —
+                designed around how your team actually works.
+              </p>
+            </div>
+            <div className={styles.benefitCard}>
+              <div className={styles.benefitIcon}>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
               </div>
-              <div className={styles.serviceItem}>
-                <span className={styles.serviceIcon}>△</span>
-                <span>Financial Reporting</span>
-              </div>
-              <div className={styles.serviceItem}>
-                <span className={styles.serviceIcon}>○</span>
-                <span>Knowledge Base & Training</span>
-              </div>
-              <div className={styles.serviceItem}>
-                <span className={styles.serviceIcon}>+</span>
-                <span>Custom to your business</span>
-              </div>
+              <h3 className={styles.benefitTitle}>Websites &amp; apps that convert</h3>
+              <p className={styles.benefitDesc}>
+                Modern websites, web apps, and e-commerce —
+                fast, clean, and built to drive revenue.
+              </p>
             </div>
           </div>
+
+          <a href="#book" className={styles.sectionCta}>Book my free audit →</a>
         </div>
       </div>
 
@@ -523,11 +431,10 @@ export function Hero() {
       <div className={styles.howSection} id="how-it-works">
         <div className={styles.howSectionInner}>
           <h2 className={styles.howHeadline}>
-            How it works.<br />
-            Buyer-ready in 60-90 days.
+            How it works.
           </h2>
           <p className={styles.howSubtitle}>
-            We systematize your business. You sell for more. We get paid from the increase.
+            We don&apos;t guess. We audit, build, and launch — most clients are live in 4-8 weeks.
           </p>
 
           <div className={styles.stepsContainer}>
@@ -537,11 +444,10 @@ export function Hero() {
                 <div className={styles.stepLine} />
               </div>
               <div className={styles.stepContent}>
-                <h3 className={styles.stepTitle}>Free assessment</h3>
+                <h3 className={styles.stepTitle}>We find where you&apos;re losing time</h3>
                 <p className={styles.stepDesc}>
-                  We analyze your operations, identify what's keeping buyers away,
-                  and show you exactly what needs to be systematized. No cost,
-                  no commitment.
+                  Free call. We map your workflows, identify the bottlenecks,
+                  and show you exactly what can be automated.
                 </p>
               </div>
             </div>
@@ -552,10 +458,10 @@ export function Hero() {
                 <div className={styles.stepLine} />
               </div>
               <div className={styles.stepContent}>
-                <h3 className={styles.stepTitle}>We systematize</h3>
+                <h3 className={styles.stepTitle}>We build the fix</h3>
                 <p className={styles.stepDesc}>
-                  Custom automation, AI agents, and documentation—everything
-                  buyers want to see. Owner involvement reduced by 60-70% within 90 days.
+                  Custom AI tools, automation, or software — scoped to your
+                  business, built in sprints, no surprises.
                 </p>
               </div>
             </div>
@@ -566,10 +472,10 @@ export function Hero() {
                 <div className={styles.stepLine} />
               </div>
               <div className={styles.stepContent}>
-                <h3 className={styles.stepTitle}>You go to market</h3>
+                <h3 className={styles.stepTitle}>Your team starts using it</h3>
                 <p className={styles.stepDesc}>
-                  List your business with confidence. Buyers see turnkey operations,
-                  complete documentation, and zero key-person risk.
+                  We deploy, train your people, and make sure
+                  it works in the real world — not just in a demo.
                 </p>
               </div>
             </div>
@@ -579,14 +485,16 @@ export function Hero() {
                 <span>4</span>
               </div>
               <div className={styles.stepContent}>
-                <h3 className={styles.stepTitle}>We get paid at closing</h3>
+                <h3 className={styles.stepTitle}>We keep improving it</h3>
                 <p className={styles.stepDesc}>
-                  You sell for more than you would have. We take 8% of the
-                  increase from sale proceeds. You keep the rest.
+                  As your business changes, your tools should too.
+                  We stick around and keep making it better.
                 </p>
               </div>
             </div>
           </div>
+
+          <a href="#book" className={styles.sectionCta}>Book my free audit →</a>
         </div>
       </div>
 
@@ -597,13 +505,13 @@ export function Hero() {
         className={styles.portfolioSection}
       >
         <div className={styles.portfolioSectionInner}>
-          <span className={styles.sectionLabel}>Selected Work</span>
+          <span className={styles.sectionLabel}>Proof</span>
           <h2 className={styles.portfolioHeadline}>
-            Real results.<br />
-            Businesses we've systematized.
+            We&apos;ve done this before.<br />
+            Here&apos;s what happened.
           </h2>
           <p className={styles.portfolioSubtitle}>
-            Operations portals, AI agents, and automation built for businesses preparing to exit.
+            Real businesses. Real systems. Real results.
           </p>
 
           {/* Floating Image Preview */}
@@ -618,28 +526,36 @@ export function Hero() {
             }}
           >
             <div className={styles.imagePreviewInner}>
-              {projects.map((project, index) => (
+              {projects.filter(p => p.image).map((project, index) => {
+                const realIndex = projects.indexOf(project)
+                return (
                 <img
                   key={project.title}
-                  src={project.image}
+                  src={project.image!}
                   alt={project.title}
                   className={styles.previewImage}
                   style={{
-                    opacity: hoveredIndex === index ? 1 : 0,
-                    scale: hoveredIndex === index ? 1 : 1.1,
-                    filter: hoveredIndex === index ? 'none' : 'blur(10px)',
+                    opacity: hoveredIndex === realIndex ? 1 : 0,
+                    scale: hoveredIndex === realIndex ? 1 : 1.1,
+                    filter: hoveredIndex === realIndex ? 'none' : 'blur(10px)',
                   }}
                 />
-              ))}
+                )
+              })}
             </div>
           </div>
 
           {/* Project List */}
           <div className={styles.projectList}>
-            {projects.map((project, index) => (
-              <Link
+            {projects.map((project, index) => {
+              const Wrapper = project.slug ? Link : 'div' as any
+              const wrapperProps = project.slug
+                ? { href: `/portfolio/${project.slug}` }
+                : {}
+              return (
+              <Wrapper
                 key={project.title}
-                href={`/portfolio/${project.slug}`}
+                {...wrapperProps}
                 className={styles.projectItem}
                 onMouseEnter={() => handleMouseEnter(index)}
                 onMouseLeave={handleMouseLeave}
@@ -681,99 +597,26 @@ export function Hero() {
                     </div>
                   </div>
                 </div>
-              </Link>
-            ))}
+              </Wrapper>
+              )
+            })}
             <div className={styles.projectListBorder} />
           </div>
+
+          <Link href="/portfolio" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', marginTop: '32px', fontSize: '14px', fontWeight: 500, color: '#888', textDecoration: 'none', transition: 'color 0.2s' }}>
+            See all work →
+          </Link>
         </div>
       </div>
 
-      {/* Guarantee Section */}
+
+      {/* Testimonial */}
       <div className={styles.guaranteeSection}>
         <div className={styles.guaranteeSectionInner}>
-          <h2 className={styles.guaranteeHeadline}>Zero-Risk Guarantee</h2>
           <p className={styles.guaranteeText}>
-            If your business sells for less than <strong>$150K above</strong> baseline valuation:
-            full refund of upfront cost, no success fee owed, and you keep all the systems we built.
+            &ldquo;Isaac came in, mapped out our workflows, and built us a custom platform that handles what used to take hours. Our team can actually focus on growing the business instead of putting out fires.&rdquo;
           </p>
-          <p className={styles.guaranteeTagline}>We only win if you win.</p>
-        </div>
-      </div>
-
-      {/* Pricing Section */}
-      <div className={styles.pricingSection} id="pricing">
-        <div className={styles.pricingSectionInner}>
-          <h2 className={styles.pricingHeadline}>
-            Two ways to work with us.
-          </h2>
-          <p className={styles.pricingSubtitle}>
-            Whether you're growing or exiting, we build the systems you need.
-          </p>
-
-          {/* Exit Systematization - Two Cards */}
-          <div className={styles.exitCards}>
-            <div className={styles.exitCardLeft}>
-              <h3 className={styles.exitCardName}>Exit Systematization</h3>
-              <p className={styles.exitCardFor}>For businesses selling in 6-12 months.</p>
-              <ul className={styles.exitCardFeatures}>
-                <li><span className={styles.featureIcon}>✓</span>Full systematization package</li>
-                <li><span className={styles.featureIcon}>⚡</span>AI agents & automation</li>
-                <li><span className={styles.featureIcon}>◎</span>90-day engagement</li>
-                <li><span className={styles.featureIcon}>○</span>Success fee paid from proceeds</li>
-              </ul>
-              <a href="#book" className={styles.modelCta}>Get started</a>
-            </div>
-            <div className={styles.exitCardsArrow}>→</div>
-            <div className={styles.exitCardRight}>
-              <h4 className={styles.breakdownTitle}>Example</h4>
-              <div className={styles.breakdownRow}>
-                <span>Business valued today</span>
-                <span>$2,000,000</span>
-              </div>
-              <div className={styles.breakdownRow}>
-                <span>Sells for after systematization</span>
-                <span>$2,500,000</span>
-              </div>
-              <div className={styles.breakdownRow}>
-                <span>Valuation increase</span>
-                <span>$500,000</span>
-              </div>
-              <div className={styles.breakdownDivider} />
-              <div className={styles.breakdownRow}>
-                <span>Retainer ($2,500 × 3 months)</span>
-                <span>$7,500</span>
-              </div>
-              <div className={styles.breakdownRow}>
-                <span>Success fee (8% of increase)</span>
-                <span>$40,000</span>
-              </div>
-              <div className={styles.breakdownDivider} />
-              <div className={`${styles.breakdownRow} ${styles.breakdownTotal}`}>
-                <span>You net extra</span>
-                <span>$452,500</span>
-              </div>
-              <div className={`${styles.breakdownRow} ${styles.breakdownRoi}`}>
-                <span>ROI</span>
-                <span>951%</span>
-              </div>
-              <p className={styles.breakdownNote}>If we don't increase the valuation, no success fee is charged.</p>
-            </div>
-          </div>
-
-          {/* Ongoing Retainer - Compact Card */}
-          <div className={styles.retainerCard}>
-            <div className={styles.retainerCardMain}>
-              <div className={styles.retainerCardInfo}>
-                <h3 className={styles.retainerCardName}>Ongoing Retainer</h3>
-                <p className={styles.retainerCardFor}>For growing businesses. Month-to-month.</p>
-              </div>
-              <div className={styles.retainerCardPrice}>
-                <span className={styles.retainerPrice}>$2,500–$5,000</span>
-                <span className={styles.retainerPeriod}>/mo</span>
-              </div>
-              <a href="#book" className={styles.retainerCta}>Get started</a>
-            </div>
-          </div>
+          <p className={styles.guaranteeTagline}>George Zimny, Co-Founder, ProducifyX</p>
         </div>
       </div>
 
@@ -794,11 +637,11 @@ export function Hero() {
                 className={styles.faqQuestion}
                 onClick={() => setOpenFaq(openFaq === 0 ? null : 0)}
               >
-                <span>What if my valuation doesn't increase?</span>
+                <span>Why not just hire a developer?</span>
                 <span className={`${styles.faqIcon} ${openFaq === 0 ? styles.faqIconOpen : ''}`}>▼</span>
               </button>
               <div className={`${styles.faqAnswer} ${openFaq === 0 ? styles.faqAnswerOpen : ''}`}>
-                <p>You pay the monthly retainer during the build. Our success fee is 8% of the valuation increase, paid from sale proceeds. If systematization doesn't increase what buyers will pay, we don't collect the success fee.</p>
+                <p>You can. But a good full-time developer costs $80-150K/year, takes months to find, and still needs someone to manage them. We come in, build what you need, and you're live in weeks — not quarters. And if you need ongoing work, we're there for that too.</p>
               </div>
             </div>
             <div className={styles.faqItem}>
@@ -806,11 +649,11 @@ export function Hero() {
                 className={styles.faqQuestion}
                 onClick={() => setOpenFaq(openFaq === 1 ? null : 1)}
               >
-                <span>How do you measure the valuation increase?</span>
+                <span>How long until we see results?</span>
                 <span className={`${styles.faqIcon} ${openFaq === 1 ? styles.faqIconOpen : ''}`}>▼</span>
               </button>
               <div className={`${styles.faqAnswer} ${openFaq === 1 ? styles.faqAnswerOpen : ''}`}>
-                <p>We work with your broker or get an independent assessment to establish your baseline valuation before we start. When you sell, the increase is the difference between what you actually sell for and that baseline. Simple, transparent, no games.</p>
+                <p>Most clients are live in 4-8 weeks. Some automations take days. We'll give you a clear timeline on the first call — no vague estimates.</p>
               </div>
             </div>
             <div className={styles.faqItem}>
@@ -818,11 +661,11 @@ export function Hero() {
                 className={styles.faqQuestion}
                 onClick={() => setOpenFaq(openFaq === 2 ? null : 2)}
               >
-                <span>How long until my business is ready to sell?</span>
+                <span>What if it doesn't work?</span>
                 <span className={`${styles.faqIcon} ${openFaq === 2 ? styles.faqIconOpen : ''}`}>▼</span>
               </button>
               <div className={`${styles.faqAnswer} ${openFaq === 2 ? styles.faqAnswerOpen : ''}`}>
-                <p>60-90 days for full implementation. Most clients go to market within 3-4 months of starting. After that, buyers see turnkey operations instead of key-person risk.</p>
+                <p>We build in sprints and show you working software along the way — not a big reveal at the end. If something isn't right, we fix it before you've paid for a finished product. Most clients stay on retainer because the systems keep getting better over time.</p>
               </div>
             </div>
             <div className={styles.faqItem}>
@@ -830,11 +673,11 @@ export function Hero() {
                 className={styles.faqQuestion}
                 onClick={() => setOpenFaq(openFaq === 3 ? null : 3)}
               >
-                <span>What if I'm not ready to sell yet?</span>
+                <span>What does it cost?</span>
                 <span className={`${styles.faqIcon} ${openFaq === 3 ? styles.faqIconOpen : ''}`}>▼</span>
               </button>
               <div className={`${styles.faqAnswer} ${openFaq === 3 ? styles.faqAnswerOpen : ''}`}>
-                <p>We work best with businesses actively preparing to go to market. If you're more than 6 months out, let's talk—we can discuss whether the timing makes sense or if you should reach out when you're closer.</p>
+                <p>It depends on what you need — that's the honest answer. But we'll tell you on the first call, not after 3 meetings. No generic proposals, no surprise invoices. You'll know the number before we start.</p>
               </div>
             </div>
             <div className={styles.faqItem}>
@@ -842,14 +685,16 @@ export function Hero() {
                 className={styles.faqQuestion}
                 onClick={() => setOpenFaq(openFaq === 4 ? null : 4)}
               >
-                <span>Is this right for my business?</span>
+                <span>Who is this NOT for?</span>
                 <span className={`${styles.faqIcon} ${openFaq === 4 ? styles.faqIconOpen : ''}`}>▼</span>
               </button>
               <div className={`${styles.faqAnswer} ${openFaq === 4 ? styles.faqAnswerOpen : ''}`}>
-                <p>If you're doing $500K+ in revenue and you're the bottleneck, probably yes. We work best with service businesses, agencies, distributors, and companies where buyers would discount for key-person risk. Book a call—we'll tell you honestly if we can help.</p>
+                <p>If your business doesn't have repeatable processes yet, we're not the right fit — you need to figure out what works before you automate it. But if your team is doing the same manual work every day and you know there's a better way, that's exactly what we fix.</p>
               </div>
             </div>
           </div>
+
+          <a href="#book" className={styles.sectionCta}>Book my free audit →</a>
         </div>
       </div>
 
@@ -857,7 +702,7 @@ export function Hero() {
       <div ref={bookCallRef} className={styles.bookCallSection} id="book">
         <div className={styles.bookCallSectionInner}>
           <h2 className={styles.bookCallHeadline}>
-            See what custom software can do for <span className={`${styles.highlighted} ${highlightVisible ? styles.highlightedVisible : ''}`}>your valuation.</span>
+            Get a free AI audit of <span className={`${styles.highlighted} ${highlightVisible ? styles.highlightedVisible : ''}`}>your operations.</span>
           </h2>
 
           {formStep === 0 && (
@@ -909,10 +754,11 @@ export function Hero() {
                     onChange={(e) => setFormData({ ...formData, lookingFor: e.target.value })}
                   >
                     <option value="">Select one</option>
-                    <option value="build">Build internal software/tools</option>
+                    <option value="build">Build custom software or an app</option>
+                    <option value="ai">AI agents or AI consulting</option>
                     <option value="automate">Automate existing processes</option>
-                    <option value="both">Both - full systematization</option>
-                    <option value="consulting">Just consulting/advice</option>
+                    <option value="website">Website or web app</option>
+                    <option value="consulting">Not sure yet — just want to talk</option>
                     <option value="sell">I want to sell you something</option>
                   </select>
                 </div>
@@ -947,36 +793,6 @@ export function Hero() {
         </div>
       </div>
 
-      {/* Footer */}
-      <footer className={styles.footer}>
-        <div className={styles.footerInner}>
-          <div className={styles.footerTop}>
-            <div className={styles.footerLogo}>
-              <img src="/logo/icon.png" alt="Harmon Digital logo" className={styles.footerLogoIcon} />
-              <span>Harmon Digital</span>
-            </div>
-            <div className={styles.footerContact}>
-              <a href="mailto:info@harmon-digital.com" className={styles.footerEmail}>info@harmon-digital.com</a>
-              <div className={styles.footerSocials}>
-                <a href="https://www.linkedin.com/company/harmon-digital/" target="_blank" rel="noopener noreferrer">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                  </svg>
-                </a>
-              </div>
-            </div>
-          </div>
-          <div className={styles.footerBottom}>
-            <p className={styles.footerCredit}>Made with love by Harmon Digital.</p>
-            <div className={styles.footerLinks}>
-              <Link href="/services/ai-agents">AI Agents</Link>
-              <Link href="/partner">Partners</Link>
-              <Link href="/privacy">Privacy</Link>
-              <Link href="/terms">Terms</Link>
-            </div>
-          </div>
-        </div>
-      </footer>
     </section>
   )
 }

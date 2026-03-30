@@ -583,29 +583,6 @@ export default function AIAgentsPage() {
         </div>
       </div>
 
-      {/* Footer */}
-      <footer className={styles.footer}>
-        <div className={styles.footerInner}>
-          <div className={styles.footerTop}>
-            <Link href="/" className={styles.footerLogo}>
-              <img src="/logo/icon.png" alt="Harmon Digital logo" className={styles.footerLogoIcon} />
-              <span>Harmon Digital</span>
-            </Link>
-            <div className={styles.footerContact}>
-              <a href="mailto:info@harmon-digital.com" className={styles.footerEmail}>info@harmon-digital.com</a>
-            </div>
-          </div>
-          <div className={styles.footerBottom}>
-            <p className={styles.footerCredit}>Made with love by Harmon Digital.</p>
-            <div className={styles.footerLinks}>
-              <Link href="/services/ai-agents">AI Agents</Link>
-              <Link href="/partner">Partners</Link>
-              <Link href="/privacy">Privacy</Link>
-              <Link href="/terms">Terms</Link>
-            </div>
-          </div>
-        </div>
-      </footer>
     </div>
   )
 }
