@@ -106,7 +106,7 @@
 
 .logoTrack {
   display: flex;
-  gap: 80px;
+  gap: 48px;
   align-items: center;
   animation: slide 40s linear infinite;
   width: max-content;
@@ -136,7 +136,7 @@
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-33.33%);
+    transform: translateX(-20%);
   }
 }
 
