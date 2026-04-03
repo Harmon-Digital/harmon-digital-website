@@ -100,13 +100,14 @@
 .logoSlider {
   width: 100%;
   overflow: hidden;
-  mask-image: linear-gradient(to right, transparent, black 2%, black 98%, transparent);
-  -webkit-mask-image: linear-gradient(to right, transparent, black 2%, black 98%, transparent);
+  mask-image: none;
+  -webkit-mask-image: none;
 }
 
 .logoTrack {
   display: flex;
-  gap: 48px;
+  gap: 56px;
+  padding-left: 56px;
   align-items: center;
   animation: slide 40s linear infinite;
   width: max-content;
