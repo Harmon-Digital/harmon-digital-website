@@ -278,7 +278,7 @@ export function Hero() {
           <div className={styles.trust}>
             <div className={styles.logoSlider}>
               <div className={styles.logoTrack}>
-                {[...clientLogos, ...clientLogos, ...clientLogos].map((logo, index) => (
+                {[...clientLogos, ...clientLogos, ...clientLogos, ...clientLogos, ...clientLogos].map((logo, index) => (
                   <div key={index} className={styles.logoSlide}>
                     <img src={logo} alt="Client logo" className={styles.clientLogo} />
                   </div>
