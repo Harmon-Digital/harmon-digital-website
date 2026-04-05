@@ -1,0 +1,788 @@
+/* Shared Section Variables — matches homepage Hero.module.css */
+.page {
+  --section-max-width: 700px;
+  --section-padding: 100px 0;
+  --section-padding-x: 24px;
+  --heading-size: clamp(26px, 3vw, 36px);
+
+  background: #0a0a0a;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+@media (max-width: 480px) {
+  .page {
+    --section-padding-x: 40px;
+  }
+}
+
+/* Hero */
+.hero {
+  padding-top: 0;
+}
+
+.heroInner {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 24px 24px;
+  min-height: calc(100vh - 40px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.heroContent {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.logoBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.logoLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #fff;
+  text-decoration: none;
+  letter-spacing: -0.01em;
+}
+
+.logoIcon {
+  height: 20px;
+  width: 20px;
+  border-radius: 4px;
+}
+
+.rating {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  margin-top: 4px;
+}
+
+.trustpilotStars {
+  display: flex;
+  gap: 3px;
+}
+
+.starBox {
+  width: 18px;
+  height: 18px;
+  background: #00b67a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  color: #fff;
+}
+
+.ratingText {
+  font-size: 12px;
+  color: #888;
+}
+
+.logoTagline {
+  font-size: 12px;
+  color: #666;
+  margin: 0 0 12px 0;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.headline {
+  font-size: clamp(36px, 6vw, 64px);
+  font-weight: 400;
+  line-height: 1.15;
+  color: #fff;
+  margin: 0 0 24px 0;
+  letter-spacing: -0.03em;
+}
+
+.subtitle {
+  font-size: 17px;
+  line-height: 1.6;
+  color: #888;
+  margin: 0 0 40px 0;
+  max-width: 680px;
+}
+
+/* Trust / Logo Slider */
+.trust {
+  margin-top: 24px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.trustLabel {
+  font-size: 17px;
+  color: #ddd;
+  margin: 0 0 24px 0;
+  text-align: center;
+  font-weight: 600;
+}
+
+.logoSlider {
+  width: 100%;
+  overflow: hidden;
+}
+
+.logoSlider + .logoSlider {
+  margin-top: 24px;
+}
+
+.logoTrack {
+  display: flex;
+  gap: 56px;
+  padding-left: 56px;
+  align-items: center;
+  animation: slide 60s linear infinite;
+  width: max-content;
+}
+
+.logoSlide {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.clientLogo {
+  height: 36px;
+  width: auto;
+  opacity: 0.7;
+  filter: brightness(0) invert(1);
+  transition: opacity 0.3s ease;
+}
+
+.clientLogo:hover {
+  opacity: 1;
+}
+
+.logoTrackReverse {
+  animation-direction: reverse;
+}
+
+@keyframes slide {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-20%); }
+}
+
+/* Why Section */
+.whySection {
+  background: #0a0a0a;
+  padding: var(--section-padding);
+}
+
+.whySectionInner {
+  max-width: var(--section-max-width);
+  margin: 0 auto;
+  padding: 0 var(--section-padding-x);
+}
+
+.whyHeader {
+  margin-bottom: 48px;
+}
+
+.sectionLabel {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #ef4444;
+  margin-bottom: 24px;
+}
+
+.howSection .sectionLabel {
+  color: #3959ff;
+}
+
+.whyHeadline {
+  font-size: var(--heading-size);
+  font-weight: 400;
+  line-height: 1.2;
+  color: #fff;
+  margin: 0 0 16px 0;
+  letter-spacing: -0.02em;
+}
+
+.whySubtitle {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #888;
+  margin: 0;
+  max-width: 480px;
+}
+
+/* Benefits Grid */
+.benefitsGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.benefitCard {
+  background: #141414;
+  border-radius: 12px;
+  padding: 32px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: default;
+}
+
+.benefitCard:hover {
+  transform: scale(1.03) rotate(-1deg);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.benefitIcon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+  color: #888;
+}
+
+.benefitTitle {
+  font-size: 18px;
+  font-weight: 500;
+  color: #fff;
+  margin: 0 0 12px 0;
+}
+
+.benefitDesc {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #888;
+  margin: 0;
+}
+
+/* Services Section */
+.servicesSection {
+  background: #0a0a0a;
+  padding: var(--section-padding);
+}
+
+.servicesSectionInner {
+  max-width: var(--section-max-width);
+  margin: 0 auto;
+  padding: 0 var(--section-padding-x);
+}
+
+.servicesHeadline {
+  font-size: var(--heading-size);
+  font-weight: 400;
+  line-height: 1.2;
+  color: #fff;
+  margin: 0 0 16px 0;
+  letter-spacing: -0.02em;
+}
+
+.servicesSubtitle {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #888;
+  margin: 0 0 48px 0;
+  max-width: 500px;
+}
+
+/* How It Works Section */
+.howSection {
+  background: #0a0a0a;
+  padding: var(--section-padding);
+}
+
+.howSectionInner {
+  max-width: var(--section-max-width);
+  margin: 0 auto;
+  padding: 0 var(--section-padding-x);
+}
+
+.howHeadline {
+  font-size: var(--heading-size);
+  font-weight: 400;
+  line-height: 1.2;
+  color: #fff;
+  margin: 0 0 16px 0;
+  letter-spacing: -0.02em;
+}
+
+.howSubtitle {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #888;
+  margin: 0 0 48px 0;
+}
+
+.stepsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.step {
+  display: flex;
+  gap: 24px;
+}
+
+.stepNumber {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.stepNumber span {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #333;
+  border-radius: 50%;
+  font-size: 14px;
+  color: #888;
+}
+
+.stepLine {
+  width: 1px;
+  flex: 1;
+  min-height: 40px;
+  background: #333;
+  margin: 8px 0;
+}
+
+.stepContent {
+  padding-bottom: 32px;
+}
+
+.stepTitle {
+  font-size: 16px;
+  font-weight: 500;
+  color: #fff;
+  margin: 0 0 8px 0;
+  padding-top: 8px;
+}
+
+.stepTitle strong {
+  color: #4ade80;
+  font-weight: 600;
+}
+
+.stepDesc {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #888;
+  margin: 0;
+  max-width: 450px;
+}
+
+/* Guarantee / Testimonial Section */
+.guaranteeSection {
+  background: #0a0a0a;
+  padding: 40px 0 100px;
+}
+
+.guaranteeSectionInner {
+  max-width: var(--section-max-width);
+  margin: 0 auto;
+  padding: 0 var(--section-padding-x);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.guaranteeText {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #888;
+  margin: 0 0 16px 0;
+  max-width: 650px;
+}
+
+.guaranteeTagline {
+  font-size: 14px;
+  color: #3959ff;
+  font-weight: 500;
+  margin: 0;
+}
+
+/* Trust Section (Logos) */
+.trustSection {
+  background: #0a0a0a;
+  padding: 80px 0;
+}
+
+.trustInner {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 var(--section-padding-x);
+  overflow: hidden;
+}
+
+.trustLabel {
+  font-size: 17px;
+  color: #ddd;
+  margin: 0 0 24px 0;
+  text-align: center;
+  font-weight: 600;
+}
+
+.logoSlider {
+  width: 100%;
+  overflow: hidden;
+}
+
+.logoSlider + .logoSlider {
+  margin-top: 24px;
+}
+
+.logoTrack {
+  display: flex;
+  gap: 56px;
+  padding-left: 56px;
+  align-items: center;
+  animation: slide 60s linear infinite;
+  width: max-content;
+}
+
+.logoSlide {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.clientLogo {
+  height: 36px;
+  width: auto;
+  opacity: 0.7;
+  filter: brightness(0) invert(1);
+  transition: opacity 0.3s ease;
+}
+
+.clientLogo:hover {
+  opacity: 1;
+}
+
+.logoTrackReverse {
+  animation-direction: reverse;
+}
+
+@keyframes slide {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-20%); }
+}
+
+/* FAQ Section */
+.faqSection {
+  background: #0a0a0a;
+  padding: var(--section-padding);
+}
+
+.faqSectionInner {
+  max-width: var(--section-max-width);
+  margin: 0 auto;
+  padding: 0 var(--section-padding-x);
+}
+
+.faqHeadline {
+  font-size: var(--heading-size);
+  font-weight: 400;
+  line-height: 1.2;
+  color: #fff;
+  margin: 0 0 16px 0;
+  letter-spacing: -0.02em;
+}
+
+.faqSubtitle {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #888;
+  margin: 0 0 48px 0;
+}
+
+.faqList {
+  display: flex;
+  flex-direction: column;
+}
+
+.faqItem {
+  border-bottom: 1px solid #222;
+}
+
+.faqQuestion {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 0;
+  background: none;
+  border: none;
+  font-size: 16px;
+  color: #fff;
+  text-align: left;
+  cursor: pointer;
+  transition: color 0.2s;
+  font-family: inherit;
+}
+
+.faqQuestion:hover {
+  color: #888;
+}
+
+.faqIcon {
+  font-size: 12px;
+  color: #666;
+  transition: transform 0.3s ease;
+}
+
+.faqIconOpen {
+  transform: rotate(180deg);
+}
+
+.faqAnswer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+}
+
+.faqAnswerOpen {
+  max-height: 300px;
+  padding-bottom: 24px;
+}
+
+.faqAnswer p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #888;
+  margin: 0;
+}
+
+/* CTA Section */
+.ctaSection {
+  background: #0a0a0a;
+  padding: var(--section-padding);
+}
+
+.ctaInner {
+  max-width: var(--section-max-width);
+  margin: 0 auto;
+  padding: 0 var(--section-padding-x);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ctaHeadline {
+  font-size: clamp(28px, 4vw, 44px);
+  font-weight: 400;
+  line-height: 1.15;
+  color: #fff;
+  margin: 0 0 20px 0;
+  letter-spacing: -0.03em;
+}
+
+.ctaSubtitle {
+  font-size: 17px;
+  line-height: 1.6;
+  color: #888;
+  margin: 0 0 40px 0;
+  max-width: 480px;
+}
+
+.ctaBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 48px;
+  background: #fff;
+  color: #000;
+  font-size: 15px;
+  font-weight: 500;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.ctaBtn:hover {
+  opacity: 0.9;
+}
+
+.ctaNote {
+  font-size: 14px;
+  color: #4ade80;
+  margin: 20px 0 0 0;
+  font-weight: 500;
+}
+
+/* Footer */
+.footer {
+  border-top: 1px solid #1a1a1a;
+  padding: 32px 0;
+}
+
+.footerInner {
+  max-width: var(--section-max-width);
+  margin: 0 auto;
+  padding: 0 var(--section-padding-x);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footerLogo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  font-weight: 400;
+  color: #666;
+  text-decoration: none;
+}
+
+.footerLogoIcon {
+  height: 18px;
+  width: 18px;
+  border-radius: 4px;
+  opacity: 0.6;
+}
+
+.footerCopy {
+  font-size: 13px;
+  color: #555;
+  margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .benefitsGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .heroInner {
+    padding: 40px 20px;
+    min-height: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .page {
+    --section-padding-x: 20px;
+    --section-padding: 60px 0;
+  }
+
+  .heroInner {
+    padding: 24px 16px;
+  }
+
+  .headline {
+    font-size: 24px;
+  }
+
+  .logoTagline {
+    font-size: 10px;
+  }
+
+  .trustLabel {
+    font-size: 14px;
+  }
+
+  .clientLogo {
+    height: 28px;
+  }
+
+  .logoTrack {
+    gap: 24px;
+    padding-left: 24px;
+  }
+
+  .logoSlider + .logoSlider {
+    margin-top: 16px;
+  }
+
+  .whyHeadline,
+  .servicesHeadline,
+  .howHeadline {
+    font-size: 22px;
+  }
+
+  .benefitCard {
+    padding: 24px;
+  }
+
+  .benefitTitle {
+    font-size: 16px;
+  }
+
+  .benefitDesc {
+    font-size: 13px;
+  }
+
+  .step {
+    gap: 16px;
+  }
+
+  .stepNumber span {
+    width: 32px;
+    height: 32px;
+    font-size: 12px;
+  }
+
+  .ctaHeadline {
+    font-size: 22px;
+  }
+
+  .ctaSubtitle {
+    font-size: 15px;
+  }
+
+  .ctaBtn {
+    padding: 14px 36px;
+    font-size: 14px;
+  }
+
+  .faqHeadline {
+    font-size: 22px;
+  }
+
+  .trustLabel {
+    font-size: 14px;
+  }
+
+  .clientLogo {
+    height: 28px;
+  }
+
+  .logoTrack {
+    gap: 24px;
+    padding-left: 24px;
+  }
+
+  .logoSlider + .logoSlider {
+    margin-top: 16px;
+  }
+
+  .footerInner {
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+  }
+}

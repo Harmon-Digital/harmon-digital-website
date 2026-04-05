@@ -1,0 +1,595 @@
+/* Shared Section Variables */
+.page {
+  --section-max-width: 700px;
+  --section-padding: 100px 0;
+  --section-padding-x: 24px;
+  --heading-size: clamp(26px, 3vw, 36px);
+
+  background: #0a0a0a;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+@media (max-width: 480px) {
+  .page {
+    --section-padding-x: 40px;
+  }
+}
+
+/* Hero */
+.hero {
+  padding-top: 0;
+}
+
+.heroInner {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 24px 24px;
+  min-height: calc(100vh - 40px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.heroContent {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.logoBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.logoLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #fff;
+  text-decoration: none;
+  letter-spacing: -0.01em;
+}
+
+.logoIcon {
+  height: 20px;
+  width: 20px;
+  border-radius: 4px;
+}
+
+.rating {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  margin-top: 4px;
+}
+
+.trustpilotStars {
+  display: flex;
+  gap: 3px;
+}
+
+.starBox {
+  width: 18px;
+  height: 18px;
+  background: #00b67a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  color: #fff;
+}
+
+.ratingText {
+  font-size: 12px;
+  color: #888;
+}
+
+.logoTagline {
+  font-size: 12px;
+  color: #666;
+  margin: 0 0 12px 0;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.headline {
+  font-size: clamp(36px, 6vw, 64px);
+  font-weight: 400;
+  line-height: 1.15;
+  color: #fff;
+  margin: 0 0 24px 0;
+  letter-spacing: -0.03em;
+}
+
+.subtitle {
+  font-size: 17px;
+  line-height: 1.6;
+  color: #888;
+  margin: 0 0 40px 0;
+  max-width: 680px;
+}
+
+/* Section Label */
+.sectionLabel {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #f59e0b;
+  margin-bottom: 24px;
+}
+
+/* Why Section */
+.whySection {
+  background: #0a0a0a;
+  padding: var(--section-padding);
+}
+
+.whySectionInner {
+  max-width: var(--section-max-width);
+  margin: 0 auto;
+  padding: 0 var(--section-padding-x);
+}
+
+.whyHeader {
+  margin-bottom: 48px;
+}
+
+.whyHeadline {
+  font-size: var(--heading-size);
+  font-weight: 400;
+  line-height: 1.2;
+  color: #fff;
+  margin: 0 0 16px 0;
+  letter-spacing: -0.02em;
+}
+
+.whySubtitle {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #888;
+  margin: 0;
+  max-width: 480px;
+}
+
+/* Benefits Grid */
+.benefitsGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.benefitCard {
+  background: #141414;
+  border-radius: 12px;
+  padding: 32px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: default;
+}
+
+.benefitCard:hover {
+  transform: scale(1.03) rotate(-1deg);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.benefitIcon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+  color: #888;
+}
+
+.benefitTitle {
+  font-size: 18px;
+  font-weight: 500;
+  color: #fff;
+  margin: 0 0 12px 0;
+}
+
+.benefitDesc {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #888;
+  margin: 0;
+}
+
+/* Tools Section */
+.toolsSection {
+  background: #0a0a0a;
+  padding: var(--section-padding);
+}
+
+.toolsSectionInner {
+  max-width: var(--section-max-width);
+  margin: 0 auto;
+  padding: 0 var(--section-padding-x);
+}
+
+.toolsHeadline {
+  font-size: var(--heading-size);
+  font-weight: 400;
+  line-height: 1.2;
+  color: #fff;
+  margin: 0 0 16px 0;
+  letter-spacing: -0.02em;
+}
+
+.toolsSubtitle {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #888;
+  margin: 0 0 48px 0;
+  max-width: 500px;
+}
+
+/* Tools Grid */
+.toolsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.toolCard {
+  background: #141414;
+  border-radius: 12px;
+  padding: 32px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: default;
+}
+
+.toolCard:hover {
+  transform: scale(1.03) rotate(-1deg);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.toolIcon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+  color: #888;
+}
+
+.toolTitle {
+  font-size: 18px;
+  font-weight: 500;
+  color: #fff;
+  margin: 0 0 12px 0;
+}
+
+.toolDesc {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #888;
+  margin: 0;
+}
+
+.toolLink {
+  color: #3959ff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: opacity 0.2s;
+}
+
+.toolLink:hover {
+  opacity: 0.8;
+}
+
+.toolNote {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #666;
+  margin: 40px 0 0;
+  text-align: center;
+  font-style: italic;
+}
+
+/* Guarantee / Testimonial */
+.guaranteeSection {
+  background: #0a0a0a;
+  padding: 40px 0 100px;
+}
+
+.guaranteeSectionInner {
+  max-width: var(--section-max-width);
+  margin: 0 auto;
+  padding: 0 var(--section-padding-x);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.guaranteeText {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #888;
+  margin: 0 0 16px 0;
+  max-width: 650px;
+}
+
+.guaranteeTagline {
+  font-size: 14px;
+  color: #3959ff;
+  font-weight: 500;
+  margin: 0;
+}
+
+/* Trust Section (Logos) */
+.trustSection {
+  background: #0a0a0a;
+  padding: 80px 0;
+}
+
+.trustInner {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 var(--section-padding-x);
+  overflow: hidden;
+}
+
+.trustLabel {
+  font-size: 17px;
+  color: #ddd;
+  margin: 0 0 24px 0;
+  text-align: center;
+  font-weight: 600;
+}
+
+.logoSlider {
+  width: 100%;
+  overflow: hidden;
+}
+
+.logoSlider + .logoSlider {
+  margin-top: 24px;
+}
+
+.logoTrack {
+  display: flex;
+  gap: 56px;
+  padding-left: 56px;
+  align-items: center;
+  animation: slide 60s linear infinite;
+  width: max-content;
+}
+
+.logoSlide {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.clientLogo {
+  height: 36px;
+  width: auto;
+  opacity: 0.7;
+  filter: brightness(0) invert(1);
+  transition: opacity 0.3s ease;
+}
+
+.clientLogo:hover {
+  opacity: 1;
+}
+
+.logoTrackReverse {
+  animation-direction: reverse;
+}
+
+@keyframes slide {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-20%); }
+}
+
+/* FAQ Section */
+.faqSection {
+  background: #0a0a0a;
+  padding: var(--section-padding);
+}
+
+.faqSectionInner {
+  max-width: var(--section-max-width);
+  margin: 0 auto;
+  padding: 0 var(--section-padding-x);
+}
+
+.faqHeadline {
+  font-size: var(--heading-size);
+  font-weight: 400;
+  line-height: 1.2;
+  color: #fff;
+  margin: 0 0 16px 0;
+  letter-spacing: -0.02em;
+}
+
+.faqList {
+  display: flex;
+  flex-direction: column;
+}
+
+.faqItem {
+  border-bottom: 1px solid #222;
+}
+
+.faqQuestion {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 0;
+  background: none;
+  border: none;
+  font-size: 16px;
+  color: #fff;
+  text-align: left;
+  cursor: pointer;
+  transition: color 0.2s;
+  font-family: inherit;
+}
+
+.faqQuestion:hover {
+  color: #888;
+}
+
+.faqIcon {
+  font-size: 12px;
+  color: #666;
+  transition: transform 0.3s ease;
+}
+
+.faqIconOpen {
+  transform: rotate(180deg);
+}
+
+.faqAnswer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+}
+
+.faqAnswerOpen {
+  max-height: 300px;
+  padding-bottom: 24px;
+}
+
+.faqAnswer p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #888;
+  margin: 0;
+}
+
+/* Footer */
+.footer {
+  border-top: 1px solid #1a1a1a;
+  padding: 32px 0;
+}
+
+.footerInner {
+  max-width: var(--section-max-width);
+  margin: 0 auto;
+  padding: 0 var(--section-padding-x);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footerLogo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  font-weight: 400;
+  color: #666;
+  text-decoration: none;
+}
+
+.footerLogoIcon {
+  height: 18px;
+  width: 18px;
+  border-radius: 4px;
+  opacity: 0.6;
+}
+
+.footerCopy {
+  font-size: 13px;
+  color: #555;
+  margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .benefitsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .toolsGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .heroInner {
+    padding: 40px 20px;
+    min-height: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .page {
+    --section-padding-x: 20px;
+    --section-padding: 60px 0;
+  }
+
+  .heroInner {
+    padding: 24px 16px;
+  }
+
+  .headline {
+    font-size: 24px;
+  }
+
+  .logoTagline {
+    font-size: 10px;
+  }
+
+  .trustLabel {
+    font-size: 14px;
+  }
+
+  .clientLogo {
+    height: 28px;
+  }
+
+  .logoTrack {
+    gap: 24px;
+    padding-left: 24px;
+  }
+
+  .logoSlider + .logoSlider {
+    margin-top: 16px;
+  }
+
+  .whyHeadline,
+  .toolsHeadline,
+  .faqHeadline {
+    font-size: 22px;
+  }
+
+  .benefitCard,
+  .toolCard {
+    padding: 24px;
+  }
+
+  .benefitTitle,
+  .toolTitle {
+    font-size: 16px;
+  }
+
+  .benefitDesc,
+  .toolDesc {
+    font-size: 13px;
+  }
+
+  .footerInner {
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+  }
+}

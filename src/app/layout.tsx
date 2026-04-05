@@ -1,7 +1,5 @@
 import type { Metadata } from 'next'
 import '@/styles/main.css'
-import { Header } from '@/components/main/Header'
-import { Footer } from '@/components/main/Footer'
 import { GoogleAnalytics } from '@/components/analytics/GoogleAnalytics'
 import { MetaPixel } from '@/components/analytics/MetaPixel'
 import {
@@ -92,9 +90,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className="main-body" suppressHydrationWarning>
         <GoogleAnalytics />
         <MetaPixel />
-        <Header />
-        <main>{children}</main>
-        <Footer />
+        {children}
       </body>
     </html>
   )
