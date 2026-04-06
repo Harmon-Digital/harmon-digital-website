@@ -17,7 +17,7 @@ const stats = [
 ]
 
 // Cal.com embed component
-function CalEmbed({ onBooked }: { onBooked: () => void }) {
+function CalEmbed({ onBooked, formData }: { onBooked: () => void; formData: Record<string, string> }) {
   const calRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
@@ -31,12 +31,42 @@ function CalEmbed({ onBooked }: { onBooked: () => void }) {
       onBooked()
     }
 
+    const lookingForLabels: Record<string, string> = {
+      'ai': 'AI Agents or AI Consulting',
+      'automate': 'Automate Existing Processes',
+      'build': 'Custom Software or App',
+      'website': 'Website or Web App',
+      'consulting': 'Not Sure — Just Want to Talk',
+    }
+    const manualHoursLabels: Record<string, string> = {
+      '0-5': '0-5 hrs/wk', '5-15': '5-15 hrs/wk', '15-30': '15-30 hrs/wk',
+      '30+': '30+ hrs/wk', 'unsure': 'Unsure',
+    }
+    const revenueLabels: Record<string, string> = {
+      '0-10k': '<$10K/mo', '10-50k': '$10-50K/mo', '50-200k': '$50-200K/mo', '200k+': '$200K+/mo',
+    }
+
+    const notesLines = [
+      `Looking for: ${lookingForLabels[formData.lookingFor] || formData.lookingFor}`,
+      formData.needs ? `Needs: ${formData.needs}` : '',
+      `Manual hours: ${manualHoursLabels[formData.manualHours] || formData.manualHours}`,
+      `Revenue: ${revenueLabels[formData.monthlyRevenue] || formData.monthlyRevenue}`,
+      `Credit score: ${formData.creditScore}`,
+    ].filter(Boolean).join('\n')
+
+    const prefill = {
+      name: formData.name || '',
+      email: formData.email || '',
+      smsReminderNumber: formData.phone || '',
+      notes: notesLines,
+    }
+
     // @ts-ignore
     if (window.Cal) {
       // @ts-ignore
       window.Cal.ns["15min"]("inline", {
         elementOrSelector: "#lp-cal-inline-15min",
-        config: { layout: "month_view", useSlotsViewOnSmallScreen: "true", theme: "light" },
+        config: { layout: "month_view", useSlotsViewOnSmallScreen: "true", theme: "light", prefill },
         calLink: "harmon-digital/15min",
       })
       // @ts-ignore
@@ -52,7 +82,7 @@ function CalEmbed({ onBooked }: { onBooked: () => void }) {
         Cal("init", "15min", {origin:"https://app.cal.com"});
         Cal.ns["15min"]("inline", {
           elementOrSelector:"#lp-cal-inline-15min",
-          config: {"layout":"month_view","useSlotsViewOnSmallScreen":"true","theme":"light"},
+          config: {"layout":"month_view","useSlotsViewOnSmallScreen":"true","theme":"light","prefill":${JSON.stringify(prefill)}},
           calLink: "harmon-digital/15min",
         });
         Cal.ns["15min"]("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
@@ -65,7 +95,7 @@ function CalEmbed({ onBooked }: { onBooked: () => void }) {
       `
       document.body.appendChild(script)
     }
-  }, [onBooked])
+  }, [onBooked, formData])
 
   return (
     <div className={styles.calFullScreen}>
@@ -95,8 +125,29 @@ export function LandingPage() {
     honeypot: '',
   })
 
+  const saveLead = async (step: number, data: typeof formData, status = 'partial') => {
+    try {
+      await fetch('/api/lead', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          ...data,
+          lastCompletedStep: step,
+          status,
+        }),
+      })
+    } catch (error) {
+      console.error('Failed to save lead:', error)
+    }
+  }
+
   const handleNext = () => {
-    setFormStep((s) => s + 1)
+    const nextStep = formStep + 1
+    // Auto-save after step 2 (we now have email+phone) and every step after
+    if (formStep >= 2 && formData.email) {
+      saveLead(formStep, formData)
+    }
+    setFormStep(nextStep)
   }
 
   const handleBack = () => {
@@ -109,6 +160,12 @@ export function LandingPage() {
       setFormStep(8)
       return
     }
+
+    const isNotAFit = formData.monthlyRevenue === 'pre-revenue'
+    const status = isNotAFit ? 'not-a-fit' : 'submitted'
+
+    // Save final lead data
+    saveLead(6, formData, status)
 
     try {
       await fetch('/api/contact', {
@@ -126,7 +183,7 @@ export function LandingPage() {
     })
 
     // Qualification filter: pre-revenue businesses don't have processes to automate yet
-    if (formData.monthlyRevenue === 'pre-revenue') {
+    if (isNotAFit) {
       router.push('/lp/not-a-fit')
       return
     }
@@ -336,7 +393,9 @@ export function LandingPage() {
                     key={opt.value}
                     className={`${styles.optionCard} ${formData.manualHours === opt.value ? styles.optionCardActive : ''}`}
                     onClick={() => {
-                      setFormData({ ...formData, manualHours: opt.value })
+                      const updated = { ...formData, manualHours: opt.value }
+                      setFormData(updated)
+                      if (updated.email) saveLead(4, updated)
                       setTimeout(() => setFormStep(5), 200)
                     }}
                   >
@@ -367,7 +426,9 @@ export function LandingPage() {
                     key={opt.value}
                     className={`${styles.optionCard} ${formData.monthlyRevenue === opt.value ? styles.optionCardActive : ''}`}
                     onClick={() => {
-                      setFormData({ ...formData, monthlyRevenue: opt.value })
+                      const updated = { ...formData, monthlyRevenue: opt.value }
+                      setFormData(updated)
+                      if (updated.email) saveLead(5, updated)
                       setTimeout(() => setFormStep(6), 200)
                     }}
                   >
@@ -399,7 +460,9 @@ export function LandingPage() {
                     className={`${styles.optionCard} ${formData.creditScore === opt.value ? styles.optionCardActive : ''}`}
                     onClick={() => {
                       setFormData({ ...formData, creditScore: opt.value })
-                      setTimeout(() => handleSubmit(), 200)
+                      setTimeout(() => {
+                        handleSubmit()
+                      }, 200)
                     }}
                   >
                     <span className={styles.optionKey}>{opt.key}</span>
@@ -414,7 +477,7 @@ export function LandingPage() {
           )}
 
           {/* Step 7: Qualified — show cal */}
-          {formStep === 7 && <CalEmbed onBooked={() => router.push('/lp/confirmed')} />}
+          {formStep === 7 && <CalEmbed key={JSON.stringify(formData)} onBooked={() => { saveLead(7, formData, 'booked'); router.push('/lp/confirmed') }} formData={formData} />}
 
           {/* Step 8: Not qualified */}
           {formStep === 8 && (
