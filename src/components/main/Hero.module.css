@@ -7,7 +7,6 @@
 
   background: #0a0a0a;
   padding-top: 80px;
-  overflow-x: hidden;
 }
 
 @media (max-width: 480px) {
@@ -84,11 +83,10 @@
 
 /* Trust Section */
 .trust {
-  margin-top: 24px;
-  width: 100vw;
-  position: relative;
-  left: 50%;
-  transform: translateX(-50%);
+  width: 100%;
+  overflow: hidden;
+  margin-top: -40px;
+  padding-bottom: 40px;
 }
 
 .trustLabel {
@@ -108,7 +106,6 @@
 .logoTrack {
   display: flex;
   gap: 56px;
-  padding-left: 56px;
   align-items: center;
   animation: slide 40s linear infinite;
   width: max-content;
@@ -146,8 +143,8 @@
 .heroCenter {
   max-width: 800px;
   margin: 0 auto;
-  padding: 80px 24px 60px;
-  min-height: calc(100vh - 140px);
+  padding: 40px 24px 40px;
+  min-height: calc(100vh - 200px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -2051,10 +2048,19 @@
   border-radius: 12px;
 }
 
-/* Qualification Form */
+/* Multi-step Qualification Form */
 .qualifyForm {
   max-width: 600px;
   width: 100%;
+}
+
+.formHeadline {
+  font-size: clamp(22px, 2.5vw, 30px);
+  font-weight: 400;
+  line-height: 1.3;
+  color: #fff;
+  margin: 0 0 16px 0;
+  letter-spacing: -0.02em;
 }
 
 .formSubtitle {
@@ -2063,21 +2069,112 @@
   margin: 0 0 32px;
 }
 
-.formGrid {
+.progressBar {
+  width: 100%;
+  height: 4px;
+  background: #333;
+  border-radius: 2px;
+  margin: 0 0 32px;
+  overflow: hidden;
+}
+
+.progressFill {
+  height: 100%;
+  background: #fff;
+  border-radius: 2px;
+  transition: width 0.4s ease;
+}
+
+.optionGrid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 20px;
-  margin-bottom: 20px;
+  gap: 12px;
+}
+
+.optionCard {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 20px;
+  background: #1a1a1a;
+  border: 2px solid transparent;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-align: left;
+  font-family: inherit;
+}
+
+.optionCard:hover {
+  border-color: #444;
+  background: #222;
+}
+
+.optionCardActive {
+  border-color: #fff;
+  background: #222;
+}
+
+.optionKey {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #555;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 500;
+  color: #888;
+  flex-shrink: 0;
+}
+
+.optionCardActive .optionKey {
+  border-color: #fff;
+  color: #fff;
+}
+
+.optionLabel {
+  font-size: 14px;
+  font-weight: 500;
+  color: #fff;
+}
+
+.formNav {
+  display: flex;
+  align-items: stretch;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.formBackBtn {
+  padding: 14px 24px;
+  background: transparent;
+  color: #888;
+  border: 1px solid #444;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.2s;
+}
+
+.formBackBtn:hover {
+  border-color: #888;
+  color: #fff;
+}
+
+.formNav .formSubmitBtn {
+  flex: 1;
+  margin-top: 0;
 }
 
 .formGroup {
   display: flex;
   flex-direction: column;
   gap: 8px;
-}
-
-.formGroupFull {
-  grid-column: 1 / -1;
+  margin-bottom: 16px;
 }
 
 .formGroup label {
@@ -2092,10 +2189,12 @@
   border: 1px solid #333;
   border-radius: 8px;
   padding: 12px 16px;
-  font-size: 15px;
+  font-size: 16px;
   color: #fff;
   font-family: inherit;
   transition: border-color 0.2s ease;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .formGroup input:focus,
@@ -2108,14 +2207,6 @@
 .formGroup input::placeholder,
 .formGroup textarea::placeholder {
   color: #555;
-}
-
-.formGroup select {
-  cursor: pointer;
-  appearance: none;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23888' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-position: right 16px center;
 }
 
 .formGroup textarea {
@@ -2138,6 +2229,51 @@
 
 .formSubmitBtn:hover {
   opacity: 0.9;
+}
+
+.formSubmitBtn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.errorBanner {
+  background: #2a1515;
+  border: 1px solid #5c2020;
+  border-radius: 8px;
+  padding: 12px 16px;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.errorBanner p {
+  color: #fca5a5;
+  font-size: 14px;
+  margin: 0;
+}
+
+.errorRetryBtn {
+  background: #dc2626;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 6px 14px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.errorRetryBtn:hover {
+  background: #b91c1c;
+}
+
+@media (max-width: 600px) {
+  .optionGrid {
+    grid-template-columns: 1fr;
+  }
 }
 
 .calEmbedWrapper {

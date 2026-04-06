@@ -7,57 +7,79 @@ import Link from 'next/link'
 import styles from './Hero.module.css'
 import { trackMetaEvent } from '@/components/analytics/MetaPixel'
 
+const lookingForLabels: Record<string, string> = {
+  'ai': 'AI Agents or AI Consulting',
+  'automate': 'Automate Existing Processes',
+  'build': 'Custom Software or App',
+  'website': 'Website or Web App',
+  'consulting': 'Not Sure — Just Want to Talk',
+}
+
 // Cal.com embed component
-function CalEmbed() {
+function CalEmbed({ formData, onBooked }: { formData: Record<string, string>; onBooked: () => void }) {
   const calRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     // @ts-ignore
+    window.__homeCalBooked = () => {
+      trackMetaEvent('Schedule', {
+        content_name: 'Homepage Cal Booking',
+        content_category: 'Contact',
+      })
+      onBooked()
+    }
+
+    const rawPhone = (formData.phone || '').replace(/[\s\-\(\)]/g, '')
+    const intlPhone = rawPhone.startsWith('+') ? rawPhone : rawPhone.startsWith('1') ? `+${rawPhone}` : `+1${rawPhone}`
+
+    const notesLines = [
+      `Looking for: ${lookingForLabels[formData.lookingFor] || formData.lookingFor}`,
+      formData.needs ? `Needs: ${formData.needs}` : '',
+    ].filter(Boolean).join('\n')
+
+    const prefill = {
+      name: formData.name || '',
+      email: formData.email || '',
+      aiAgentCallPhoneNumber: formData.phone ? intlPhone : '',
+      title: lookingForLabels[formData.lookingFor] || formData.lookingFor || '',
+      notes: notesLines,
+    }
+
+    // @ts-ignore
     if (window.Cal) {
-      // Cal already loaded, just initialize
       // @ts-ignore
-      window.Cal.ns["15min"]("inline", {
+      window.Cal.ns["audit"]("inline", {
         elementOrSelector: "#my-cal-inline-15min",
-        config: { layout: "month_view", useSlotsViewOnSmallScreen: "true" },
-        calLink: "harmon-digital/15min",
+        config: { layout: "month_view", useSlotsViewOnSmallScreen: "true", theme: "light", prefill },
+        calLink: "harmon-digital/audit",
       })
       // @ts-ignore
-      window.Cal.ns["15min"]("on", {
+      window.Cal.ns["audit"]("on", {
         action: "bookingSuccessful",
-        callback: () => {
-          trackMetaEvent('Schedule', {
-            content_name: 'Homepage Cal Booking',
-            content_category: 'Contact',
-          })
-        }
+        // @ts-ignore
+        callback: () => window.__homeCalBooked()
       })
     } else {
-      // Load Cal.com embed script
       const script = document.createElement('script')
       script.innerHTML = `
         (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
-        Cal("init", "15min", {origin:"https://app.cal.com"});
-        Cal.ns["15min"]("inline", {
+        Cal("init", "audit", {origin:"https://app.cal.com"});
+        Cal.ns["audit"]("inline", {
           elementOrSelector:"#my-cal-inline-15min",
-          config: {"layout":"month_view","useSlotsViewOnSmallScreen":"true"},
-          calLink: "harmon-digital/15min",
+          config: {"layout":"month_view","useSlotsViewOnSmallScreen":"true","theme":"light","prefill":${JSON.stringify(prefill)}},
+          calLink: "harmon-digital/audit",
         });
-        Cal.ns["15min"]("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
-        Cal.ns["15min"]("on", {
+        Cal.ns["audit"]("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
+        Cal.ns["audit"]("on", {
           action: "bookingSuccessful",
           callback: function() {
-            if (window.fbq) {
-              window.fbq('track', 'Schedule', {
-                content_name: 'Homepage Cal Booking',
-                content_category: 'Contact'
-              });
-            }
+            if (window.__homeCalBooked) window.__homeCalBooked();
           }
         });
       `
       document.body.appendChild(script)
     }
-  }, [])
+  }, [onBooked, formData])
 
   return (
     <>
@@ -145,14 +167,19 @@ export function Hero() {
   const bookCallRef = useRef<HTMLDivElement>(null)
   const animationRef = useRef<number | null>(null)
 
-  // Qualification form state
-  const [formStep, setFormStep] = useState(0) // 0 = form, 1 = qualified, 2 = not qualified
+  // Multi-step qualification form (same as LP)
+  const [formStep, setFormStep] = useState(1)
+  const [submitError, setSubmitError] = useState(false)
   const [formData, setFormData] = useState({
+    lookingFor: '',
     name: '',
     email: '',
-    lookingFor: '',
+    phone: '',
     needs: '',
-    honeypot: '', // spam trap - should remain empty
+    manualHours: '',
+    monthlyRevenue: '',
+    creditScore: '',
+    honeypot: '',
   })
 
   useEffect(() => {
@@ -217,41 +244,51 @@ export function Hero() {
     setIsVisible(false)
   }
 
-  const handleFormSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-
-    // Spam check - if honeypot is filled, it's a bot
-    if (formData.honeypot) {
-      setFormStep(2)
-      return
-    }
-
-    // Only filter out salespeople trying to sell services
-    const isSalesPitch = formData.lookingFor === 'sell'
-    if (isSalesPitch) {
-      setFormStep(2)
-      return
-    }
-
-    // Send form data to API
+  const saveLead = async (step: number, data: typeof formData, status = 'partial') => {
     try {
-      await fetch('/api/contact', {
+      await fetch('/api/lead', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({ ...data, lastCompletedStep: step, status }),
       })
     } catch (error) {
+      console.error('Failed to save lead:', error)
+    }
+  }
+
+  const handleFormNext = () => {
+    if (formStep >= 2 && formData.email) saveLead(formStep, formData)
+    setFormStep((s) => s + 1)
+  }
+
+  const handleFormBack = () => setFormStep((s) => s - 1)
+
+  const handleFormSubmit = async (data: typeof formData) => {
+    if (data.honeypot) { setFormStep(8); return }
+
+    const isNotAFit = data.monthlyRevenue === 'pre-revenue'
+    saveLead(6, data, isNotAFit ? 'not-a-fit' : 'submitted')
+
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      })
+      if (!res.ok) throw new Error('Email send failed')
+      setSubmitError(false)
+    } catch (error) {
       console.error('Failed to submit form:', error)
+      setSubmitError(true)
     }
 
-    // Track Lead event for Meta Pixel
     trackMetaEvent('Lead', {
       content_name: 'Homepage Contact Form',
       content_category: 'Contact',
     })
 
-    // Everyone else is qualified
-    setFormStep(1)
+    if (isNotAFit) { setFormStep(8); return }
+    setFormStep(7)
   }
 
   return (
@@ -275,18 +312,19 @@ export function Hero() {
             Book my free audit
           </a>
 
-          <div className={styles.trust}>
-            <div className={styles.logoSlider}>
-              <div className={styles.logoTrack}>
-                {[...clientLogos, ...clientLogos, ...clientLogos, ...clientLogos, ...clientLogos].map((logo, index) => (
-                  <div key={index} className={styles.logoSlide}>
-                    <img src={logo} alt="Client logo" className={styles.clientLogo} />
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
         </motion.div>
+      </div>
+
+      <div className={styles.trust}>
+        <div className={styles.logoSlider}>
+          <div className={styles.logoTrack}>
+            {[...clientLogos, ...clientLogos, ...clientLogos, ...clientLogos, ...clientLogos].map((logo, index) => (
+              <div key={index} className={styles.logoSlide}>
+                <img src={logo} alt="Client logo" className={styles.clientLogo} />
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
 
       {/* Problem Section */}
@@ -698,96 +736,162 @@ export function Hero() {
         </div>
       </div>
 
-      {/* Book a Call Section */}
+      {/* Book a Call Section — Multi-step form */}
       <div ref={bookCallRef} className={styles.bookCallSection} id="book">
         <div className={styles.bookCallSectionInner}>
           <h2 className={styles.bookCallHeadline}>
             Get a free AI audit of <span className={`${styles.highlighted} ${highlightVisible ? styles.highlightedVisible : ''}`}>your operations.</span>
           </h2>
 
-          {formStep === 0 && (
-            <form className={styles.qualifyForm} onSubmit={handleFormSubmit}>
-              <p className={styles.formSubtitle}>Tell us what you need so we can come prepared.</p>
-
-              {/* Honeypot field - hidden from users, bots will fill it */}
-              <input
-                type="text"
-                name="website_url"
-                value={formData.honeypot}
-                onChange={(e) => setFormData({ ...formData, honeypot: e.target.value })}
-                style={{ position: 'absolute', left: '-9999px', opacity: 0 }}
-                tabIndex={-1}
-                autoComplete="off"
-              />
-
-              <div className={styles.formGrid}>
-                <div className={styles.formGroup}>
-                  <label htmlFor="name">Name</label>
-                  <input
-                    type="text"
-                    id="name"
-                    required
-                    value={formData.name}
-                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    placeholder="Your name"
-                  />
-                </div>
-
-                <div className={styles.formGroup}>
-                  <label htmlFor="email">Email</label>
-                  <input
-                    type="email"
-                    id="email"
-                    required
-                    value={formData.email}
-                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    placeholder="you@company.com"
-                  />
-                </div>
-
-                <div className={`${styles.formGroup} ${styles.formGroupFull}`}>
-                  <label htmlFor="lookingFor">What are you looking for?</label>
-                  <select
-                    id="lookingFor"
-                    required
-                    value={formData.lookingFor}
-                    onChange={(e) => setFormData({ ...formData, lookingFor: e.target.value })}
-                  >
-                    <option value="">Select one</option>
-                    <option value="build">Build custom software or an app</option>
-                    <option value="ai">AI agents or AI consulting</option>
-                    <option value="automate">Automate existing processes</option>
-                    <option value="website">Website or web app</option>
-                    <option value="consulting">Not sure yet — just want to talk</option>
-                    <option value="sell">I want to sell you something</option>
-                  </select>
-                </div>
-              </div>
-
-              <div className={styles.formGroup}>
-                <label htmlFor="needs">Tell us about your project</label>
-                <textarea
-                  id="needs"
-                  value={formData.needs}
-                  onChange={(e) => setFormData({ ...formData, needs: e.target.value })}
-                  placeholder="What would you like to build or automate? (optional)"
-                  rows={3}
-                />
-              </div>
-
-              <button type="submit" className={styles.formSubmitBtn}>
-                Continue
-              </button>
-            </form>
+          {formStep <= 6 && (
+            <div className={styles.progressBar}>
+              <div className={styles.progressFill} style={{ width: `${(formStep / 6) * 100}%` }} />
+            </div>
           )}
 
-          {formStep === 1 && <CalEmbed />}
+          <input type="text" name="website_url" value={formData.honeypot} onChange={(e) => setFormData({ ...formData, honeypot: e.target.value })} style={{ position: 'absolute', left: '-9999px', opacity: 0 }} tabIndex={-1} autoComplete="off" />
 
+          {submitError && (
+            <div className={styles.errorBanner}>
+              <p>Something went wrong sending your info. Your data is saved — try again.</p>
+              <button className={styles.errorRetryBtn} onClick={() => handleFormSubmit(formData)}>Retry</button>
+            </div>
+          )}
+
+          {/* Step 1: What do you need? */}
+          {formStep === 1 && (
+            <div className={styles.qualifyForm}>
+              <h3 className={styles.formHeadline}>What are you looking for?</h3>
+              <p className={styles.formSubtitle}>Pick the one that best describes your need.</p>
+              <div className={styles.optionGrid}>
+                {[
+                  { value: 'ai', label: 'AI Agents or AI Consulting', key: 'A' },
+                  { value: 'automate', label: 'Automate Existing Processes', key: 'B' },
+                  { value: 'build', label: 'Custom Software or App', key: 'C' },
+                  { value: 'website', label: 'Website or Web App', key: 'D' },
+                  { value: 'consulting', label: 'Not Sure — Just Want to Talk', key: 'E' },
+                ].map((opt) => (
+                  <button key={opt.value} className={`${styles.optionCard} ${formData.lookingFor === opt.value ? styles.optionCardActive : ''}`} onClick={() => { setFormData({ ...formData, lookingFor: opt.value }); setTimeout(() => setFormStep(2), 200) }}>
+                    <span className={styles.optionKey}>{opt.key}</span>
+                    <span className={styles.optionLabel}>{opt.label}</span>
+                  </button>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* Step 2: Contact info */}
           {formStep === 2 && (
+            <div className={styles.qualifyForm}>
+              <h3 className={styles.formHeadline}>How do we reach you?</h3>
+              <div className={styles.formGroup}>
+                <label htmlFor="hp-name">Name</label>
+                <input type="text" id="hp-name" value={formData.name} onChange={(e) => setFormData({ ...formData, name: e.target.value })} placeholder="Your full name" autoFocus />
+              </div>
+              <div className={styles.formGroup}>
+                <label htmlFor="hp-email">Email</label>
+                <input type="email" id="hp-email" value={formData.email} onChange={(e) => setFormData({ ...formData, email: e.target.value })} placeholder="you@company.com" />
+              </div>
+              <div className={styles.formGroup}>
+                <label htmlFor="hp-phone">Phone</label>
+                <input type="tel" id="hp-phone" value={formData.phone} onChange={(e) => setFormData({ ...formData, phone: e.target.value })} placeholder="(555) 555-5555" />
+              </div>
+              <div className={styles.formNav}>
+                <button className={styles.formBackBtn} onClick={handleFormBack}>Back</button>
+                <button className={styles.formSubmitBtn} disabled={!formData.name || !formData.email || !formData.phone} onClick={handleFormNext}>Continue</button>
+              </div>
+            </div>
+          )}
+
+          {/* Step 3: What do you need help with */}
+          {formStep === 3 && (
+            <div className={styles.qualifyForm}>
+              <h3 className={styles.formHeadline}>What do you need help with?</h3>
+              <div className={styles.formGroup}>
+                <textarea id="hp-needs" value={formData.needs} onChange={(e) => setFormData({ ...formData, needs: e.target.value })} placeholder="Tell us about your project, pain points, or goals..." rows={4} autoFocus />
+              </div>
+              <div className={styles.formNav}>
+                <button className={styles.formBackBtn} onClick={handleFormBack}>Back</button>
+                <button className={styles.formSubmitBtn} disabled={!formData.needs} onClick={handleFormNext}>Continue</button>
+              </div>
+            </div>
+          )}
+
+          {/* Step 4: Hours on manual work */}
+          {formStep === 4 && (
+            <div className={styles.qualifyForm}>
+              <h3 className={styles.formHeadline}>How many hours per week does your team spend on manual or repetitive tasks?</h3>
+              <div className={styles.optionGrid}>
+                {[
+                  { value: '0-5', label: '0 - 5 hours', key: 'A' },
+                  { value: '5-15', label: '5 - 15 hours', key: 'B' },
+                  { value: '15-30', label: '15 - 30 hours', key: 'C' },
+                  { value: '30+', label: '30+ hours', key: 'D' },
+                  { value: 'unsure', label: 'Not sure', key: 'E' },
+                ].map((opt) => (
+                  <button key={opt.value} className={`${styles.optionCard} ${formData.manualHours === opt.value ? styles.optionCardActive : ''}`} onClick={() => { const updated = { ...formData, manualHours: opt.value }; setFormData(updated); if (updated.email) saveLead(4, updated); setTimeout(() => setFormStep(5), 200) }}>
+                    <span className={styles.optionKey}>{opt.key}</span>
+                    <span className={styles.optionLabel}>{opt.label}</span>
+                  </button>
+                ))}
+              </div>
+              <div className={styles.formNav}><button className={styles.formBackBtn} onClick={handleFormBack}>Back</button></div>
+            </div>
+          )}
+
+          {/* Step 5: Monthly revenue */}
+          {formStep === 5 && (
+            <div className={styles.qualifyForm}>
+              <h3 className={styles.formHeadline}>What&apos;s your approximate monthly revenue?</h3>
+              <div className={styles.optionGrid}>
+                {[
+                  { value: 'pre-revenue', label: 'Pre-revenue', key: 'A' },
+                  { value: '0-10k', label: 'Under $10K', key: 'B' },
+                  { value: '10-50k', label: '$10K - $50K', key: 'C' },
+                  { value: '50-200k', label: '$50K - $200K', key: 'D' },
+                  { value: '200k+', label: '$200K+', key: 'E' },
+                ].map((opt) => (
+                  <button key={opt.value} className={`${styles.optionCard} ${formData.monthlyRevenue === opt.value ? styles.optionCardActive : ''}`} onClick={() => { const updated = { ...formData, monthlyRevenue: opt.value }; setFormData(updated); if (updated.email) saveLead(5, updated); setTimeout(() => setFormStep(6), 200) }}>
+                    <span className={styles.optionKey}>{opt.key}</span>
+                    <span className={styles.optionLabel}>{opt.label}</span>
+                  </button>
+                ))}
+              </div>
+              <div className={styles.formNav}><button className={styles.formBackBtn} onClick={handleFormBack}>Back</button></div>
+            </div>
+          )}
+
+          {/* Step 6: Credit score */}
+          {formStep === 6 && (
+            <div className={styles.qualifyForm}>
+              <h3 className={styles.formHeadline}>We offer flexible payment options so budget doesn&apos;t hold you back. Most clients start with a small deposit and pay as we deliver. To see what you qualify for, what&apos;s your estimated credit score?</h3>
+              <div className={styles.optionGrid}>
+                {[
+                  { value: 'below-600', label: 'Below 600', key: 'A' },
+                  { value: '600-650', label: '600 - 650', key: 'B' },
+                  { value: '650-700', label: '650 - 700', key: 'C' },
+                  { value: '700-750', label: '700 - 750', key: 'D' },
+                  { value: '750-800+', label: '750 - 800+', key: 'E' },
+                ].map((opt) => (
+                  <button key={opt.value} className={`${styles.optionCard} ${formData.creditScore === opt.value ? styles.optionCardActive : ''}`} onClick={() => { const updated = { ...formData, creditScore: opt.value }; setFormData(updated); setTimeout(() => handleFormSubmit(updated), 200) }}>
+                    <span className={styles.optionKey}>{opt.key}</span>
+                    <span className={styles.optionLabel}>{opt.label}</span>
+                  </button>
+                ))}
+              </div>
+              <div className={styles.formNav}><button className={styles.formBackBtn} onClick={handleFormBack}>Back</button></div>
+            </div>
+          )}
+
+          {/* Step 7: Qualified — Cal embed */}
+          {formStep === 7 && <CalEmbed key={JSON.stringify(formData)} formData={formData} onBooked={() => saveLead(7, formData, 'booked')} />}
+
+          {/* Step 8: Rejected / Not a fit */}
+          {formStep === 8 && (
             <div className={styles.thankYouMessage}>
-              <div className={styles.thankYouIcon}>✓</div>
+              <div className={styles.thankYouIcon}>&#10003;</div>
               <h3>Thanks for your interest!</h3>
-              <p>We've received your information and will be in touch soon.</p>
+              <p>We&apos;ve received your information and will be in touch if there&apos;s a fit.</p>
             </div>
           )}
         </div>

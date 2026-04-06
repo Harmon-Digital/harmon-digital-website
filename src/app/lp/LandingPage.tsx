@@ -61,20 +61,21 @@ function CalEmbed({ onBooked, formData }: { onBooked: () => void; formData: Reco
     const prefill = {
       name: formData.name || '',
       email: formData.email || '',
-      attendeePhoneNumber: formData.phone ? intlPhone : '',
+      aiAgentCallPhoneNumber: formData.phone ? intlPhone : '',
+      title: lookingForLabels[formData.lookingFor] || formData.lookingFor || '',
       notes: notesLines,
     }
 
     // @ts-ignore
     if (window.Cal) {
       // @ts-ignore
-      window.Cal.ns["15min"]("inline", {
+      window.Cal.ns["audit"]("inline", {
         elementOrSelector: "#lp-cal-inline-15min",
         config: { layout: "month_view", useSlotsViewOnSmallScreen: "true", theme: "light", prefill },
-        calLink: "harmon-digital/15min",
+        calLink: "harmon-digital/audit",
       })
       // @ts-ignore
-      window.Cal.ns["15min"]("on", {
+      window.Cal.ns["audit"]("on", {
         action: "bookingSuccessful",
         // @ts-ignore
         callback: () => window.__lpCalBooked()
@@ -83,14 +84,14 @@ function CalEmbed({ onBooked, formData }: { onBooked: () => void; formData: Reco
       const script = document.createElement('script')
       script.innerHTML = `
         (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
-        Cal("init", "15min", {origin:"https://app.cal.com"});
-        Cal.ns["15min"]("inline", {
+        Cal("init", "audit", {origin:"https://app.cal.com"});
+        Cal.ns["audit"]("inline", {
           elementOrSelector:"#lp-cal-inline-15min",
           config: {"layout":"month_view","useSlotsViewOnSmallScreen":"true","theme":"light","prefill":${JSON.stringify(prefill)}},
-          calLink: "harmon-digital/15min",
+          calLink: "harmon-digital/audit",
         });
-        Cal.ns["15min"]("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
-        Cal.ns["15min"]("on", {
+        Cal.ns["audit"]("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
+        Cal.ns["audit"]("on", {
           action: "bookingSuccessful",
           callback: function() {
             if (window.__lpCalBooked) window.__lpCalBooked();
