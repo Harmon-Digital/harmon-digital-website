@@ -58,12 +58,11 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: 'Failed to save lead' }, { status: 500 })
     }
 
-    // On booking: send prep email + sync to CRM
+    // On booking: send prep email + sync to CRM + trigger Retell call
     if (status === 'booked' && name && email) {
-      // Post-booking prep email
       sendPrepEmail(name, email)
-      // Sync to CRM leads table
       syncToCRM({ name, email, phone, lookingFor, needs, manualHours, monthlyRevenue, creditScore })
+      if (phone) triggerRetellCall({ name, email, phone, lookingFor, needs, manualHours, monthlyRevenue })
     }
 
     // On submit (not booked yet): sync to CRM
@@ -75,6 +74,29 @@ export async function POST(request: Request) {
   } catch (error) {
     console.error('Error saving lead:', error)
     return NextResponse.json({ error: 'Failed to save lead' }, { status: 500 })
+  }
+}
+
+async function triggerRetellCall(data: {
+  name: string
+  email: string
+  phone: string
+  lookingFor?: string
+  needs?: string
+  manualHours?: string
+  monthlyRevenue?: string
+}) {
+  try {
+    await fetch(`${SUPABASE_URL}/functions/v1/retell-call`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'x-edge-secret': EDGE_FUNCTION_SECRET,
+      },
+      body: JSON.stringify(data),
+    })
+  } catch (error) {
+    console.error('Failed to trigger Retell call:', error)
   }
 }
 
