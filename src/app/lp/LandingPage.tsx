@@ -54,10 +54,14 @@ function CalEmbed({ onBooked, formData }: { onBooked: () => void; formData: Reco
       `Credit score: ${formData.creditScore}`,
     ].filter(Boolean).join('\n')
 
+    // Format phone to international format (Cal.com requires no spaces)
+    const rawPhone = (formData.phone || '').replace(/[\s\-\(\)]/g, '')
+    const intlPhone = rawPhone.startsWith('+') ? rawPhone : rawPhone.startsWith('1') ? `+${rawPhone}` : `+1${rawPhone}`
+
     const prefill = {
       name: formData.name || '',
       email: formData.email || '',
-      smsReminderNumber: formData.phone || '',
+      attendeePhoneNumber: formData.phone ? intlPhone : '',
       notes: notesLines,
     }
 
@@ -154,27 +158,32 @@ export function LandingPage() {
     setFormStep((s) => s - 1)
   }
 
-  const handleSubmit = async () => {
+  const [submitError, setSubmitError] = useState(false)
+
+  const handleSubmit = async (data: typeof formData) => {
     // Honeypot check
-    if (formData.honeypot) {
+    if (data.honeypot) {
       setFormStep(8)
       return
     }
 
-    const isNotAFit = formData.monthlyRevenue === 'pre-revenue'
+    const isNotAFit = data.monthlyRevenue === 'pre-revenue'
     const status = isNotAFit ? 'not-a-fit' : 'submitted'
 
     // Save final lead data
-    saveLead(6, formData, status)
+    saveLead(6, data, status)
 
     try {
-      await fetch('/api/contact', {
+      const res = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
+        body: JSON.stringify(data),
       })
+      if (!res.ok) throw new Error('Email send failed')
+      setSubmitError(false)
     } catch (error) {
       console.error('Failed to submit form:', error)
+      setSubmitError(true)
     }
 
     trackMetaEvent('Lead', {
@@ -272,6 +281,13 @@ export function LandingPage() {
             tabIndex={-1}
             autoComplete="off"
           />
+
+          {submitError && (
+            <div className={styles.errorBanner}>
+              <p>Something went wrong sending your info. Your data is saved — try again.</p>
+              <button className={styles.errorRetryBtn} onClick={() => handleSubmit(formData)}>Retry</button>
+            </div>
+          )}
 
           {/* Step 1: What do you need? */}
           {formStep === 1 && (
@@ -459,10 +475,9 @@ export function LandingPage() {
                     key={opt.value}
                     className={`${styles.optionCard} ${formData.creditScore === opt.value ? styles.optionCardActive : ''}`}
                     onClick={() => {
-                      setFormData({ ...formData, creditScore: opt.value })
-                      setTimeout(() => {
-                        handleSubmit()
-                      }, 200)
+                      const updated = { ...formData, creditScore: opt.value }
+                      setFormData(updated)
+                      setTimeout(() => handleSubmit(updated), 200)
                     }}
                   >
                     <span className={styles.optionKey}>{opt.key}</span>

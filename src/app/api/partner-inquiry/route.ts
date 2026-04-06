@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server'
 
 const SUPABASE_URL = process.env.SUPABASE_URL!
+const EDGE_FUNCTION_SECRET = process.env.EDGE_FUNCTION_SECRET!
 
 export async function POST(request: Request) {
   try {
@@ -8,7 +9,10 @@ export async function POST(request: Request) {
 
     const res = await fetch(`${SUPABASE_URL}/functions/v1/partner-inquiry-email`, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers: {
+        'Content-Type': 'application/json',
+        'x-edge-secret': EDGE_FUNCTION_SECRET,
+      },
       body: JSON.stringify(body),
     })
 
