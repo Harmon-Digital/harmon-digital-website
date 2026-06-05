@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import '@/styles/main.css'
 import { GoogleAnalytics } from '@/components/analytics/GoogleAnalytics'
 import { MetaPixel } from '@/components/analytics/MetaPixel'
+import { ApolloTracker } from '@/components/analytics/ApolloTracker'
 import {
   OrganizationSchema,
   ProfessionalServiceSchema,
@@ -90,6 +91,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className="main-body" suppressHydrationWarning>
         <GoogleAnalytics />
         <MetaPixel />
+        <ApolloTracker />
         {children}
       </body>
     </html>
