@@ -1,0 +1,162 @@
+.page {
+  min-height: 100vh;
+  background: #0a0a0a;
+  padding-top: 120px;
+  padding-bottom: 60px;
+}
+
+.header {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 0 24px 60px;
+}
+
+.label {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 500;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 24px;
+}
+
+.title {
+  font-size: clamp(32px, 5vw, 42px);
+  font-weight: 400;
+  color: #fff;
+  margin: 0 0 16px;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.subtitle {
+  font-size: 16px;
+  color: #888;
+  margin: 0;
+  line-height: 1.6;
+}
+
+.content {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.section {
+  margin-bottom: 60px;
+}
+
+.sectionTitle {
+  font-size: clamp(24px, 3.5vw, 28px);
+  font-weight: 400;
+  color: #fff;
+  margin: 0 0 24px;
+  letter-spacing: -0.02em;
+}
+
+.text {
+  font-size: 17px;
+  color: #ccc;
+  margin: 0 0 20px;
+  line-height: 1.7;
+}
+
+.text strong {
+  color: #fff;
+  font-weight: 500;
+}
+
+.valuesGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.valueItem {
+  padding: 24px;
+  border: 1px solid #1a1a1a;
+  border-radius: 8px;
+}
+
+.valueItemTitle {
+  font-size: 16px;
+  font-weight: 500;
+  color: #fff;
+  margin: 0 0 8px;
+}
+
+.valueItemDesc {
+  font-size: 15px;
+  color: #888;
+  margin: 0;
+  line-height: 1.6;
+}
+
+.cta {
+  text-align: center;
+  margin-top: 80px;
+  padding-top: 60px;
+  border-top: 1px solid #1a1a1a;
+}
+
+.ctaTitle {
+  font-size: clamp(24px, 4vw, 32px);
+  font-weight: 400;
+  color: #fff;
+  margin: 0 0 12px;
+  letter-spacing: -0.02em;
+}
+
+.ctaSubtitle {
+  font-size: 16px;
+  color: #888;
+  margin: 0 0 32px;
+}
+
+.ctaButton {
+  display: inline-flex;
+  align-items: center;
+  padding: 14px 32px;
+  background: #fff;
+  color: #000;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.ctaButton:hover {
+  opacity: 0.9;
+}
+
+.poweredBy {
+  max-width: 700px;
+  margin: 100px auto 0;
+  padding: 40px 24px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  border-top: 1px solid #1a1a1a;
+}
+
+.poweredByLabel {
+  font-size: 11px;
+  font-weight: 500;
+  color: #555;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+}
+
+.poweredByLogo {
+  height: 32px;
+  width: auto;
+  opacity: 0.75;
+  transition: opacity 0.2s ease;
+}
+
+.poweredByLogo:hover {
+  opacity: 1;
+}
