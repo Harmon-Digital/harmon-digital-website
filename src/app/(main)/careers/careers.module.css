@@ -152,8 +152,8 @@
 
 .poweredByLogoWrap {
   background: #fff;
-  border-radius: 8px;
-  padding: 12px 20px;
+  border-radius: 12px;
+  padding: 20px 32px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -165,7 +165,7 @@
 }
 
 .poweredByLogo {
-  height: 28px;
+  height: 56px;
   width: auto;
   display: block;
 }
