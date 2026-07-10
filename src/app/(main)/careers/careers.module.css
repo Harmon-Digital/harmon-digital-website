@@ -150,13 +150,22 @@
   letter-spacing: 0.15em;
 }
 
-.poweredByLogo {
-  height: 32px;
-  width: auto;
-  opacity: 0.75;
-  transition: opacity 0.2s ease;
+.poweredByLogoWrap {
+  background: #fff;
+  border-radius: 8px;
+  padding: 12px 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease;
 }
 
-.poweredByLogo:hover {
-  opacity: 1;
+.poweredByLogoWrap:hover {
+  transform: translateY(-1px);
+}
+
+.poweredByLogo {
+  height: 28px;
+  width: auto;
+  display: block;
 }

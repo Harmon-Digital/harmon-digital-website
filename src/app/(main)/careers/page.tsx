@@ -87,11 +87,13 @@ export default function CareersPage() {
 
       <div className={styles.poweredBy}>
         <span className={styles.poweredByLabel}>Powered by</span>
-        <img
-          src="/producifyx/producifyx-logo.png"
-          alt="ProducifyX"
-          className={styles.poweredByLogo}
-        />
+        <div className={styles.poweredByLogoWrap}>
+          <img
+            src="/producifyx/producifyx-logo.png"
+            alt="ProducifyX"
+            className={styles.poweredByLogo}
+          />
+        </div>
       </div>
     </div>
   )
