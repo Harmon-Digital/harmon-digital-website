@@ -10,6 +10,10 @@ export const size = {
 export const contentType = 'image/png'
 
 export default async function Image() {
+  const logoData = await fetch(
+    new URL('./og-logo.png', import.meta.url)
+  ).then((res) => res.arrayBuffer())
+
   return new ImageResponse(
     (
       <div
@@ -24,29 +28,17 @@ export default async function Image() {
           padding: '40px 80px',
         }}
       >
-        {/* Logo Icon */}
-        <div
+        {/* Real logo */}
+        <img
+          // @ts-expect-error - ImageResponse accepts ArrayBuffer as src
+          src={logoData}
+          width={140}
+          height={140}
           style={{
-            width: 120,
-            height: 120,
-            borderRadius: 24,
-            background: 'linear-gradient(135deg, #3959ff 0%, #1a3ad4 100%)',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
             marginBottom: 40,
+            borderRadius: 28,
           }}
-        >
-          <div
-            style={{
-              color: 'white',
-              fontSize: 60,
-              fontWeight: 'bold',
-            }}
-          >
-            //
-          </div>
-        </div>
+        />
 
         {/* Company Name */}
         <div
